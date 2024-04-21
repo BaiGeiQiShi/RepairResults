@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 316
+Faulty:
+double highVal=rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta,dataArea,yAxisLocation);
+Seed:
+g2.setPaint(plot.getDomainGridlinePaint());
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 113
+Faulty:
+return result;
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+Evaluations: 1033
+EstimatedTime: 208920

@@ -1,0 +1,68 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 472
+Faulty:
+g2.setPaint(this.errorIndicatorPaint);
+Seed:
+if (seriesCount > 1) {
+  double seriesGap=dataArea.getHeight() * getItemMargin() / (categoryCount * (seriesCount - 1));
+  rectY=rectY + row * (state.getBarWidth() + seriesGap);
+}
+ else {
+  rectY=rectY + row * state.getBarWidth();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 418
+Faulty:
+if (lclip <= 0.0) {
+  if (value >= uclip) {
+    value=uclip;
+  }
+ else {
+    if (value <= lclip) {
+      value=lclip;
+    }
+  }
+}
+ else {
+  if (value <= lclip) {
+    return;
+  }
+  base=getLowerClip();
+  if (value >= uclip) {
+    value=uclip;
+  }
+}
+Seed:
+if (getBase() <= 0.0) {
+  if (value >= uclip) {
+    value=uclip;
+  }
+ else {
+    if (value <= lclip) {
+      value=lclip;
+    }
+  }
+}
+ else {
+  if (value <= lclip) {
+    return;
+  }
+  base=getLowerClip();
+  if (value >= uclip) {
+    value=uclip;
+  }
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 404
+Faulty:
+double value=meanValue.doubleValue();
+Seed:
+double value=meanValue.shortValue();
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+result=masd.getMean();
+**************************************************
+Evaluations: 7540
+EstimatedTime: 1566514

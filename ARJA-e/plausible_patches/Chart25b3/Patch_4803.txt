@@ -1,0 +1,31 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getBase();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 471
+Faulty:
+if (this.errorIndicatorPaint != null) {
+  g2.setPaint(this.errorIndicatorPaint);
+}
+ else {
+  g2.setPaint(getItemOutlinePaint(row,column));
+}
+Seed:
+plot.drawOutline(g2,dataArea);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+result=masd.getMean();
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 450
+Faulty:
+g2.setPaint(seriesPaint);
+Seed:
+g2.fill(bar);
+**************************************************
+Evaluations: 4507
+EstimatedTime: 957769

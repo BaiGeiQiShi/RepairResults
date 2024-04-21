@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 667
+Faulty:
+entries.remove(index);
+Seed:
+entries.put(index,value);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 220
+Faulty:
+return FastMath.abs(value) < epsilon;
+Seed:
+if (Double.isNaN(value)) {
+  return false;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 372
+Faulty:
+iter.advance();
+Seed:
+if (!(iter != null)) throw new org.apache.commons.math.exception.MathArithmeticException();
+**************************************************
+Evaluations: 7801
+EstimatedTime: 4597302

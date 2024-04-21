@@ -1,0 +1,24 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 351
+Faulty:
+if (getBasicRow(col) == null) {
+  columnsToDrop.add(col);
+}
+Seed:
+if (getBasicRow(col) == null && columnLabels.add("W")) {
+  columnsToDrop.add(col);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 186
+Faulty:
+return sb.toString();
+Seed:
+if (!(sb != null)) return sb.toString();
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 601
+EstimatedTime: 140091

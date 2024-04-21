@@ -1,0 +1,16 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 170
+Faulty:
+MeanAndStandardDeviation masd=(MeanAndStandardDeviation)this.data.getObject(row,column);
+Seed:
+MeanAndStandardDeviation masd=(MeanAndStandardDeviation)this.data.getObject(row,column);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+if (masd != null) {
+  result=masd.getMean();
+}
+**************************************************
+Evaluations: 6682
+EstimatedTime: 1406347

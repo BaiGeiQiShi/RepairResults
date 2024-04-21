@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 230
+Faulty:
+return StringUtils.EMPTY;
+Seed:
+return StringUtils.upperCase(StringUtils.EMPTY);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 252
+Faulty:
+int i=className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
+Seed:
+if (!(className != null)) return null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 254
+Faulty:
+return StringUtils.EMPTY;
+Seed:
+className=StringUtils.deleteWhitespace(className);
+**************************************************
+4 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 232
+Faulty:
+return getPackageName(cls.getName());
+Seed:
+return getPackageName(cls.getTypeName());
+**************************************************
+Evaluations: 4931
+EstimatedTime: 516463

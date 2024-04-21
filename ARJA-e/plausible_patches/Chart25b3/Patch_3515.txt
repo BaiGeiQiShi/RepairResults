@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && Double.isNaN(this.minimumRangeValue)) {
+  result=masd.getMean();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 449
+Faulty:
+Paint seriesPaint=getItemPaint(row,column);
+Seed:
+Paint seriesPaint=getItemPaint(getPassCount(),column);
+**************************************************
+Evaluations: 3375
+EstimatedTime: 718654

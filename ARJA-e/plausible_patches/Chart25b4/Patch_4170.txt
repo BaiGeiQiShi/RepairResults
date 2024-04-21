@@ -1,0 +1,24 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 315
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+double valueDelta=dataset.getMeanValue(row,column).doubleValue();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 260
+Faulty:
+double value=meanValue.doubleValue();
+Seed:
+if (!getItemVisible(row,column)) {
+  return;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 353
+Faulty:
+EntityCollection entities=state.getEntityCollection();
+Seed:
+if (row < dataset.getRowCount() - 1) {
+  return;
+}
+**************************************************
+Evaluations: 3550
+EstimatedTime: 718787

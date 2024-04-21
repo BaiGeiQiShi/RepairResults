@@ -1,0 +1,8 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 263
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getLowerClip();
+**************************************************
+Evaluations: 4217
+EstimatedTime: 852156

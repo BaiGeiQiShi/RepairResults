@@ -1,0 +1,33 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 261
+Faulty:
+double base=0.0;
+Seed:
+if (seriesCount > 1) {
+  double seriesGap=dataArea.getHeight() * getItemMargin() / (categoryCount * (seriesCount - 1));
+  rectY=rectY + row * (state.getBarWidth() + seriesGap);
+}
+ else {
+  rectY=rectY + row * state.getBarWidth();
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 207
+Faulty:
+if (orientation == PlotOrientation.HORIZONTAL) {
+  drawHorizontalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+ else if (orientation == PlotOrientation.VERTICAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+Seed:
+if (!getItemVisible(row,column)) {
+  return;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 113
+Faulty:
+return result;
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+Evaluations: 4381
+EstimatedTime: 884454

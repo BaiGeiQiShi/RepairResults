@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 667
+Faulty:
+entries.remove(index);
+Seed:
+entries.put(index,value);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 396
+Faulty:
+final double previous=values[index];
+Seed:
+final double previous=values[FastMath.round(index)];
+**************************************************
+Evaluations: 8424
+EstimatedTime: 4909409

@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 386
+Faulty:
+double rectX=domainAxis.getCategoryStart(column,getColumnCount(),dataArea,xAxisLocation);
+Seed:
+double rectX=domainAxis.getCategoryStart(row,getColumnCount(),dataArea,xAxisLocation);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 472
+Faulty:
+g2.setPaint(this.errorIndicatorPaint);
+Seed:
+g2.setStroke(this.errorIndicatorStroke);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getLowerClip();
+**************************************************
+Evaluations: 2266
+EstimatedTime: 480277

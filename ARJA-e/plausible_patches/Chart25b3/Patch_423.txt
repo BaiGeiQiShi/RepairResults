@@ -1,0 +1,35 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 477
+Faulty:
+Line2D line=null;
+Seed:
+if (this.errorIndicatorPaint != null) {
+  g2.setPaint(this.errorIndicatorPaint);
+}
+ else {
+  g2.setPaint(getItemPaint(row,column));
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+result=masd.getMean();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 465
+Faulty:
+if (this.errorIndicatorStroke != null) {
+  g2.setStroke(this.errorIndicatorStroke);
+}
+ else {
+  g2.setStroke(getItemOutlineStroke(row,column));
+}
+Seed:
+if (this.errorIndicatorStroke != null || value <= lclip) {
+  g2.setStroke(this.errorIndicatorStroke);
+}
+ else {
+  g2.setStroke(getItemOutlineStroke(row,column));
+}
+**************************************************
+Evaluations: 472
+EstimatedTime: 104498

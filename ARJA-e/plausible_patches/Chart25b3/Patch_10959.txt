@@ -1,0 +1,38 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getBase();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 418
+Faulty:
+if (lclip <= 0.0) {
+  if (value >= uclip) {
+    value=uclip;
+  }
+ else {
+    if (value <= lclip) {
+      value=lclip;
+    }
+  }
+}
+ else {
+  if (value <= lclip) {
+    return;
+  }
+  base=getLowerClip();
+  if (value >= uclip) {
+    value=uclip;
+  }
+}
+Seed:
+base=getLowerClip();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 450
+Faulty:
+g2.setPaint(seriesPaint);
+Seed:
+g2.setPaint(plot.getRangeGridlinePaint());
+**************************************************
+Evaluations: 9748
+EstimatedTime: 1978480

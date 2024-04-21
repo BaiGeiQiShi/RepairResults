@@ -1,0 +1,11 @@
+FL-1 File: src/main/java/org/joda/time/MutableDateTime.java
+Time3b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.5
+
+
+Number of failing tests: 1 
+Buggy Location: 639
+Patch Found in iteration 0 
+Repair Action: replace 
+ - setMillis(type.getField(getChronology()).add(getMillis(),  amount));  
+ + if(amount  >  0)  {  setMillis(type.getField(getChronology()).add(getMillis(),  amount));  } 
+ --------------------------------------------------

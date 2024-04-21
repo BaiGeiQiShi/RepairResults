@@ -1,0 +1,56 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 478
+Faulty:
+line=new Line2D.Double(rectX + rectWidth / 2.0d,lowVal,rectX + rectWidth / 2.0d,highVal);
+Seed:
+line=new Line2D.Double(rectX + rectWidth * 2.0d,lowVal,rectX + rectWidth / 2.0d,highVal);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 418
+Faulty:
+if (lclip <= 0.0) {
+  if (value >= uclip) {
+    value=uclip;
+  }
+ else {
+    if (value <= lclip) {
+      value=lclip;
+    }
+  }
+}
+ else {
+  if (value <= lclip) {
+    return;
+  }
+  base=getLowerClip();
+  if (value >= uclip) {
+    value=uclip;
+  }
+}
+Seed:
+if (lclip <= 0.0) {
+  if (value >= uclip) {
+    value=uclip;
+  }
+ else {
+    if (value <= lclip) {
+      value=lclip;
+    }
+  }
+}
+ else {
+  if (value <= lclip) {
+    return;
+  }
+  base=lclip;
+  if (value >= uclip) {
+    value=uclip;
+  }
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 459
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+double valueDelta=dataset.getStdDevValue(row,row).doubleValue();
+**************************************************
+Evaluations: 7055
+EstimatedTime: 1478085

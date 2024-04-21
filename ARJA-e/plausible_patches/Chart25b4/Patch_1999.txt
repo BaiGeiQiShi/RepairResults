@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 318
+Faulty:
+double lowVal=rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta,dataArea,yAxisLocation);
+Seed:
+double lowVal=rangeAxis.valueToJava2D(meanValue.doubleValue() - rectHeight,dataArea,yAxisLocation);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 113
+Faulty:
+return result;
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+Evaluations: 1753
+EstimatedTime: 356504

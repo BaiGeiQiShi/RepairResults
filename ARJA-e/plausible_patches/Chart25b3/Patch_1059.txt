@@ -1,0 +1,24 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getLowerClip();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 447
+Faulty:
+Rectangle2D bar=new Rectangle2D.Double(rectX,rectY,rectWidth,rectHeight);
+Seed:
+Rectangle2D bar=new Rectangle2D.Double(getRowCount(),rectY,rectWidth,rectHeight);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 450
+Faulty:
+g2.setPaint(seriesPaint);
+Seed:
+if (isDrawBarOutline() && state.getBarWidth() > 3) {
+  g2.setStroke(getItemStroke(row,column));
+  g2.setPaint(getItemOutlinePaint(row,column));
+  g2.draw(bar);
+}
+**************************************************
+Evaluations: 1141
+EstimatedTime: 243248

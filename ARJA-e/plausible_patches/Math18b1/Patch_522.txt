@@ -1,0 +1,38 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 751
+Faulty:
+negccov=negcovMax;
+Seed:
+negccov=ccov1Sep;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1035
+Faulty:
+double diff=Math.abs(x[i] - repaired[i]);
+Seed:
+double diff=Math.abs(repair(x)[i] - repaired[i]);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 955
+Faulty:
+double[] res=new double[x.length];
+Seed:
+if (!(x != null)) throw new org.apache.commons.math3.exception.MathUnsupportedOperationException();
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+5 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 364
+Faulty:
+iterations=0;
+Seed:
+C=triu(C,0).add(triu(C,1).transpose());
+**************************************************
+6 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1021
+Faulty:
+repaired[i]=x[i];
+Seed:
+if (!(x != null && repaired != null)) throw new org.apache.commons.math3.exception.MathUnsupportedOperationException();
+**************************************************
+Evaluations: 666
+EstimatedTime: 5224459

@@ -1,0 +1,25 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 343
+Faulty:
+g2.draw(line);
+Seed:
+if (this.errorIndicatorPaint != null) {
+  g2.setPaint(this.errorIndicatorPaint);
+}
+ else {
+  g2.setPaint(getItemPaint(row,column));
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 262
+Faulty:
+double lclip=getLowerClip();
+Seed:
+double lclip=getUpperClip();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 296
+Faulty:
+double transY2=rangeAxis.valueToJava2D(value,dataArea,yAxisLocation);
+Seed:
+double transY2=rangeAxis.valueToJava2D(base,dataArea,yAxisLocation);
+**************************************************
+Evaluations: 8393
+EstimatedTime: 1678245

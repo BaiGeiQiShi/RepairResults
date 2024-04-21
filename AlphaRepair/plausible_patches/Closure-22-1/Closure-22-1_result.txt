@@ -1,0 +1,47 @@
+----------------------------------------
+Patch Number :82
+Faulty Line :/tmp/Closure-22-1/src/com/google/javascript/jscomp/CheckSideEffects.java:115
++ continue; if (an.getType()!= Token.FOR)
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.500869823503308
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :118
+Faulty Line :/tmp/Closure-22-1/src/com/google/javascript/jscomp/CheckSideEffects.java:115
+- continue;
++ break; else
+mask:<mask><mask><mask>
+-0.6071144081652164
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :148
+Faulty Line :/tmp/Closure-22-1/src/com/google/javascript/jscomp/CheckSideEffects.java:115
+- continue;
++ { break; } parent = gramps;
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>;
+-0.766157111080247
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :155
+Faulty Line :/tmp/Closure-22-1/src/com/google/javascript/jscomp/CheckSideEffects.java:115
+- continue;
++ break;
+mask:<mask><mask>
+-0.8108020136132836
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :165
+Faulty Line :/tmp/Closure-22-1/src/com/google/javascript/jscomp/CheckSideEffects.java:115
+- continue;
++ { break; } parent = an;
+mask:<mask><mask><mask><mask><mask><mask><mask>;
+-0.855305614082941
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :817
+Faulty Line :/tmp/Closure-22-1/src/com/google/javascript/jscomp/CheckSideEffects.java:102
+- Node gramps = parent.getParent();
++ Node gramps = parent.getParent(); parent= parent.getParent();
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>= parent.getParent();
+-0.5393146133050323
+Success (Plausible Patch)

@@ -1,0 +1,24 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 449
+Faulty:
+Paint seriesPaint=getItemPaint(row,column);
+Seed:
+if (isDrawBarOutline() && state.getBarWidth() > BAR_OUTLINE_WIDTH_THRESHOLD) {
+  g2.setStroke(getItemOutlineStroke(row,column));
+  g2.setPaint(getItemOutlinePaint(row,column));
+  g2.draw(bar);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getBase();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 450
+Faulty:
+g2.setPaint(seriesPaint);
+Seed:
+g2.setPaint(errorIndicatorPaint);
+**************************************************
+Evaluations: 5439
+EstimatedTime: 1158042

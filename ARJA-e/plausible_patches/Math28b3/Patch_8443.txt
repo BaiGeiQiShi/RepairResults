@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getNumArtificialVariables();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 173
+Faulty:
+final int len=msgPatterns.size();
+Seed:
+final float len=msgPatterns.size();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=getMaxIterations();
+**************************************************
+Evaluations: 8563
+EstimatedTime: 2093486

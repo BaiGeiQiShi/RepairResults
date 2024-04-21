@@ -1,0 +1,65 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 481
+Faulty:
+line=new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d,highVal,rectX + rectWidth / 2.0d + 5.0d,highVal);
+Seed:
+g2.fill(bar);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 418
+Faulty:
+if (lclip <= 0.0) {
+  if (value >= uclip) {
+    value=uclip;
+  }
+ else {
+    if (value <= lclip) {
+      value=lclip;
+    }
+  }
+}
+ else {
+  if (value <= lclip) {
+    return;
+  }
+  base=getLowerClip();
+  if (value >= uclip) {
+    value=uclip;
+  }
+}
+Seed:
+if (uclip <= 0.0) {
+  if (value >= uclip) {
+    return;
+  }
+  base=uclip;
+  if (value <= lclip) {
+    value=lclip;
+  }
+}
+ else if (lclip <= 0.0) {
+  if (value >= uclip) {
+    value=uclip;
+  }
+ else {
+    if (value <= lclip) {
+      value=lclip;
+    }
+  }
+}
+ else {
+  if (value <= lclip) {
+    return;
+  }
+  base=lclip;
+  if (value >= uclip) {
+    value=uclip;
+  }
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+result=masd.getMean();
+**************************************************
+Evaluations: 6912
+EstimatedTime: 1451382

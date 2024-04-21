@@ -1,0 +1,19 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 444
+Faulty:
+double rectWidth=state.getBarWidth();
+Seed:
+if (this.errorIndicatorStroke != null) {
+  g2.setStroke(this.errorIndicatorStroke);
+}
+ else {
+  g2.setStroke(getItemOutlineStroke(row,column));
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getLowerClip();
+**************************************************
+Evaluations: 2079
+EstimatedTime: 443546

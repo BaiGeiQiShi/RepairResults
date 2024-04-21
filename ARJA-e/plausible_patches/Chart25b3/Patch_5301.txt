@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 449
+Faulty:
+Paint seriesPaint=getItemPaint(row,column);
+Seed:
+Paint seriesPaint=getItemPaint(categoryCount,column);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 488
+Faulty:
+CategoryItemLabelGenerator generator=getItemLabelGenerator(row,column);
+Seed:
+rectY=rectY + row * state.getBarWidth();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 459
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+double valueDelta=dataset.getStdDevValue(row,row).doubleValue();
+**************************************************
+Evaluations: 4916
+EstimatedTime: 1047431

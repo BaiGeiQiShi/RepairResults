@@ -1,0 +1,19 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 212
+Faulty:
+drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+Seed:
+drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,row);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 390
+Faulty:
+int seriesCount=getRowCount();
+Seed:
+if (this.errorIndicatorStroke != null) {
+  g2.setStroke(this.errorIndicatorStroke);
+}
+ else {
+  g2.setStroke(getItemOutlineStroke(row,column));
+}
+**************************************************
+Evaluations: 9493
+EstimatedTime: 1931748

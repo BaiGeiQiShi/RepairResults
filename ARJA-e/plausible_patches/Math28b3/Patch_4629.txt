@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java 80
+Faulty:
+return context.getMessage();
+Seed:
+return getContext().getMessage();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions=new ArrayList<Integer>();
+**************************************************
+Evaluations: 4712
+EstimatedTime: 1183248

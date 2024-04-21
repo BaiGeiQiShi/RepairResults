@@ -1,0 +1,36 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 308
+Faulty:
+if (isDrawBarOutline() && state.getBarWidth() > 3) {
+  g2.setStroke(getItemStroke(row,column));
+  g2.setPaint(getItemOutlinePaint(row,column));
+  g2.draw(bar);
+}
+Seed:
+if (isDrawBarOutline() && state.getBarWidth() > BAR_OUTLINE_WIDTH_THRESHOLD) {
+  Stroke stroke=getItemOutlineStroke(row,column);
+  Paint paint=getItemOutlinePaint(row,column);
+  if (stroke != null && paint != null) {
+    g2.setStroke(stroke);
+    g2.setPaint(paint);
+    g2.draw(bar);
+  }
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 207
+Faulty:
+if (orientation == PlotOrientation.HORIZONTAL) {
+  drawHorizontalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+ else if (orientation == PlotOrientation.VERTICAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+Seed:
+if (orientation == PlotOrientation.HORIZONTAL && !(this.errorIndicatorStroke != null)) {
+  drawHorizontalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+ else if (orientation == PlotOrientation.VERTICAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+**************************************************
+Evaluations: 1272
+EstimatedTime: 258421

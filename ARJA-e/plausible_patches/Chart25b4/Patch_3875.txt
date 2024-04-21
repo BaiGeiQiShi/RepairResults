@@ -1,0 +1,18 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 338
+Faulty:
+line=new Line2D.Double(highVal,rectY + rectHeight * 0.25,highVal,rectY + rectHeight * 0.75);
+Seed:
+drawHorizontalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,dataset,row,column);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && !(!Double.isNaN(this.minimumRangeValue) && !Double.isNaN(this.maximumRangeValue))) {
+  result=masd.getMean();
+}
+**************************************************
+Evaluations: 3316
+EstimatedTime: 670042

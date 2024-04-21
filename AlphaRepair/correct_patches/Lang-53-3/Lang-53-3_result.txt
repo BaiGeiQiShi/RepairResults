@@ -1,0 +1,7 @@
+----------------------------------------
+Patch Number :8556
+Faulty Line :/tmp/Lang-53-3/src/java/org/apache/commons/lang/time/DateUtils.java:641
++ if (field == Calendar.SECOND) { done = true; }
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.3048442741720161
+Success (Plausible Patch)

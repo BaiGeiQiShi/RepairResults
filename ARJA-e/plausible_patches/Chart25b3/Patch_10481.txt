@@ -1,0 +1,24 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 480
+Faulty:
+g2.draw(line);
+Seed:
+g2.setPaint(Color.lightGray);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 211
+Faulty:
+if (orientation == PlotOrientation.VERTICAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+Seed:
+if (orientation == PlotOrientation.HORIZONTAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 459
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+rectX=rectX + row * state.getBarWidth();
+**************************************************
+Evaluations: 9346
+EstimatedTime: 1903919

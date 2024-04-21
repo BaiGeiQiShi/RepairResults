@@ -1,0 +1,64 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 750
+Faulty:
+if (includeInterval && dataset instanceof IntervalXYDataset) {
+  IntervalXYDataset intervalXYData=(IntervalXYDataset)dataset;
+  for (int series=0; series < seriesCount; series++) {
+    int itemCount=dataset.getItemCount(series);
+    for (int item=0; item < itemCount; item++) {
+      lvalue=intervalXYData.getStartXValue(series,item);
+      uvalue=intervalXYData.getEndXValue(series,item);
+      if (!Double.isNaN(lvalue)) {
+        minimum=Math.min(minimum,lvalue);
+      }
+      if (!Double.isNaN(uvalue)) {
+        maximum=Math.max(maximum,uvalue);
+      }
+    }
+  }
+}
+ else {
+  for (int series=0; series < seriesCount; series++) {
+    int itemCount=dataset.getItemCount(series);
+    for (int item=0; item < itemCount; item++) {
+      lvalue=dataset.getXValue(series,item);
+      uvalue=lvalue;
+      if (!Double.isNaN(lvalue)) {
+        minimum=Math.min(minimum,lvalue);
+        maximum=Math.max(maximum,uvalue);
+      }
+    }
+  }
+}
+Seed:
+for (int series=0; series < seriesCount; series++) {
+  int itemCount=dataset.getItemCount(series);
+  for (int item=0; item < itemCount; item++) {
+    lvalue=dataset.getXValue(series,item);
+    uvalue=lvalue;
+    if (!Double.isNaN(lvalue)) {
+      minimum=Math.min(minimum,lvalue);
+      maximum=Math.max(maximum,uvalue);
+    }
+  }
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 188
+Faulty:
+return s.getXHighValue(item);
+Seed:
+return s.getXLowValue(item);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 747
+Faulty:
+int seriesCount=dataset.getSeriesCount();
+Seed:
+long seriesCount=dataset.getSeriesCount();
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 174
+Faulty:
+return s.getXLowValue(item);
+Seed:
+return s.getXHighValue(item);
+**************************************************
+Evaluations: 8963
+EstimatedTime: 2416878

@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 243
+Faulty:
+double rectY=domainAxis.getCategoryStart(column,getColumnCount(),dataArea,xAxisLocation);
+Seed:
+double rectY=domainAxis.getCategoryStart(getPassCount(),getColumnCount(),dataArea,xAxisLocation);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 263
+Faulty:
+double uclip=getUpperClip();
+Seed:
+base=getLowerClip();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+result=masd.getMean();
+**************************************************
+Evaluations: 2149
+EstimatedTime: 436446

@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java 86
+Faulty:
+return context.getLocalizedMessage();
+Seed:
+context.addMessage(LocalizedFormats.ARITHMETIC_EXCEPTION);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 146
+Faulty:
+minRow=row;
+Seed:
+return row;
+**************************************************
+Evaluations: 2711
+EstimatedTime: 634000

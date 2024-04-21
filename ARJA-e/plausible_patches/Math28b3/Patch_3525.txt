@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 176
+Faulty:
+final Object[] args=msgArguments.get(i);
+Seed:
+final Object[] args=msgArguments.get(count);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(i,column);
+**************************************************
+Evaluations: 3580
+EstimatedTime: 921686

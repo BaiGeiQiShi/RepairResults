@@ -1,0 +1,29 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 459
+Faulty:
+break generationLoop;
+Seed:
+diagC=square(diagD);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+for (int i=0; i < x.length; i++) {
+  double diff=Math.abs(x[i] - repaired[i]);
+  penalty+=diff * valueRange;
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1021
+Faulty:
+repaired[i]=x[i];
+Seed:
+if (x != null && repaired != null) repaired[i]=x[i];
+**************************************************
+Evaluations: 1237
+EstimatedTime: 10146164

@@ -1,0 +1,76 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 383
+Faulty:
+RectangleEdge xAxisLocation=plot.getDomainAxisEdge();
+Seed:
+plot.drawOutline(g2,dataArea);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 409
+Faulty:
+if (uclip <= 0.0) {
+  if (value >= uclip) {
+    return;
+  }
+  base=uclip;
+  if (value <= lclip) {
+    value=lclip;
+  }
+}
+ else if (lclip <= 0.0) {
+  if (value >= uclip) {
+    value=uclip;
+  }
+ else {
+    if (value <= lclip) {
+      value=lclip;
+    }
+  }
+}
+ else {
+  if (value <= lclip) {
+    return;
+  }
+  base=getLowerClip();
+  if (value >= uclip) {
+    value=uclip;
+  }
+}
+Seed:
+if (lclip <= 0.0) {
+  if (value >= uclip) {
+    value=uclip;
+  }
+ else {
+    if (value <= lclip) {
+      value=lclip;
+    }
+  }
+}
+ else {
+  if (value <= lclip) {
+    return;
+  }
+  base=lclip;
+  if (value >= uclip) {
+    value=uclip;
+  }
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 212
+Faulty:
+drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+Seed:
+drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,row);
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 207
+Faulty:
+if (orientation == PlotOrientation.HORIZONTAL) {
+  drawHorizontalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+ else if (orientation == PlotOrientation.VERTICAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+Seed:
+g2.setStroke(getItemStroke(row,column));
+**************************************************
+Evaluations: 7379
+EstimatedTime: 1537504

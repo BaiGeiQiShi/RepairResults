@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 231
+Faulty:
+matrix.setEntry(row,getSlackVariableOffset() + slackVar++,-1);
+Seed:
+matrix.setEntry(row,width - 1,constraint.getValue());
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+if (i < minIndex || i < tableau.getWidth() - 1 && minRow != row) {
+  minIndex=i;
+  minRow=row;
+}
+**************************************************
+Evaluations: 6801
+EstimatedTime: 1491561

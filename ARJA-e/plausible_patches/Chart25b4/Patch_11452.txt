@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 316
+Faulty:
+double highVal=rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta,dataArea,yAxisLocation);
+Seed:
+this.errorIndicatorStroke=new BasicStroke(0.5f);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 315
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+double valueDelta=dataset.getMeanValue(row,column).doubleValue();
+**************************************************
+Evaluations: 9381
+EstimatedTime: 1873384

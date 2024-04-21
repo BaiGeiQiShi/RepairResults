@@ -1,0 +1,76 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/ComparableObjectSeries.java 333
+Faulty:
+return (ComparableObjectItem)this.data.get(index);
+Seed:
+if (getItemCount() > this.maximumItemCount) {
+  this.data.remove(0);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 750
+Faulty:
+if (includeInterval && dataset instanceof IntervalXYDataset) {
+  IntervalXYDataset intervalXYData=(IntervalXYDataset)dataset;
+  for (int series=0; series < seriesCount; series++) {
+    int itemCount=dataset.getItemCount(series);
+    for (int item=0; item < itemCount; item++) {
+      lvalue=intervalXYData.getStartXValue(series,item);
+      uvalue=intervalXYData.getEndXValue(series,item);
+      if (!Double.isNaN(lvalue)) {
+        minimum=Math.min(minimum,lvalue);
+      }
+      if (!Double.isNaN(uvalue)) {
+        maximum=Math.max(maximum,uvalue);
+      }
+    }
+  }
+}
+ else {
+  for (int series=0; series < seriesCount; series++) {
+    int itemCount=dataset.getItemCount(series);
+    for (int item=0; item < itemCount; item++) {
+      lvalue=dataset.getXValue(series,item);
+      uvalue=lvalue;
+      if (!Double.isNaN(lvalue)) {
+        minimum=Math.min(minimum,lvalue);
+        maximum=Math.max(maximum,uvalue);
+      }
+    }
+  }
+}
+Seed:
+for (int series=0; series < seriesCount; series++) {
+  int itemCount=dataset.getItemCount(series);
+  for (int item=0; item < itemCount; item++) {
+    lvalue=dataset.getXValue(series,item);
+    uvalue=lvalue;
+    if (!Double.isNaN(lvalue)) {
+      minimum=Math.min(minimum,lvalue);
+      maximum=Math.max(maximum,uvalue);
+    }
+  }
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 188
+Faulty:
+return s.getXHighValue(item);
+Seed:
+return s.getXLowValue(item);
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 174
+Faulty:
+return s.getXLowValue(item);
+Seed:
+return s.getXHighValue(item);
+**************************************************
+5 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 742
+Faulty:
+if (dataset == null) {
+  throw new IllegalArgumentException("Null 'dataset' argument.");
+}
+Seed:
+if (dataset == null && dataset instanceof XYDomainInfo) {
+  throw new IllegalArgumentException("Null 'dataset' argument.");
+}
+**************************************************
+Evaluations: 8738
+EstimatedTime: 2354959

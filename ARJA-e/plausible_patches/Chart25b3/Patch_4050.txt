@@ -1,0 +1,34 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && Double.isNaN(this.minimumRangeValue)) {
+  result=masd.getMean();
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 480
+Faulty:
+g2.draw(line);
+Seed:
+NULL
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 172
+Faulty:
+if (masd != null) {
+  result=masd.getStandardDeviation();
+}
+Seed:
+if (masd != null && Double.isNaN(this.minimumRangeValue)) {
+  result=masd.getStandardDeviation();
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+result=masd.getMean();
+**************************************************
+Evaluations: 3852
+EstimatedTime: 820114

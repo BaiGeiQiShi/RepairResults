@@ -1,0 +1,34 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/AbstractLinearOptimizer.java 128
+Faulty:
+throw new MaxCountExceededException(maxIterations);
+Seed:
+this.maxIterations=maxIterations;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 151
+Faulty:
+return minRow;
+Seed:
+minRatioPositions=new ArrayList<Integer>();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 128
+Faulty:
+return getMessage(Locale.US);
+Seed:
+return getMessage(Locale.TAIWAN);
+**************************************************
+4 Delete /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 119
+Faulty:
+for (Integer row : minRatioPositions) {
+  for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+    int column=i + tableau.getArtificialVariableOffset();
+    final double entry=tableau.getEntry(row,column);
+    if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+      return row;
+    }
+  }
+}
+Seed:
+NULL
+**************************************************
+Evaluations: 245
+EstimatedTime: 57658

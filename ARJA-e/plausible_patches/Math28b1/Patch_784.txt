@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions.add(getIterations());
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 368
+Faulty:
+for (int i=drop.length - 1; i >= 0; i--) {
+  columnLabels.remove((int)drop[i]);
+}
+Seed:
+columnLabels.add("W");
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=row;
+**************************************************
+Evaluations: 919
+EstimatedTime: 211907

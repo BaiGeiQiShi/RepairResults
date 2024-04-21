@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 338
+Faulty:
+columnsToDrop.add(0);
+Seed:
+if (columnsToDrop != null) columnsToDrop.add(0);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(i,col);
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 4627
+EstimatedTime: 1006687

@@ -1,0 +1,16 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 383
+Faulty:
+RectangleEdge xAxisLocation=plot.getDomainAxisEdge();
+Seed:
+RectangleEdge xAxisLocation=plot.getDomainAxisEdge(row);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+if (masd != null) {
+  result=masd.getMean();
+}
+**************************************************
+Evaluations: 9139
+EstimatedTime: 1867498

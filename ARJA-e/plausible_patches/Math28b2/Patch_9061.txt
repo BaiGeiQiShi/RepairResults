@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 227
+Faulty:
+doIteration(tableau);
+Seed:
+if (!(tableau != null)) throw new org.apache.commons.math3.optimization.linear.NoFeasibleSolutionException();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (!(tableau != null && row != null)) throw new java.lang.IllegalArgumentException();
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 9471
+EstimatedTime: 2218875

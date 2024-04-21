@@ -1,0 +1,36 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 664
+Faulty:
+if (!isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (!isDefaultValue(value) || entries.containsKey(index)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 665
+Faulty:
+entries.put(index,value);
+Seed:
+this.epsilon=epsilon;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 564
+Faulty:
+throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
+Seed:
+throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.EMPTY_STRING_FOR_IMAGINARY_CHARACTER);
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 385
+Faulty:
+return (key != 0 || states[index] == FULL) && keys[index] == key;
+Seed:
+if (!(index < states.length && index < keys.length)) throw new java.util.NoSuchElementException();
+**************************************************
+Evaluations: 5094
+EstimatedTime: 3241671

@@ -1,0 +1,50 @@
+1 Delete /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 340
+Faulty:
+g2.draw(line);
+Seed:
+NULL
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+result=masd.getMean();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 260
+Faulty:
+double value=meanValue.doubleValue();
+Seed:
+if (row < dataset.getRowCount() - 1) {
+  return;
+}
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 206
+Faulty:
+PlotOrientation orientation=plot.getOrientation();
+Seed:
+if (data != null) {
+  PlotOrientation orientation=plot.getOrientation();
+  double space=0.0;
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    space=dataArea.getHeight();
+  }
+ else   if (orientation == PlotOrientation.VERTICAL) {
+    space=dataArea.getWidth();
+  }
+  double maxWidth=space * getMaximumBarWidth();
+  int columns=data.getColumnCount();
+  double categoryMargin=0.0;
+  if (columns > 1) {
+    categoryMargin=domainAxis.getCategoryMargin();
+  }
+  double used=space * (1 - domainAxis.getLowerMargin() - domainAxis.getUpperMargin()- categoryMargin);
+  if (columns > 0) {
+    state.setBarWidth(Math.min(used / columns,maxWidth));
+  }
+ else {
+    state.setBarWidth(Math.min(used,maxWidth));
+  }
+}
+**************************************************
+Evaluations: 2707
+EstimatedTime: 548713

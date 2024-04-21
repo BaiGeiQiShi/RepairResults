@@ -1,0 +1,26 @@
+1 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 525
+Faulty:
+parl=fp / (delta * sum2);
+Seed:
+for (int j=rank; j < cols; ++j) {
+  lmDir[permutation[j]]=0;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 405
+Faulty:
+point[pj]=oldX[pj];
+Seed:
+if (((Math.abs(actRed) <= costRelativeTolerance) && (preRed <= costRelativeTolerance) && (ratio <= 2.0)) || (delta <= parRelativeTolerance * xNorm)) {
+  return new VectorialPointValuePair(point,objective);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 404
+Faulty:
+int pj=permutation[j];
+Seed:
+if (jacobian.length != rows) {
+  throw new FunctionEvaluationException(point,"dimension mismatch {0} != {1}",jacobian.length,rows);
+}
+**************************************************
+Evaluations: 9906
+EstimatedTime: 3107673

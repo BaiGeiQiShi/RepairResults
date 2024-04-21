@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 298
+Faulty:
+double rectX=Math.min(transY2,transY1);
+Seed:
+double rectX=Math.pow(transY2,transY1);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 334
+Faulty:
+Line2D line=null;
+Seed:
+g2.setPaint(getItemPaint(row,column));
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return minimumRangeValueIncStdDev;
+**************************************************
+Evaluations: 4215
+EstimatedTime: 851713

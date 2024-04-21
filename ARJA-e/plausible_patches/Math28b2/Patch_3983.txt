@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 141
+Faulty:
+int i=tableau.getNumObjectiveFunctions();
+Seed:
+int i=tableau.getNumSlackVariables();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 379
+Faulty:
+ResourceBundle bundle=ResourceBundle.getBundle("assets/" + path,locale);
+Seed:
+ResourceBundle bundle=ResourceBundle.getBundle("assets/" + path);
+**************************************************
+Evaluations: 4269
+EstimatedTime: 996325

@@ -1,0 +1,24 @@
+1 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 285
+Faulty:
+if (locale != null) {
+  key=new Pair(key,locale);
+}
+Seed:
+if (locale == null) {
+  locale=Locale.getDefault();
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 290
+Faulty:
+FastDateFormat format=(FastDateFormat)cDateInstanceCache.get(key);
+Seed:
+key=new Pair(key,locale);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1727
+Faulty:
+return (mObj1 == null ? key.mObj1 == null : mObj1.equals(key.mObj1)) && (mObj2 == null ? key.mObj2 == null : mObj2.equals(key.mObj2));
+Seed:
+return (mObj1 == null ? key.mObj1 == null : mObj1.equals(key.mObj1)) && (mObj2 == null ? key.mObj2 == null : DurationFormatUtils.S.equals(key.mObj2));
+**************************************************
+Evaluations: 9355
+EstimatedTime: 1084117

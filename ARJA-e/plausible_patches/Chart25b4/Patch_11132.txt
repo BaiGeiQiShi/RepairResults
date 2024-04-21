@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 243
+Faulty:
+double rectY=domainAxis.getCategoryStart(column,getColumnCount(),dataArea,xAxisLocation);
+Seed:
+if (!(domainAxis != null && dataArea != null)) throw new java.lang.IllegalArgumentException();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 111
+Faulty:
+result=masd.getMean();
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+Evaluations: 9111
+EstimatedTime: 1822715

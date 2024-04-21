@@ -1,0 +1,27 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 445
+Faulty:
+double rectHeight=Math.abs(transY2 - transY1);
+Seed:
+double rectHeight=Math.exp(transY2 - transY1);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+if (masd != null) {
+  result=masd.getMean();
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 465
+Faulty:
+if (this.errorIndicatorStroke != null) {
+  g2.setStroke(this.errorIndicatorStroke);
+}
+ else {
+  g2.setStroke(getItemOutlineStroke(row,column));
+}
+Seed:
+g2.draw(bar);
+**************************************************
+Evaluations: 3905
+EstimatedTime: 831004

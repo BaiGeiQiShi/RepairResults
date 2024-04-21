@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return minimumRangeValueIncStdDev;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null || !(Double.isNaN(this.maximumRangeValue))) {
+  result=masd.getMean();
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+if (masd != null) {
+  result=masd.getMean();
+}
+**************************************************
+Evaluations: 9751
+EstimatedTime: 1945087

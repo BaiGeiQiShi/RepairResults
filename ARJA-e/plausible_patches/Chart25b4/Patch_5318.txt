@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 315
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+if (!(dataset.getStdDevValue(row,column) != null && dataset != null)) return;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 172
+Faulty:
+if (masd != null) {
+  result=masd.getStandardDeviation();
+}
+Seed:
+result=masd.getStandardDeviation();
+**************************************************
+Evaluations: 4457
+EstimatedTime: 899732

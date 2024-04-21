@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 263
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getMinimumBarLength();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 206
+Faulty:
+PlotOrientation orientation=plot.getOrientation();
+Seed:
+PlotOrientation orientation=getPlot().getOrientation();
+**************************************************
+Evaluations: 9185
+EstimatedTime: 1835840

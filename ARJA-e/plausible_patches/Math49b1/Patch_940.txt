@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 667
+Faulty:
+entries.remove(index);
+Seed:
+entries.put(index,value);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 369
+Faulty:
+OpenMapRealVector res=new OpenMapRealVector(this);
+Seed:
+OpenMapRealVector res=copy();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 370
+Faulty:
+Iterator iter=res.entries.iterator();
+Seed:
+Iterator iter=entries.iterator();
+**************************************************
+Evaluations: 1051
+EstimatedTime: 747284

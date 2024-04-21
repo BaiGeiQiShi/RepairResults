@@ -1,0 +1,19 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+result=masd.getMean();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 204
+Faulty:
+StatisticalCategoryDataset statData=(StatisticalCategoryDataset)data;
+Seed:
+if (this.errorIndicatorPaint != null) {
+  g2.setPaint(this.errorIndicatorPaint);
+}
+ else {
+  g2.setPaint(getItemOutlinePaint(row,column));
+}
+**************************************************
+Evaluations: 4478
+EstimatedTime: 903735

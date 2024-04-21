@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions.contains(i);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 124
+Faulty:
+return row;
+Seed:
+return i;
+**************************************************
+Evaluations: 7840
+EstimatedTime: 1917352

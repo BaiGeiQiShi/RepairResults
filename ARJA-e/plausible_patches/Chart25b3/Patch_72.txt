@@ -1,0 +1,45 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 419
+Faulty:
+if (value >= uclip) {
+  value=uclip;
+}
+ else {
+  if (value <= lclip) {
+    value=lclip;
+  }
+}
+Seed:
+if (value <= lclip) {
+  return;
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 449
+Faulty:
+Paint seriesPaint=getItemPaint(row,column);
+Seed:
+Paint seriesPaint=getItemPaint(categoryCount,column);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 200
+Faulty:
+if (!(data instanceof StatisticalCategoryDataset)) {
+  throw new IllegalArgumentException("Requires StatisticalCategoryDataset.");
+}
+Seed:
+if (!(data instanceof StatisticalCategoryDataset) && isDrawBarOutline() && state.getBarWidth() > 3) {
+  throw new IllegalArgumentException("Requires StatisticalCategoryDataset.");
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 405
+Faulty:
+double base=0.0;
+Seed:
+double base=5.0d;
+**************************************************
+5 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 212
+Faulty:
+drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+Seed:
+drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,row);
+**************************************************
+Evaluations: 86
+EstimatedTime: 19162

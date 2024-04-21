@@ -1,0 +1,51 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 315
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+double valueDelta=dataset.getMeanValue(row,column).doubleValue();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 354
+Faulty:
+if (entities != null) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+Seed:
+if (entities != null && isDrawBarOutline() && state.getBarWidth() > 3) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 265
+Faulty:
+if (uclip <= 0.0) {
+  if (value >= uclip) {
+    return;
+  }
+  base=uclip;
+  if (value <= lclip) {
+    value=lclip;
+  }
+}
+ else if (lclip <= 0.0) {
+  if (value >= uclip) {
+    value=uclip;
+  }
+ else {
+    if (value <= lclip) {
+      value=lclip;
+    }
+  }
+}
+ else {
+  if (value <= lclip) {
+    return;
+  }
+  base=getLowerClip();
+  if (value >= uclip) {
+    value=uclip;
+  }
+}
+Seed:
+base=lclip;
+**************************************************
+Evaluations: 1832
+EstimatedTime: 370966

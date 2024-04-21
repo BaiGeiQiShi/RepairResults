@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+if (cmp < 0) {
+  minRatio=ratio;
+  minRatioPositions=new ArrayList<Integer>();
+  minRatioPositions.add(i);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 186
+Faulty:
+return sb.toString();
+Seed:
+if (++count < len) {
+  sb.append(separator);
+}
+**************************************************
+Evaluations: 4419
+EstimatedTime: 960698

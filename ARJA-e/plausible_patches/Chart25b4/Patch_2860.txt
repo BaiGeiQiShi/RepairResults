@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return row;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 322
+Faulty:
+g2.setStroke(this.errorIndicatorStroke);
+Seed:
+highVal=rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta,dataArea,yAxisLocation);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 301
+Faulty:
+double rectWidth=Math.abs(transY2 - transY1);
+Seed:
+g2.setPaint(getItemPaint(row,column));
+**************************************************
+Evaluations: 2487
+EstimatedTime: 504698

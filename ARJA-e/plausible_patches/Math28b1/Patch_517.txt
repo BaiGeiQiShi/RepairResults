@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(i,col);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 351
+Faulty:
+if (getBasicRow(col) == null) {
+  columnsToDrop.add(col);
+}
+Seed:
+if (getBasicRow(col) == null || !(columnLabels.add("Z"))) {
+  columnsToDrop.add(col);
+}
+**************************************************
+Evaluations: 630
+EstimatedTime: 147263

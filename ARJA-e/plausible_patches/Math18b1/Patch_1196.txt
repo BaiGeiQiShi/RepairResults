@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 459
+Faulty:
+break generationLoop;
+Seed:
+if (hsig) {
+  pc=pc.add(xmean.subtract(xold).scalarMultiply(Math.sqrt(cc * (2. - cc) * mueff) / sigma));
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 970
+Faulty:
+double[] repaired=repair(point);
+Seed:
+this.valueRange=valueRange;
+**************************************************
+Evaluations: 1265
+EstimatedTime: 10399942

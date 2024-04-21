@@ -1,0 +1,24 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 466
+Faulty:
+g2.setStroke(this.errorIndicatorStroke);
+Seed:
+rectY=rectY + row * state.getBarWidth();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 490
+Faulty:
+if (generator != null && isItemLabelVisible(row,column)) {
+  drawItemLabel(g2,dataset,row,column,plot,generator,bar,(value < 0.0));
+}
+Seed:
+if (generator != null && isItemLabelVisible(row,column)) {
+  drawItemLabel(g2,dataset,row,column,plot,generator,bar,false);
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+result=masd.getMean();
+**************************************************
+Evaluations: 2673
+EstimatedTime: 568163

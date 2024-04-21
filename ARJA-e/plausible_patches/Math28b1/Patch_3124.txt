@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 379
+Faulty:
+ResourceBundle bundle=ResourceBundle.getBundle("assets/" + path,locale);
+Seed:
+ResourceBundle bundle=ResourceBundle.getBundle("assets/" + sourceFormat,locale);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(row,getIterations());
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java 86
+Faulty:
+return context.getLocalizedMessage();
+Seed:
+context.addMessage(LocalizedFormats.ARITHMETIC_EXCEPTION);
+**************************************************
+Evaluations: 3518
+EstimatedTime: 764103

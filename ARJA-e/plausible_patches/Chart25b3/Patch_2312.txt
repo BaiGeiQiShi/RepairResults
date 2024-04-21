@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 383
+Faulty:
+RectangleEdge xAxisLocation=plot.getDomainAxisEdge();
+Seed:
+{
+  plot=new CategoryPlot();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 459
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+double valueDelta=dataset.getStdDevValue(row,row).doubleValue();
+**************************************************
+Evaluations: 2316
+EstimatedTime: 490873

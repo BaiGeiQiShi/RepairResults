@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getNumDecisionVariables();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 227
+Faulty:
+doIteration(tableau);
+Seed:
+if (tableau != null) doIteration(tableau);
+**************************************************
+Evaluations: 5582
+EstimatedTime: 1388296

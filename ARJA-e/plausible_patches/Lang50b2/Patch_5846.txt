@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 290
+Faulty:
+FastDateFormat format=(FastDateFormat)cDateInstanceCache.get(key);
+Seed:
+FastDateFormat format=(FastDateFormat)cDateInstanceCache.get(cDefaultPattern);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1721
+Faulty:
+if (!(obj instanceof Pair)) {
+  return false;
+}
+Seed:
+if (!(cInstanceCache instanceof Pair)) {
+  return false;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1727
+Faulty:
+return (mObj1 == null ? key.mObj1 == null : mObj1.equals(key.mObj1)) && (mObj2 == null ? key.mObj2 == null : mObj2.equals(key.mObj2));
+Seed:
+if (this == obj) {
+  return true;
+}
+**************************************************
+Evaluations: 6052
+EstimatedTime: 692795

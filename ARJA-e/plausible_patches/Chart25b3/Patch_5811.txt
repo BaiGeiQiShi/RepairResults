@@ -1,0 +1,26 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getBase();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 497
+Faulty:
+if (entities != null) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+Seed:
+if (entities != null || !(generator != null)) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+**************************************************
+Evaluations: 5354
+EstimatedTime: 1140202

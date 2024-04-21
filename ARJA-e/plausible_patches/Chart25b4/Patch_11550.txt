@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 170
+Faulty:
+MeanAndStandardDeviation masd=(MeanAndStandardDeviation)this.data.getObject(row,column);
+Seed:
+MeanAndStandardDeviation masd=(MeanAndStandardDeviation)this.data.getObject(row,row);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 345
+Faulty:
+CategoryItemLabelGenerator generator=getItemLabelGenerator(row,column);
+Seed:
+CategoryItemLabelGenerator generator=getItemLabelGenerator(row,getColumnCount());
+**************************************************
+Evaluations: 9455
+EstimatedTime: 1887838

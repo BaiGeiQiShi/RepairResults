@@ -1,0 +1,26 @@
+1 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/MathRuntimeException.java 132
+Faulty:
+return new MessageFormat(pattern.getLocalizedString(locale),locale).format(arguments);
+Seed:
+if (!(pattern != null)) return null;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 552
+Faulty:
+return values[current];
+Seed:
+return values[perturb(current)];
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 368
+Faulty:
+checkVectorDimensions(v.getDimension());
+Seed:
+checkVectorDimensions(projection(v).getDimension());
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 667
+Faulty:
+entries.remove(index);
+Seed:
+entries.put(index,value);
+**************************************************
+Evaluations: 1166
+EstimatedTime: 845072

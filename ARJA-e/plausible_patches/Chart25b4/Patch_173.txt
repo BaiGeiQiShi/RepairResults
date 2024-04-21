@@ -1,0 +1,57 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return getRowCount();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 321
+Faulty:
+if (this.errorIndicatorStroke != null) {
+  g2.setStroke(this.errorIndicatorStroke);
+}
+ else {
+  g2.setStroke(getItemOutlineStroke(row,column));
+}
+Seed:
+if (isDrawBarOutline() && state.getBarWidth() > BAR_OUTLINE_WIDTH_THRESHOLD) {
+  g2.setStroke(getItemStroke(row,column));
+  g2.setPaint(getItemOutlinePaint(row,column));
+  g2.draw(bar);
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 275
+Faulty:
+if (value >= uclip) {
+  value=uclip;
+}
+ else {
+  if (value <= lclip) {
+    value=lclip;
+  }
+}
+Seed:
+if (value >= uclip || value < 0.0) {
+  value=uclip;
+}
+ else {
+  if (value <= lclip) {
+    value=lclip;
+  }
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 308
+Faulty:
+if (isDrawBarOutline() && state.getBarWidth() > 3) {
+  g2.setStroke(getItemStroke(row,column));
+  g2.setPaint(getItemOutlinePaint(row,column));
+  g2.draw(bar);
+}
+Seed:
+if (getAutoPopulateSeriesStroke() && state.getBarWidth() > 3) {
+  g2.setStroke(getItemStroke(row,column));
+  g2.setPaint(getItemOutlinePaint(row,column));
+  g2.draw(bar);
+}
+**************************************************
+Evaluations: 177
+EstimatedTime: 37231

@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=row;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions.contains(i);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 186
+Faulty:
+return sb.toString();
+Seed:
+msgPatterns=new ArrayList<Localizable>(len);
+**************************************************
+Evaluations: 3669
+EstimatedTime: 943042

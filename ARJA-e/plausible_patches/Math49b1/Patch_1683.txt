@@ -1,0 +1,28 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 532
+Faulty:
+if (current < 0) {
+  throw MathRuntimeException.createNoSuchElementException(LocalizedFormats.ITERATOR_EXHAUSTED);
+}
+Seed:
+if (current < 0 && states[++next] != FULL) {
+  throw MathRuntimeException.createNoSuchElementException(LocalizedFormats.ITERATOR_EXHAUSTED);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 664
+Faulty:
+if (!isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (!isDefaultValue(value) || entries.containsKey(index)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+Evaluations: 1788
+EstimatedTime: 1238637

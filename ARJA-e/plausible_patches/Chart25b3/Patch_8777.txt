@@ -1,0 +1,34 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && Double.isNaN(this.minimumRangeValue)) {
+  result=masd.getMean();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 406
+Faulty:
+double lclip=getLowerClip();
+Seed:
+double lclip=getMinimumBarLength();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 204
+Faulty:
+StatisticalCategoryDataset statData=(StatisticalCategoryDataset)data;
+Seed:
+this.errorIndicatorPaint=null;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 497
+Faulty:
+if (entities != null) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+Seed:
+if (entities != null || seriesCount > 1) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+**************************************************
+Evaluations: 7898
+EstimatedTime: 1634703

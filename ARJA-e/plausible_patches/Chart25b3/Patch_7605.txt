@@ -1,0 +1,34 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && Double.isNaN(this.maximumRangeValueIncStdDev)) {
+  result=masd.getMean();
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 451
+Faulty:
+g2.fill(bar);
+Seed:
+NULL
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 204
+Faulty:
+StatisticalCategoryDataset statData=(StatisticalCategoryDataset)data;
+Seed:
+g2.setStroke(getItemOutlineStroke(row,column));
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 200
+Faulty:
+if (!(data instanceof StatisticalCategoryDataset)) {
+  throw new IllegalArgumentException("Requires StatisticalCategoryDataset.");
+}
+Seed:
+if (!(data instanceof StatisticalCategoryDataset) && this.errorIndicatorStroke != null) {
+  throw new IllegalArgumentException("Requires StatisticalCategoryDataset.");
+}
+**************************************************
+Evaluations: 6883
+EstimatedTime: 1445726

@@ -1,0 +1,18 @@
+1 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 405
+Faulty:
+point[pj]=oldX[pj];
+Seed:
+if (((Math.abs(actRed) <= costRelativeTolerance) && (preRed <= costRelativeTolerance) && (ratio <= 2.0)) || (delta <= parRelativeTolerance * xNorm)) {
+  return new VectorialPointValuePair(point,objective);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 381
+Faulty:
+tmp=0.1;
+Seed:
+if (((Math.abs(actRed) <= costRelativeTolerance) && (preRed <= costRelativeTolerance) && (ratio <= 2.0)) || (delta <= parRelativeTolerance * xNorm)) {
+  return new VectorialPointValuePair(point,objective);
+}
+**************************************************
+Evaluations: 7843
+EstimatedTime: 2565687

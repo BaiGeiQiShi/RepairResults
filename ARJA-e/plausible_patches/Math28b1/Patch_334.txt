@@ -1,0 +1,54 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 358
+Faulty:
+int col=0;
+Seed:
+if (getNumObjectiveFunctions() == 2) {
+  columnLabels.add("W");
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(i,column);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 378
+Faulty:
+final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+Seed:
+if (!(LocalizedFormats.class != null && LocalizedFormats.class.getName() != null)) return sourceFormat;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 120
+Faulty:
+for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+  int column=i + tableau.getArtificialVariableOffset();
+  final double entry=tableau.getEntry(row,column);
+  if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+    return row;
+  }
+}
+Seed:
+for (int i=0; i <= tableau.getNumArtificialVariables(); i++) {
+  int column=i + tableau.getArtificialVariableOffset();
+  final double entry=tableau.getEntry(row,column);
+  if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+    return row;
+  }
+}
+**************************************************
+5 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 360
+Faulty:
+if (!columnsToDrop.contains(j)) {
+  matrix[i - 1][col++]=tableau.getEntry(i,j);
+}
+Seed:
+columnLabels.add("RHS");
+**************************************************
+6 Delete /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 429
+EstimatedTime: 95964

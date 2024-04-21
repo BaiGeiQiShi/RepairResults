@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 340
+Faulty:
+g2.draw(line);
+Seed:
+g2.setPaint(Color.lightGray);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return maximumRangeValueIncStdDev;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 322
+Faulty:
+g2.setStroke(this.errorIndicatorStroke);
+Seed:
+rectX=rectX + row * state.getBarWidth();
+**************************************************
+Evaluations: 516
+EstimatedTime: 104630

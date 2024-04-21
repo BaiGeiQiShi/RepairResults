@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 316
+Faulty:
+double highVal=rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta,dataArea,yAxisLocation);
+Seed:
+double highVal=rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta,dataArea,xAxisLocation);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 262
+Faulty:
+double lclip=getLowerClip();
+Seed:
+base=getLowerClip();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 315
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+if (!(dataset.getStdDevValue(row,column) != null && dataset != null)) return;
+**************************************************
+Evaluations: 3116
+EstimatedTime: 628884

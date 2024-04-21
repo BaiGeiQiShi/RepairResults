@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+result=masd.getMean();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 258
+Faulty:
+Number meanValue=dataset.getMeanValue(row,column);
+Seed:
+if (row < dataset.getRowCount() - 1) {
+  return;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 345
+Faulty:
+CategoryItemLabelGenerator generator=getItemLabelGenerator(row,column);
+Seed:
+g2.setPaint(plot.getDomainGridlinePaint());
+**************************************************
+Evaluations: 4094
+EstimatedTime: 826872

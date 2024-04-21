@@ -1,0 +1,28 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 176
+Faulty:
+final Object[] args=msgArguments.get(i);
+Seed:
+if (!(i < msgArguments.size())) return null;
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 119
+Faulty:
+for (Integer row : minRatioPositions) {
+  for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+    int column=i + tableau.getArtificialVariableOffset();
+    final double entry=tableau.getEntry(row,column);
+    if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+      return row;
+    }
+  }
+}
+Seed:
+NULL
+**************************************************
+Evaluations: 310
+EstimatedTime: 73383

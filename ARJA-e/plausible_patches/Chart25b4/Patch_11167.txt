@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 353
+Faulty:
+EntityCollection entities=state.getEntityCollection();
+Seed:
+rectHeight=state.getBarWidth();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 170
+Faulty:
+MeanAndStandardDeviation masd=(MeanAndStandardDeviation)this.data.getObject(row,column);
+Seed:
+MeanAndStandardDeviation masd=(MeanAndStandardDeviation)this.data.getObject(row,row);
+**************************************************
+Evaluations: 9139
+EstimatedTime: 1828225

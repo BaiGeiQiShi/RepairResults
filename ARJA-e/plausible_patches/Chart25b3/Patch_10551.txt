@@ -1,0 +1,39 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 419
+Faulty:
+if (value >= uclip) {
+  value=uclip;
+}
+ else {
+  if (value <= lclip) {
+    value=lclip;
+  }
+}
+Seed:
+if (value <= lclip) {
+  value=lclip;
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 452
+Faulty:
+if (isDrawBarOutline() && state.getBarWidth() > 3) {
+  g2.setStroke(getItemStroke(row,column));
+  g2.setPaint(getItemOutlinePaint(row,column));
+  g2.draw(bar);
+}
+Seed:
+if (isDrawBarOutline() && state.getBarWidth() > 3 || seriesCount > 1) {
+  g2.setStroke(getItemStroke(row,column));
+  g2.setPaint(getItemOutlinePaint(row,column));
+  g2.draw(bar);
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+if (masd != null) {
+  result=masd.getMean();
+}
+**************************************************
+Evaluations: 9404
+EstimatedTime: 1914416

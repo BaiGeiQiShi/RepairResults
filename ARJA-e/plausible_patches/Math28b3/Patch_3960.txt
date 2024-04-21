@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (Precision.equals(DEFAULT_ULPS,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 180
+Faulty:
+if (++count < len) {
+  sb.append(separator);
+}
+Seed:
+if (++count < len && msgPatterns.add(pat)) {
+  sb.append(separator);
+}
+**************************************************
+Evaluations: 4009
+EstimatedTime: 1020111

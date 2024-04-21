@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 147
+Faulty:
+return buildMessage(locale,": ");
+Seed:
+return getMessage(locale,": ");
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+if (i < minIndex || minRatioPositions.size() > 1) {
+  minIndex=i;
+  minRow=row;
+}
+**************************************************
+Evaluations: 9465
+EstimatedTime: 2303015

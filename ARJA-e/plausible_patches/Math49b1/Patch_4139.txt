@@ -1,0 +1,34 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 664
+Faulty:
+if (!isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (!isDefaultValue(value) || entries.containsKey(index)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 665
+Faulty:
+entries.put(index,value);
+Seed:
+for (int i=0; i < virtualSize; i++) {
+  setEntry(i,value);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 354
+Faulty:
+final int hash=hashOf(key);
+Seed:
+if (shouldGrowTable()) {
+  growTable();
+}
+**************************************************
+Evaluations: 4219
+EstimatedTime: 2718639

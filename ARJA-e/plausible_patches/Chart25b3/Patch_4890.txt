@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 444
+Faulty:
+double rectWidth=state.getBarWidth();
+Seed:
+double rectWidth=state.getSeriesRunningTotal();
+**************************************************
+2 Delete /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 451
+Faulty:
+g2.fill(bar);
+Seed:
+NULL
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 406
+Faulty:
+double lclip=getLowerClip();
+Seed:
+base=getLowerClip();
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getMinimumBarLength();
+**************************************************
+Evaluations: 4573
+EstimatedTime: 972855

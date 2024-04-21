@@ -1,0 +1,30 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 109
+Faulty:
+if (upper.length != dim) {
+  throw new DimensionMismatchException(upper.length,dim);
+}
+Seed:
+if (lower.length != dim) {
+  throw new DimensionMismatchException(upper.length,dim);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+return isMinimize ? mu : -penalty;
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 960
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+Evaluations: 656
+EstimatedTime: 5095247

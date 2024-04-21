@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 119
+Faulty:
+for (Integer row : minRatioPositions) {
+  for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+    int column=i + tableau.getArtificialVariableOffset();
+    final double entry=tableau.getEntry(row,column);
+    if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+      return row;
+    }
+  }
+}
+Seed:
+minRatioPositions=new ArrayList<Integer>();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions=new ArrayList<Integer>();
+**************************************************
+Evaluations: 4258
+EstimatedTime: 1074641

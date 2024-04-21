@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 402
+Faulty:
+Number meanValue=dataset.getMeanValue(row,column);
+Seed:
+Number meanValue=dataset.getMeanValue(row,getPassCount());
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+result=masd.getMean();
+**************************************************
+Evaluations: 4064
+EstimatedTime: 863582

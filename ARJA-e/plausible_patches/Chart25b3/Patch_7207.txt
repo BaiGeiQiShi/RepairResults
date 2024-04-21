@@ -1,0 +1,30 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && !(!Double.isNaN(this.minimumRangeValueIncStdDev) && !Double.isNaN(this.maximumRangeValueIncStdDev))) {
+  result=masd.getMean();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 481
+Faulty:
+line=new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d,highVal,rectX + rectWidth / 2.0d + 5.0d,highVal);
+Seed:
+line=new Line2D.Double(getBase() + rectWidth / 2.0d - 5.0d,highVal,rectX + rectWidth / 2.0d + 5.0d,highVal);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 459
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+if (seriesCount > 1) {
+  double seriesGap=dataArea.getWidth() * getItemMargin() / (categoryCount * (seriesCount - 1));
+  rectX=rectX + row * (state.getBarWidth() + seriesGap);
+}
+ else {
+  rectX=rectX + row * state.getBarWidth();
+}
+**************************************************
+Evaluations: 6534
+EstimatedTime: 1380881

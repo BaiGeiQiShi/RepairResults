@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 354
+Faulty:
+if (entities != null) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+Seed:
+g2.setPaint(getItemPaint(row,column));
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return getColumnCount();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 318
+Faulty:
+double lowVal=rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta,dataArea,yAxisLocation);
+Seed:
+g2.setPaint(getItemFillPaint(row,column));
+**************************************************
+Evaluations: 2390
+EstimatedTime: 485602

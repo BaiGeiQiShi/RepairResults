@@ -1,0 +1,34 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 406
+Faulty:
+double lclip=getLowerClip();
+Seed:
+double lclip=hashCode();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 481
+Faulty:
+line=new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d,highVal,rectX + rectWidth / 2.0d + 5.0d,highVal);
+Seed:
+line=new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d,highVal,rectX + lclip / 2.0d + 5.0d,highVal);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getItemLabelAnchorOffset();
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 445
+Faulty:
+double rectHeight=Math.abs(transY2 - transY1);
+Seed:
+if (plot == null) {
+  throw new IllegalArgumentException("Null 'plot' argument.");
+}
+**************************************************
+5 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 450
+Faulty:
+g2.setPaint(seriesPaint);
+Seed:
+g2.setPaint(getBaseOutlinePaint());
+**************************************************
+Evaluations: 9145
+EstimatedTime: 1868632

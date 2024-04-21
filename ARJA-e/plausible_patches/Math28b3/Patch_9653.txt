@@ -1,0 +1,16 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(row,getIterations());
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 337
+Faulty:
+Set<Integer> columnsToDrop=new TreeSet<Integer>();
+Seed:
+for (int i=0; i < getNumSlackVariables(); i++) {
+  columnLabels.add("s" + i);
+}
+**************************************************
+Evaluations: 9797
+EstimatedTime: 2381995

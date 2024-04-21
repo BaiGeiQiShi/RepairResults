@@ -1,0 +1,25 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java 86
+Faulty:
+return context.getLocalizedMessage();
+Seed:
+if (!(context != null)) return null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 143
+Faulty:
+if (row == tableau.getBasicRow(i)) {
+  if (i < minIndex) {
+    minIndex=i;
+    minRow=row;
+  }
+}
+Seed:
+minRatioPositions=new ArrayList<Integer>();
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 1205
+EstimatedTime: 270153

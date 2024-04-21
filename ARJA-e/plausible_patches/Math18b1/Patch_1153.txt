@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 87
+Faulty:
+return optimize(maxEval,f,goalType,startPoint,null,null);
+Seed:
+evaluations.setMaximalCount(maxEval);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+Evaluations: 1232
+EstimatedTime: 10085280

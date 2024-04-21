@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 478
+Faulty:
+line=new Line2D.Double(rectX + rectWidth / 2.0d,lowVal,rectX + rectWidth / 2.0d,highVal);
+Seed:
+g2.draw(line);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 170
+Faulty:
+MeanAndStandardDeviation masd=(MeanAndStandardDeviation)this.data.getObject(row,column);
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+Evaluations: 1804
+EstimatedTime: 384809

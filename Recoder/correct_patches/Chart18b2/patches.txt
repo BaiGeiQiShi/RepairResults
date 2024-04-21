@@ -1,0 +1,1 @@
+Chart18b2/source/org/jfree/data/DefaultKeyedValues.java		318 	insert-before:0$rebuildIndex();

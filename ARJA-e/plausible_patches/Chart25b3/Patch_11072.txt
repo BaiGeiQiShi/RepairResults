@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 406
+Faulty:
+double lclip=getLowerClip();
+Seed:
+double lclip=hashCode();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 204
+Faulty:
+StatisticalCategoryDataset statData=(StatisticalCategoryDataset)data;
+Seed:
+this.errorIndicatorStroke=new BasicStroke(0.5f);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 440
+Faulty:
+double transY2=rangeAxis.valueToJava2D(value,dataArea,yAxisLocation);
+Seed:
+double transY2=rangeAxis.valueToJava2D(getRowCount(),dataArea,yAxisLocation);
+**************************************************
+Evaluations: 9836
+EstimatedTime: 1998277

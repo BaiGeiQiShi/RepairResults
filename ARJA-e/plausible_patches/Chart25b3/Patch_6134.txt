@@ -1,0 +1,44 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && Double.isNaN(this.minimumRangeValue)) {
+  result=masd.getMean();
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 451
+Faulty:
+g2.fill(bar);
+Seed:
+if (!getItemVisible(row,column)) {
+  return;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 496
+Faulty:
+EntityCollection entities=state.getEntityCollection();
+Seed:
+if (isDrawBarOutline() && state.getBarWidth() > BAR_OUTLINE_WIDTH_THRESHOLD) {
+  Stroke stroke=getItemOutlineStroke(row,column);
+  Paint paint=getItemOutlinePaint(row,column);
+  if (stroke != null && paint != null) {
+    g2.setStroke(stroke);
+    g2.setPaint(paint);
+    g2.draw(bar);
+  }
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 497
+Faulty:
+if (entities != null) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+Seed:
+if (entities != null || value < 0.0) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+**************************************************
+Evaluations: 5624
+EstimatedTime: 1197728

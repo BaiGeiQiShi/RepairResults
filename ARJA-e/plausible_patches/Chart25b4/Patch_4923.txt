@@ -1,0 +1,34 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+result=masd.getMean();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 300
+Faulty:
+double rectHeight=state.getBarWidth();
+Seed:
+double rectHeight=state.getSeriesRunningTotal();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 275
+Faulty:
+if (value >= uclip) {
+  value=uclip;
+}
+ else {
+  if (value <= lclip) {
+    value=lclip;
+  }
+}
+Seed:
+if (value >= getRowCount()) {
+  value=uclip;
+}
+ else {
+  if (value <= lclip) {
+    value=lclip;
+  }
+}
+**************************************************
+Evaluations: 4138
+EstimatedTime: 835688

@@ -1,0 +1,42 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 664
+Faulty:
+if (!isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (!isDefaultValue(value) || entries.containsKey(index)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 529
+Faulty:
+if (referenceCount != count) {
+  throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
+}
+Seed:
+if (referenceCount != count) {
+  throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 665
+Faulty:
+entries.put(index,value);
+Seed:
+for (int i=0; i < virtualSize; i++) {
+  setEntry(i,value);
+}
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 564
+Faulty:
+throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
+Seed:
+current=next;
+**************************************************
+Evaluations: 7342
+EstimatedTime: 4379812

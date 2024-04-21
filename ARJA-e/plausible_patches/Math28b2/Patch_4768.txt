@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (Precision.equals(entry,0d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+if (!(tableau != null)) return minRatioPositions.get(0);
+**************************************************
+Evaluations: 5066
+EstimatedTime: 1173724

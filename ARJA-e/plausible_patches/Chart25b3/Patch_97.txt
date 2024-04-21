@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 466
+Faulty:
+g2.setStroke(this.errorIndicatorStroke);
+Seed:
+g2.setPaint(getItemFillPaint(row,column));
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 496
+Faulty:
+EntityCollection entities=state.getEntityCollection();
+Seed:
+if (!getItemVisible(row,column)) {
+  return;
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 459
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+double valueDelta=dataset.getStdDevValue(row,row).doubleValue();
+**************************************************
+Evaluations: 111
+EstimatedTime: 24763

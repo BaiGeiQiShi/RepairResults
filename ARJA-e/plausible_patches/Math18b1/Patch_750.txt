@@ -1,0 +1,35 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1035
+Faulty:
+double diff=Math.abs(x[i] - repaired[i]);
+Seed:
+if (!(x != null && repaired != null)) break;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 358
+Faulty:
+isMinimize=getGoalType().equals(GoalType.MINIMIZE);
+Seed:
+isMinimize=getGoalType().equals(getGoalType());
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 583
+Faulty:
+lambda=4 + (int)(3. * Math.log(dimension));
+Seed:
+this.sigma=sigma;
+**************************************************
+5 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 960
+Faulty:
+return res;
+Seed:
+for (int i=0; i < x.length; i++) {
+  double diff=boundaries[1][i] - boundaries[0][i];
+  res[i]=(x[i] - boundaries[0][i]) / diff;
+}
+**************************************************
+Evaluations: 872
+EstimatedTime: 6981077

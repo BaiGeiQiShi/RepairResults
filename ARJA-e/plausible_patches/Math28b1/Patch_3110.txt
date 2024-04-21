@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 151
+Faulty:
+return minRow;
+Seed:
+return minIndex;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 337
+Faulty:
+Set<Integer> columnsToDrop=new TreeSet<Integer>();
+Seed:
+for (int i=0; i < getNumArtificialVariables(); i++) {
+  columnLabels.add("a" + i);
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=row;
+**************************************************
+Evaluations: 3505
+EstimatedTime: 760997

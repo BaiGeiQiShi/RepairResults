@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+size();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 396
+Faulty:
+final double previous=values[index];
+Seed:
+double previous=missingEntries;
+**************************************************
+Evaluations: 9678
+EstimatedTime: 5599261

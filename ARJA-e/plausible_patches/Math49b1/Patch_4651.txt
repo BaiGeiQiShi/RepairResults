@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+computeCapacity(count);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 564
+Faulty:
+throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
+Seed:
+throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.EQUAL_VERTICES_IN_SIMPLEX);
+**************************************************
+Evaluations: 4726
+EstimatedTime: 3042727

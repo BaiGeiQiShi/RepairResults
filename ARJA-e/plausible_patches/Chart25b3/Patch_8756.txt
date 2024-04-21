@@ -1,0 +1,28 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 472
+Faulty:
+g2.setPaint(this.errorIndicatorPaint);
+Seed:
+g2.setPaint(Color.lightGray);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 113
+Faulty:
+return result;
+Seed:
+return column;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 212
+Faulty:
+drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+Seed:
+drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,row);
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+if (masd != null) {
+  result=masd.getStandardDeviation();
+}
+**************************************************
+Evaluations: 7881
+EstimatedTime: 1631718

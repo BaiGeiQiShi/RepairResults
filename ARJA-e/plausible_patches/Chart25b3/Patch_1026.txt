@@ -1,0 +1,26 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 439
+Faulty:
+double transY1=rangeAxis.valueToJava2D(base,dataArea,yAxisLocation);
+Seed:
+if (seriesCount > 1) {
+  double seriesGap=dataArea.getWidth() * getItemMargin() / (categoryCount * (seriesCount - 1));
+  rectX=rectX + row * (state.getBarWidth() + seriesGap);
+}
+ else {
+  rectX=rectX + row * state.getBarWidth();
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 204
+Faulty:
+StatisticalCategoryDataset statData=(StatisticalCategoryDataset)data;
+Seed:
+setNegativeItemLabelPositionFallback(null);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 459
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+double valueDelta=dataset.getStdDevValue(row,row).doubleValue();
+**************************************************
+Evaluations: 1110
+EstimatedTime: 236437

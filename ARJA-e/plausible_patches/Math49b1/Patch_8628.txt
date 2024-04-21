@@ -1,0 +1,18 @@
+1 Delete /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+NULL
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/AbstractRealVector.java 76
+Faulty:
+if (index < 0 || index >= getDimension()) {
+  throw new OutOfRangeException(LocalizedFormats.INDEX,index,0,getDimension() - 1);
+}
+Seed:
+if (index < 0) {
+  throw new NoSuchElementException();
+}
+**************************************************
+Evaluations: 8724
+EstimatedTime: 5100272

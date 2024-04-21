@@ -1,0 +1,28 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 247
+Faulty:
+int categoryCount=getColumnCount();
+Seed:
+int categoryCount=getPassCount();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 315
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+g2.setPaint(plot.getDomainGridlinePaint());
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 322
+Faulty:
+g2.setStroke(this.errorIndicatorStroke);
+Seed:
+rectX=rectX + row * state.getBarWidth();
+**************************************************
+Evaluations: 9261
+EstimatedTime: 1851188

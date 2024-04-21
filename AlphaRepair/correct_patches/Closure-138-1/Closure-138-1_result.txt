@@ -1,0 +1,64 @@
+----------------------------------------
+Patch Number :1595
+Faulty Line :/tmp/Closure-138-1/src/com/google/javascript/jscomp/ClosureReverseAbstractInterpreter.java:208
+- if (paramType != null) {
++ if (param!= null) {
+mask:if (<mask><mask><mask>) {
+-0.1121910687846442
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :1756
+Faulty Line :/tmp/Closure-138-1/src/com/google/javascript/jscomp/ClosureReverseAbstractInterpreter.java:208
+- if (paramType != null) {
++ if (paramType != null || param.isQualifiedName()) {
+mask:if (paramType != null ||<mask><mask><mask><mask><mask><mask><mask>) {
+-0.46543083793949336
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :1846
+Faulty Line :/tmp/Closure-138-1/src/com/google/javascript/jscomp/ClosureReverseAbstractInterpreter.java:208
+- if (paramType != null) {
++ if (paramType != null || callee!= null) {
+mask:if (paramType != null ||<mask><mask><mask><mask>) {
+-0.5998772353304958
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :1849
+Faulty Line :/tmp/Closure-138-1/src/com/google/javascript/jscomp/ClosureReverseAbstractInterpreter.java:208
+- if (paramType != null) {
++ if (callee!= null) {
+mask:<mask><mask><mask><mask><mask><mask>) {
+-0.6015749850387996
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :1870
+Faulty Line :/tmp/Closure-138-1/src/com/google/javascript/jscomp/ClosureReverseAbstractInterpreter.java:208
+- if (paramType != null) {
++ if (paramType != null || paramType == null) {
+mask:if (paramType != null ||<mask><mask><mask><mask>) {
+-0.6502861604094505
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :1919
+Faulty Line :/tmp/Closure-138-1/src/com/google/javascript/jscomp/ClosureReverseAbstractInterpreter.java:208
+- if (paramType != null) {
++ if (paramType != null || param!= null) {
+mask:if (paramType != null ||<mask><mask><mask>) {
+-0.7690816726535559
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :1962
+Faulty Line :/tmp/Closure-138-1/src/com/google/javascript/jscomp/ClosureReverseAbstractInterpreter.java:208
+- if (paramType != null) {
++ if (true) {
+mask:<mask><mask><mask>) {
+-0.8975773664812247
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :1963
+Faulty Line :/tmp/Closure-138-1/src/com/google/javascript/jscomp/ClosureReverseAbstractInterpreter.java:208
+- if (paramType != null) {
++ if (null!= param) {
+mask:<mask><mask><mask><mask><mask>) {
+-0.8978997156023979
+Success (Plausible Patch)

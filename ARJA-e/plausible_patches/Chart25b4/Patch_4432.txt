@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+if (masd != null) {
+  result=masd.getMean();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 306
+Faulty:
+g2.setPaint(seriesPaint);
+Seed:
+g2.setPaint(this.errorIndicatorPaint);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 322
+Faulty:
+g2.setStroke(this.errorIndicatorStroke);
+Seed:
+g2.setStroke(getErrorIndicatorStroke());
+**************************************************
+Evaluations: 3767
+EstimatedTime: 760219

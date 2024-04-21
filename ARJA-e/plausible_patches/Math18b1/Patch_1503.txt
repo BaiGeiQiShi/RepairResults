@@ -1,0 +1,26 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 931
+Faulty:
+double diff=boundaries[1][i] - boundaries[0][i];
+Seed:
+if (!(i < boundaries[1].length && 1 < boundaries.length && i < boundaries[0].length && 0 < boundaries.length)) throw new org.apache.commons.math3.exception.MathUnsupportedOperationException();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 113
+Faulty:
+final double v=startPoint[i];
+Seed:
+lowerBound=new double[dim];
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+return isMinimize ? penalty : -mu;
+**************************************************
+Evaluations: 1521
+EstimatedTime: 12570366

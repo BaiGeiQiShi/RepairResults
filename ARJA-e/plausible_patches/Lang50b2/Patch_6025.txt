@@ -1,0 +1,28 @@
+1 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 285
+Faulty:
+if (locale != null) {
+  key=new Pair(key,locale);
+}
+Seed:
+if (locale == null) {
+  locale=Locale.getDefault();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 286
+Faulty:
+key=new Pair(key,locale);
+Seed:
+key=new Pair(cDefaultPattern,locale);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1721
+Faulty:
+if (!(obj instanceof Pair)) {
+  return false;
+}
+Seed:
+if ((obj instanceof Pair)) {
+  return false;
+}
+**************************************************
+Evaluations: 6232
+EstimatedTime: 716370

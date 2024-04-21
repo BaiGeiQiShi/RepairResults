@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 172
+Faulty:
+if (masd != null) {
+  result=masd.getStandardDeviation();
+}
+Seed:
+if (masd != null || !(Double.isNaN(this.maximumRangeValue))) {
+  result=masd.getStandardDeviation();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return row;
+**************************************************
+Evaluations: 3490
+EstimatedTime: 706775

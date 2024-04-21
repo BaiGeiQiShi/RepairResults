@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 315
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+if (!(dataset.getStdDevValue(row,column) != null && dataset != null)) return;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 334
+Faulty:
+Line2D line=null;
+Seed:
+Line2D line;
+**************************************************
+Evaluations: 3498
+EstimatedTime: 708571

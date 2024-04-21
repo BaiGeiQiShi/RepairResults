@@ -1,0 +1,56 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 536
+Faulty:
+boundaries[0]=lB;
+Seed:
+if (hasFiniteBounds) {
+  for (int i=0; i < lB.length; i++) {
+    if (Double.isInfinite(lB[i]) || Double.isInfinite(uB[i])) {
+      hasInfiniteBounds=true;
+      break;
+    }
+  }
+  if (hasInfiniteBounds) {
+    throw new MathUnsupportedOperationException();
+  }
+ else {
+    boundaries=new double[2][];
+    boundaries[0]=lB;
+    boundaries[1]=uB;
+    for (int i=0; i < lB.length; i++) {
+      if (Double.isInfinite(boundaries[1][i] - boundaries[0][i])) {
+        final double max=Double.MAX_VALUE + boundaries[0][i];
+        final NumberIsTooLargeException e=new NumberIsTooLargeException(boundaries[1][i],max,true);
+        e.getContext().addMessage(LocalizedFormats.OVERFLOW);
+        e.getContext().addMessage(LocalizedFormats.INDEX,i);
+        throw e;
+      }
+    }
+  }
+}
+ else {
+  boundaries=null;
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+return isMinimize ? diagonalOnly : -penalty;
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 960
+Faulty:
+return res;
+Seed:
+for (int i=0; i < x.length; i++) {
+  double diff=boundaries[1][i] - boundaries[0][i];
+  res[i]=diff * x[i] + boundaries[0][i];
+}
+**************************************************
+Evaluations: 670
+EstimatedTime: 5264868

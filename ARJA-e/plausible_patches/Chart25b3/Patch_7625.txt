@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 398
+Faulty:
+rectX=rectX + row * state.getBarWidth();
+Seed:
+rectX=getItemMargin() + row * state.getBarWidth();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+result=masd.getMean();
+**************************************************
+Evaluations: 6902
+EstimatedTime: 1449267

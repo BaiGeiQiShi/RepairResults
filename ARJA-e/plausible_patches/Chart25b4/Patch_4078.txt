@@ -1,0 +1,28 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 262
+Faulty:
+double lclip=getLowerClip();
+Seed:
+if (!getItemVisible(row,column)) {
+  return;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+result=masd.getMean();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 296
+Faulty:
+double transY2=rangeAxis.valueToJava2D(value,dataArea,yAxisLocation);
+Seed:
+g2.setPaint(plot.getRangeGridlinePaint());
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 208
+Faulty:
+drawHorizontalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+Seed:
+g2.setPaint(getItemOutlinePaint(row,column));
+**************************************************
+Evaluations: 3482
+EstimatedTime: 704971

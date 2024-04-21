@@ -1,0 +1,41 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 383
+Faulty:
+RectangleEdge xAxisLocation=plot.getDomainAxisEdge();
+Seed:
+if (dataset != null) {
+  int columns=dataset.getColumnCount();
+  int rows=dataset.getRowCount();
+  double space=0.0;
+  PlotOrientation orientation=plot.getOrientation();
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    space=dataArea.getHeight();
+  }
+ else   if (orientation == PlotOrientation.VERTICAL) {
+    space=dataArea.getWidth();
+  }
+  double maxWidth=space * getMaximumBarWidth();
+  double categoryMargin=0.0;
+  if (columns > 1) {
+    categoryMargin=domainAxis.getCategoryMargin();
+  }
+  double used=space * (1 - domainAxis.getLowerMargin() - domainAxis.getUpperMargin()- categoryMargin);
+  if ((rows * columns) > 0) {
+    state.setBarWidth(Math.min(used / (dataset.getColumnCount()),maxWidth));
+  }
+ else {
+    state.setBarWidth(Math.min(used,maxWidth));
+  }
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 211
+Faulty:
+if (orientation == PlotOrientation.VERTICAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+Seed:
+if (orientation == PlotOrientation.HORIZONTAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+**************************************************
+Evaluations: 8891
+EstimatedTime: 1821920

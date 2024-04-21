@@ -1,0 +1,24 @@
+1 Delete /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 451
+Faulty:
+g2.fill(bar);
+Seed:
+NULL
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 406
+Faulty:
+double lclip=getLowerClip();
+Seed:
+double lclip=hashCode();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 490
+Faulty:
+if (generator != null && isItemLabelVisible(row,column)) {
+  drawItemLabel(g2,dataset,row,column,plot,generator,bar,(value < 0.0));
+}
+Seed:
+if (generator != null && isItemLabelVisible(row,column) && value <= lclip) {
+  drawItemLabel(g2,dataset,row,column,plot,generator,bar,(value < 0.0));
+}
+**************************************************
+Evaluations: 1538
+EstimatedTime: 326956

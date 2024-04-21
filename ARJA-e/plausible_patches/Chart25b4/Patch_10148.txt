@@ -1,0 +1,18 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 111
+Faulty:
+result=masd.getMean();
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 279
+Faulty:
+if (value <= lclip) {
+  value=lclip;
+}
+Seed:
+if (value <= lclip) {
+  value=lclip;
+}
+**************************************************
+Evaluations: 8344
+EstimatedTime: 1668759

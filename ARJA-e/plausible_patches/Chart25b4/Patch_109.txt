@@ -1,0 +1,34 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 260
+Faulty:
+double value=meanValue.doubleValue();
+Seed:
+if (!(meanValue != null)) return;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 322
+Faulty:
+g2.setStroke(this.errorIndicatorStroke);
+Seed:
+g2.draw(bar);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 345
+Faulty:
+CategoryItemLabelGenerator generator=getItemLabelGenerator(row,column);
+Seed:
+CategoryItemLabelGenerator generator=getItemLabelGenerator(row,getPassCount());
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 279
+Faulty:
+if (value <= lclip) {
+  value=lclip;
+}
+Seed:
+g2.setStroke(plot.getRangeGridlineStroke());
+**************************************************
+5 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 113
+Faulty:
+return result;
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+Evaluations: 120
+EstimatedTime: 25275

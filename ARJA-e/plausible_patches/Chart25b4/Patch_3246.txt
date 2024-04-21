@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 296
+Faulty:
+double transY2=rangeAxis.valueToJava2D(value,dataArea,yAxisLocation);
+Seed:
+if (value >= uclip) {
+  return;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 113
+Faulty:
+return result;
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+Evaluations: 2803
+EstimatedTime: 567555

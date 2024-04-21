@@ -1,0 +1,30 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 349
+Faulty:
+for (int i=0; i < getNumArtificialVariables(); i++) {
+  int col=i + getArtificialVariableOffset();
+  if (getBasicRow(col) == null) {
+    columnsToDrop.add(col);
+  }
+}
+Seed:
+for (int i=getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+  final double entry=tableau.getEntry(0,i);
+  if (Precision.compareTo(entry,0d,epsilon) > 0) {
+    columnsToDrop.add(i);
+  }
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 137
+Faulty:
+return getMessage(Locale.getDefault());
+Seed:
+return getMessage(Locale.US);
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 3116
+EstimatedTime: 811099

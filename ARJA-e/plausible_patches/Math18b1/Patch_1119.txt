@@ -1,0 +1,28 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1036
+Faulty:
+penalty+=diff * valueRange;
+Seed:
+NULL
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 482
+Faulty:
+sigma=sigma * Math.exp(0.2 + cs / damps);
+Seed:
+if (bestValue == fitness[arindex[(int)(0.1 + lambda / 4.)]]) {
+  sigma=sigma * Math.exp(0.2 + cs / damps);
+}
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 958
+Faulty:
+res[i]=diff * x[i] + boundaries[0][i];
+Seed:
+if (!(res != null && x != null && boundaries[0] != null && boundaries != null)) return res;
+**************************************************
+Evaluations: 1206
+EstimatedTime: 9837897

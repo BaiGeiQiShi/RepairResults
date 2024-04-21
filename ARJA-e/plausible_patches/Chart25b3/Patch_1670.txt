@@ -1,0 +1,33 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && Double.isNaN(this.minimumRangeValue)) {
+  result=masd.getMean();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 490
+Faulty:
+if (generator != null && isItemLabelVisible(row,column)) {
+  drawItemLabel(g2,dataset,row,column,plot,generator,bar,(value < 0.0));
+}
+Seed:
+if (generator != null && getItemCreateEntity(row,column)) {
+  drawItemLabel(g2,dataset,row,column,plot,generator,bar,(value < 0.0));
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 465
+Faulty:
+if (this.errorIndicatorStroke != null) {
+  g2.setStroke(this.errorIndicatorStroke);
+}
+ else {
+  g2.setStroke(getItemOutlineStroke(row,column));
+}
+Seed:
+g2.setPaint(seriesPaint);
+**************************************************
+Evaluations: 1727
+EstimatedTime: 367540

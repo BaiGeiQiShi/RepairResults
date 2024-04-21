@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java 86
+Faulty:
+return context.getLocalizedMessage();
+Seed:
+return context.getMessage();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions.contains(i);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 378
+Faulty:
+final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+Seed:
+if (!(LocalizedFormats.class != null && LocalizedFormats.class.getName() != null)) return sourceFormat;
+**************************************************
+Evaluations: 721
+EstimatedTime: 205495

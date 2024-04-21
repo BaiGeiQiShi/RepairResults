@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 667
+Faulty:
+entries.remove(index);
+Seed:
+entries.put(index,value);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 518
+Faulty:
+return next >= 0;
+Seed:
+return MathUtils.indicator(next) >= 0;
+**************************************************
+Evaluations: 2399
+EstimatedTime: 1632803

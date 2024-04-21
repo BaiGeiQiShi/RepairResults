@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 439
+Faulty:
+double transY1=rangeAxis.valueToJava2D(base,dataArea,yAxisLocation);
+Seed:
+double transY1=rangeAxis.valueToJava2D(getUpperClip(),dataArea,yAxisLocation);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 472
+Faulty:
+g2.setPaint(this.errorIndicatorPaint);
+Seed:
+g2.setPaint(getBaseItemLabelPaint());
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 173
+Faulty:
+result=masd.getStandardDeviation();
+Seed:
+result=masd.getMean();
+**************************************************
+Evaluations: 7993
+EstimatedTime: 1654744

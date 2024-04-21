@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 442
+Faulty:
+double rectY=Math.min(transY2,transY1);
+Seed:
+double rectY=Math.copySign(transY2,transY1);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getMinimumBarLength();
+**************************************************
+Evaluations: 8846
+EstimatedTime: 1812451

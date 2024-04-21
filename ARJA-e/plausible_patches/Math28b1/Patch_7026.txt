@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 128
+Faulty:
+return getMessage(Locale.US);
+Seed:
+return getMessage(Locale.ENGLISH);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(row,i);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+if (i < minIndex || !(Precision.equals(tableau.getEntry(0,tableau.getRhsOffset()),0d,epsilon))) {
+  minIndex=i;
+  minRow=row;
+}
+**************************************************
+Evaluations: 7834
+EstimatedTime: 1713722

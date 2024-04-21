@@ -1,0 +1,2 @@
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	    insert-before:0$populated = true;
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		192	    insert-before:0$populated = true;

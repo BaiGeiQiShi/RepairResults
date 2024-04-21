@@ -1,0 +1,8 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+computeCapacity(count);
+**************************************************
+Evaluations: 9527
+EstimatedTime: 5538677

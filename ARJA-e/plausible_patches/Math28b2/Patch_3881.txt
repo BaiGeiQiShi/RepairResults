@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/AbstractLinearOptimizer.java 128
+Faulty:
+throw new MaxCountExceededException(maxIterations);
+Seed:
+this.maxIterations=maxIterations;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+if (i < minIndex || i < tableau.getWidth() - 1) {
+  minIndex=i;
+  minRow=row;
+}
+**************************************************
+Evaluations: 4155
+EstimatedTime: 972617

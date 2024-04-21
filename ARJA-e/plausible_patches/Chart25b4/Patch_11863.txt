@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 303
+Faulty:
+Rectangle2D bar=new Rectangle2D.Double(rectX,rectY,rectWidth,rectHeight);
+Seed:
+if (!getItemVisible(row,column)) {
+  return;
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return row;
+**************************************************
+Evaluations: 9693
+EstimatedTime: 1934371

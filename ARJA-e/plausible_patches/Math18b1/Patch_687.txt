@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 364
+Faulty:
+iterations=0;
+Seed:
+for (int i=0; i < historySize; i++) {
+  fitnessHistory[i]=Double.MAX_VALUE;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1021
+Faulty:
+repaired[i]=x[i];
+Seed:
+fitnessHistory[i]=Double.MAX_VALUE;
+**************************************************
+Evaluations: 818
+EstimatedTime: 6530841

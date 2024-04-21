@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(i,col);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 186
+Faulty:
+return sb.toString();
+Seed:
+msgPatterns=new ArrayList<Localizable>(len);
+**************************************************
+Evaluations: 2747
+EstimatedTime: 576369

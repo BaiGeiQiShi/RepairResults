@@ -1,0 +1,30 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 476
+Faulty:
+break generationLoop;
+Seed:
+continue;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1018
+Faulty:
+if (x[i] > 1.0) {
+  repaired[i]=1.0;
+}
+ else {
+  repaired[i]=x[i];
+}
+Seed:
+if (x[checkFeasableCount] > 1.0) {
+  repaired[i]=1.0;
+}
+ else {
+  repaired[i]=x[i];
+}
+**************************************************
+Evaluations: 1214
+EstimatedTime: 9909878

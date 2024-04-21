@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+result=masd.getMean();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 341
+Faulty:
+line=new Line2D.Double(lowVal,rectY + rectHeight * 0.25,lowVal,rectY + rectHeight * 0.75);
+Seed:
+value=uclip;
+**************************************************
+Evaluations: 2594
+EstimatedTime: 526190

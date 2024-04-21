@@ -1,0 +1,24 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 216
+Faulty:
+if (states[index] == FREE) {
+  return false;
+}
+Seed:
+if (states[index] == FREE && !(shouldGrowTable())) {
+  return false;
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+NULL
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 370
+Faulty:
+Iterator iter=res.entries.iterator();
+Seed:
+if (!(res != null && res.entries != null)) return null;
+**************************************************
+Evaluations: 2102
+EstimatedTime: 1419383

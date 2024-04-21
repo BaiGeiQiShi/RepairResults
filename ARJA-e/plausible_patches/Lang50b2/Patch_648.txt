@@ -1,0 +1,34 @@
+1 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 281
+Faulty:
+if (timeZone != null) {
+  key=new Pair(key,timeZone);
+}
+Seed:
+if (timeZone == null) {
+  timeZone=TimeZone.getDefault();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 290
+Faulty:
+FastDateFormat format=(FastDateFormat)cDateInstanceCache.get(key);
+Seed:
+FastDateFormat format=(FastDateFormat)cDateInstanceCache.get(cInstanceCache);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1721
+Faulty:
+if (!(obj instanceof Pair)) {
+  return false;
+}
+Seed:
+if (!(obj instanceof Pair) || !(obj instanceof TimeZoneDisplayKey)) {
+  return false;
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1727
+Faulty:
+return (mObj1 == null ? key.mObj1 == null : mObj1.equals(key.mObj1)) && (mObj2 == null ? key.mObj2 == null : mObj2.equals(key.mObj2));
+Seed:
+return (mObj1 == null ? key.mObj1 == null : mObj1.equals(key.mObj1)) && (DateFormatUtils.SMTP_DATETIME_FORMAT == null ? key.mObj2 == null : mObj2.equals(key.mObj2));
+**************************************************
+Evaluations: 695
+EstimatedTime: 82359

@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 138
+Faulty:
+Integer minRow=null;
+Seed:
+minRatioPositions=new ArrayList<Integer>();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions.contains(i);
+**************************************************
+Evaluations: 9334
+EstimatedTime: 2272598

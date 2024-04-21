@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+if (i < minIndex || minRatioPositions.size() > 1) {
+  minIndex=i;
+  minRow=row;
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 179
+Faulty:
+sb.append(fmt.format(args));
+Seed:
+sb.append(fmt.format(ArgUtils.flatten(args)));
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 146
+Faulty:
+minRow=row;
+Seed:
+NULL
+**************************************************
+Evaluations: 8307
+EstimatedTime: 2028694

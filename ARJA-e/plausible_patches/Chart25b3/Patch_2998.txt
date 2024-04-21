@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 406
+Faulty:
+double lclip=getLowerClip();
+Seed:
+double lclip=hashCode();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 445
+Faulty:
+double rectHeight=Math.abs(transY2 - transY1);
+Seed:
+g2.setStroke(plot.getRangeGridlineStroke());
+**************************************************
+Evaluations: 2911
+EstimatedTime: 618746

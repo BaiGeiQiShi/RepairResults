@@ -1,0 +1,40 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/AbstractLinearOptimizer.java 128
+Faulty:
+throw new MaxCountExceededException(maxIterations);
+Seed:
+throw new MaxCountExceededException(iterations);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getNumDecisionVariables();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(i,column);
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 142
+Faulty:
+for (; i < tableau.getWidth() - 1 && minRow != row; i++) {
+  if (row == tableau.getBasicRow(i)) {
+    if (i < minIndex) {
+      minIndex=i;
+      minRow=row;
+    }
+  }
+}
+Seed:
+for (; i < tableau.getWidth() - 1 && getMaxIterations() != row; i++) {
+  if (row == tableau.getBasicRow(i)) {
+    if (i < minIndex) {
+      minIndex=i;
+      minRow=row;
+    }
+  }
+}
+**************************************************
+Evaluations: 656
+EstimatedTime: 152075

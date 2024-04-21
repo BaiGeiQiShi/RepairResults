@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+if (i < minIndex || !(Precision.equals(tableau.getEntry(0,tableau.getRhsOffset()),0d,epsilon))) {
+  minIndex=i;
+  minRow=row;
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java 80
+Faulty:
+return context.getMessage();
+Seed:
+return context.getLocalizedMessage();
+**************************************************
+Evaluations: 7793
+EstimatedTime: 1907629

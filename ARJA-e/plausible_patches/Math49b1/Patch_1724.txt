@@ -1,0 +1,28 @@
+1 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 216
+Faulty:
+if (states[index] == FREE) {
+  return false;
+}
+Seed:
+if (index < 0) {
+  throw MathRuntimeException.createArrayIndexOutOfBoundsException(LocalizedFormats.CANNOT_SET_AT_NEGATIVE_INDEX,index);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 667
+Faulty:
+entries.remove(index);
+Seed:
+entries.put(index,value);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/AbstractRealVector.java 64
+Faulty:
+if (d != n) {
+  throw new DimensionMismatchException(d,n);
+}
+Seed:
+if (d != n) {
+  throw new DimensionMismatchException(d,n);
+}
+**************************************************
+Evaluations: 1826
+EstimatedTime: 1268318

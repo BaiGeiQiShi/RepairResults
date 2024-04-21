@@ -1,0 +1,30 @@
+1 InsertBefore /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 252
+Faulty:
+int i=className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
+Seed:
+if (!(className != null)) return null;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 232
+Faulty:
+return getPackageName(cls.getName());
+Seed:
+return getPackageName(cls.getTypeName());
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 256
+Faulty:
+return className.substring(0,i);
+Seed:
+return StringEscapeUtils.unescapeJavaScript(className).substring(0,i);
+**************************************************
+4 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 253
+Faulty:
+if (i == -1) {
+  return StringUtils.EMPTY;
+}
+Seed:
+if (i == -1 || className.startsWith("L")) {
+  return StringUtils.EMPTY;
+}
+**************************************************
+Evaluations: 3051
+EstimatedTime: 324503

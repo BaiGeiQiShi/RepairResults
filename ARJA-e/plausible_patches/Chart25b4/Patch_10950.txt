@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return maximumRangeValueIncStdDev;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 353
+Faulty:
+EntityCollection entities=state.getEntityCollection();
+Seed:
+if (!(state != null)) return;
+**************************************************
+Evaluations: 8971
+EstimatedTime: 1795169

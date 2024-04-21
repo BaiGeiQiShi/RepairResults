@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 186
+Faulty:
+if (states[index] == FREE) {
+  return missingEntries;
+}
+Seed:
+if (!(states != null)) throw new java.util.NoSuchElementException();
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+NULL
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 213
+Faulty:
+return true;
+Seed:
+index=changeIndexSign(index);
+**************************************************
+Evaluations: 7414
+EstimatedTime: 4410141

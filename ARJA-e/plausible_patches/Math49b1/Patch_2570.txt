@@ -1,0 +1,40 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 664
+Faulty:
+if (!isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (!isDefaultValue(value) || entries.containsKey(index)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 216
+Faulty:
+if (states[index] == FREE) {
+  return false;
+}
+Seed:
+if (states[MathUtils.sign(index)] == FREE) {
+  return false;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 395
+Faulty:
+states[index]=REMOVED;
+Seed:
+if (!(index < states.length)) return 0;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 400
+Faulty:
+return previous;
+Seed:
+return FastMath.atanh(previous);
+**************************************************
+Evaluations: 2663
+EstimatedTime: 1792112

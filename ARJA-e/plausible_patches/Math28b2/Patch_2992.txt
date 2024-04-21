@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 352
+Faulty:
+columnsToDrop.add(col);
+Seed:
+columnLabels.add("W");
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=getIterations();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+row=i;
+**************************************************
+Evaluations: 3213
+EstimatedTime: 745026

@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 540
+Faulty:
+for (int i=0; i < lB.length; i++) {
+  if (Double.isInfinite(boundaries[1][i] - boundaries[0][i])) {
+    final double max=Double.MAX_VALUE + boundaries[0][i];
+    final NumberIsTooLargeException e=new NumberIsTooLargeException(boundaries[1][i],max,true);
+    e.getContext().addMessage(LocalizedFormats.OVERFLOW);
+    e.getContext().addMessage(LocalizedFormats.INDEX,i);
+    throw e;
+  }
+}
+Seed:
+boundaries[0]=lB;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+Evaluations: 1693
+EstimatedTime: 14313367

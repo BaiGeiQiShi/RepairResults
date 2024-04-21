@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+return minRatioPositions.get(0);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 378
+Faulty:
+final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+Seed:
+final String path=LocalizedFormats.class.getCanonicalName().replaceAll("\\.","/");
+**************************************************
+Evaluations: 7682
+EstimatedTime: 1680785

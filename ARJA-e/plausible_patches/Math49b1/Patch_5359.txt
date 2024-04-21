@@ -1,0 +1,40 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/MathRuntimeException.java 132
+Faulty:
+return new MessageFormat(pattern.getLocalizedString(locale),locale).format(arguments);
+Seed:
+return buildMessage(locale,pattern,arguments);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 666
+Faulty:
+if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+{
+  entries=new OpenIntToDoubleHashMap();
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 664
+Faulty:
+if (!isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (!isDefaultValue(value) || entries.containsKey(index)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 564
+Faulty:
+throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
+Seed:
+next=-2;
+**************************************************
+Evaluations: 5423
+EstimatedTime: 3395294

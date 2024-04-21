@@ -1,0 +1,27 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(row,getIterations());
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/util/Precision.java 117
+Faulty:
+return -1;
+Seed:
+if (x < y) {
+  return -1;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 143
+Faulty:
+if (row == tableau.getBasicRow(i)) {
+  if (i < minIndex) {
+    minIndex=i;
+    minRow=row;
+  }
+}
+Seed:
+minRow=row;
+**************************************************
+Evaluations: 7877
+EstimatedTime: 1729371

@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getNumSlackVariables();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 180
+Faulty:
+if (++count < len) {
+  sb.append(separator);
+}
+Seed:
+if (++count < len || !(msgPatterns.add(pat))) {
+  sb.append(separator);
+}
+**************************************************
+Evaluations: 8355
+EstimatedTime: 1953376

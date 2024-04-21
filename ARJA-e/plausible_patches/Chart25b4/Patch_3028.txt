@@ -1,0 +1,8 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 315
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+if (!(dataset.getStdDevValue(row,column) != null && dataset != null)) return;
+**************************************************
+Evaluations: 2623
+EstimatedTime: 532230

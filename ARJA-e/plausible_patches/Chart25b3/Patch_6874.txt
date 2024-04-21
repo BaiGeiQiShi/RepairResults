@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 478
+Faulty:
+line=new Line2D.Double(rectX + rectWidth / 2.0d,lowVal,rectX + rectWidth / 2.0d,highVal);
+Seed:
+line=new Line2D.Double(rectX + rectWidth * 2.0d,lowVal,rectX + rectWidth / 2.0d,highVal);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getBase();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 440
+Faulty:
+double transY2=rangeAxis.valueToJava2D(value,dataArea,yAxisLocation);
+Seed:
+g2.setStroke(plot.getRangeGridlineStroke());
+**************************************************
+Evaluations: 6261
+EstimatedTime: 1330929

@@ -1,0 +1,34 @@
+1 Replace /arja/105_bugs_with_src/Chart18b3/source/org/jfree/data/DefaultKeyedValues.java 318
+Faulty:
+if (index < this.keys.size()) {
+  rebuildIndex();
+}
+Seed:
+this.indexMap.clear();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart18b3/source/org/jfree/data/DefaultKeyedValues.java 334
+Faulty:
+if (index < 0) {
+  return;
+}
+Seed:
+if (index < 0) {
+  throw new UnknownKeyException("Key not found: " + key);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart18b3/source/org/jfree/data/DefaultKeyedValues2D.java 457
+Faulty:
+DefaultKeyedValues rowData=(DefaultKeyedValues)iterator.next();
+Seed:
+if (!(iterator != null)) continue;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart18b3/source/org/jfree/data/DefaultKeyedValues2D.java 458
+Faulty:
+rowData.removeValue(columnKey);
+Seed:
+if (!(this.columnKeys.contains(columnKey))) {
+  throw new UnknownKeyException("Unrecognised columnKey: " + columnKey);
+}
+**************************************************
+Evaluations: 8484
+EstimatedTime: 3853285

@@ -1,0 +1,46 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 200
+Faulty:
+if (!(data instanceof StatisticalCategoryDataset)) {
+  throw new IllegalArgumentException("Requires StatisticalCategoryDataset.");
+}
+Seed:
+if (data != null) {
+  PlotOrientation orientation=plot.getOrientation();
+  double space=0.0;
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    space=dataArea.getHeight();
+  }
+ else   if (orientation == PlotOrientation.VERTICAL) {
+    space=dataArea.getWidth();
+  }
+  double maxWidth=space * getMaximumBarWidth();
+  int columns=data.getColumnCount();
+  double categoryMargin=0.0;
+  if (columns > 1) {
+    categoryMargin=domainAxis.getCategoryMargin();
+  }
+  double used=space * (1 - domainAxis.getLowerMargin() - domainAxis.getUpperMargin()- categoryMargin);
+  if (columns > 0) {
+    state.setBarWidth(Math.min(used / columns,maxWidth));
+  }
+ else {
+    state.setBarWidth(Math.min(used,maxWidth));
+  }
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 497
+Faulty:
+if (entities != null) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+Seed:
+g2.setPaint(seriesPaint);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 459
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+double valueDelta=dataset.getStdDevValue(row,row).doubleValue();
+**************************************************
+Evaluations: 3328
+EstimatedTime: 708573

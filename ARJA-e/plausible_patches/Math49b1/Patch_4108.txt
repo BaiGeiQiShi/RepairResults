@@ -1,0 +1,38 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 664
+Faulty:
+if (!isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (!isDefaultValue(value) || isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 216
+Faulty:
+if (states[index] == FREE) {
+  return false;
+}
+Seed:
+if (states[index] == FREE && !(states[index] != FULL || keys[index] == key)) {
+  return false;
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/AbstractRealVector.java 76
+Faulty:
+if (index < 0 || index >= getDimension()) {
+  throw new OutOfRangeException(LocalizedFormats.INDEX,index,0,getDimension() - 1);
+}
+Seed:
+if (index >= getDimension()) {
+  throw new OutOfRangeException(LocalizedFormats.INDEX,index,0,getDimension() - 1);
+}
+**************************************************
+Evaluations: 4187
+EstimatedTime: 2707292

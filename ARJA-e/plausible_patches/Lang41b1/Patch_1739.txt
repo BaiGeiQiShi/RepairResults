@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 230
+Faulty:
+return StringUtils.EMPTY;
+Seed:
+return StringUtils.defaultString(StringUtils.EMPTY);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 252
+Faulty:
+int i=className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
+Seed:
+int i=StringUtils.strip(className).lastIndexOf(PACKAGE_SEPARATOR_CHAR);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 232
+Faulty:
+return getPackageName(cls.getName());
+Seed:
+return getPackageName(cls.getTypeName());
+**************************************************
+Evaluations: 1641
+EstimatedTime: 180693

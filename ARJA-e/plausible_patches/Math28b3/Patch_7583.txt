@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 128
+Faulty:
+return getMessage(Locale.US);
+Seed:
+return getMessage(Locale.GERMANY);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=minIndex;
+**************************************************
+Evaluations: 7693
+EstimatedTime: 1884679

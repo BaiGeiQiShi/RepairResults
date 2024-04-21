@@ -1,0 +1,6 @@
+Time12b1/src/main/java/org/joda/time/LocalDateTime.java		669	replace:0,1$return true;
+Time12b1/src/main/java/org/joda/time/LocalDateTime.java		669	replace:0,1$return (other.iLocalMillis == other.iLocalMillis);
+Time12b1/src/main/java/org/joda/time/LocalDateTime.java		669	replace:0,1$return (iLocalMillis <= other.iLocalMillis);
+Time12b1/src/main/java/org/joda/time/LocalDateTime.java		669	replace:0,1$return (partial instanceof LocalDateTime);
+Time12b1/src/main/java/org/joda/time/LocalDateTime.java		669	replace:0,1$return (iLocalMillis == iLocalMillis);
+Time12b1/src/main/java/org/joda/time/LocalDateTime.java		669	replace:0,1$return ((iLocalMillis == other.iLocalMillis) || (other.iLocalMillis == other.iLocalMillis));

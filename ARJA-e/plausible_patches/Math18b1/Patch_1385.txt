@@ -1,0 +1,27 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 751
+Faulty:
+negccov=negcovMax;
+Seed:
+BD=times(B,repmat(diagD.transpose(),dimension,1));
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1018
+Faulty:
+if (x[i] > 1.0) {
+  repaired[i]=1.0;
+}
+ else {
+  repaired[i]=x[i];
+}
+Seed:
+if (inputSigma[i] > boundaries[1][i] - boundaries[0][i]) {
+  throw new OutOfRangeException(inputSigma[i],0,boundaries[1][i] - boundaries[0][i]);
+}
+**************************************************
+Evaluations: 1419
+EstimatedTime: 11669990

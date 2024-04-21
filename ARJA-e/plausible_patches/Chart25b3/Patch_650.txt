@@ -1,0 +1,28 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 406
+Faulty:
+double lclip=getLowerClip();
+Seed:
+double lclip=hashCode();
+**************************************************
+2 Delete /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 483
+Faulty:
+g2.draw(line);
+Seed:
+NULL
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 405
+Faulty:
+double base=0.0;
+Seed:
+if (row < dataset.getRowCount() - 1) {
+  return;
+}
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 108
+Faulty:
+MeanAndStandardDeviation masd=(MeanAndStandardDeviation)this.data.getObject(row,column);
+Seed:
+if (!(this.data.getObject(row,column) instanceof MeanAndStandardDeviation)) return result;
+**************************************************
+Evaluations: 729
+EstimatedTime: 155943

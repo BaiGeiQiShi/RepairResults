@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 353
+Faulty:
+EntityCollection entities=state.getEntityCollection();
+Seed:
+if (generator != null && isItemLabelVisible(row,column)) {
+  drawItemLabel(g2,dataset,row,column,plot,generator,bar,false);
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 341
+Faulty:
+line=new Line2D.Double(lowVal,rectY + rectHeight * 0.25,lowVal,rectY + rectHeight * 0.75);
+Seed:
+NULL
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 113
+Faulty:
+return result;
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+Evaluations: 238
+EstimatedTime: 49900

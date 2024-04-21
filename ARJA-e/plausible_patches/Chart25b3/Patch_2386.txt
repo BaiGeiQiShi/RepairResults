@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 478
+Faulty:
+line=new Line2D.Double(rectX + rectWidth / 2.0d,lowVal,rectX + rectWidth / 2.0d,highVal);
+Seed:
+line=new Line2D.Double(rectX + rectWidth / 2.0d,rectY,rectX + rectWidth / 2.0d,highVal);
+**************************************************
+Evaluations: 2386
+EstimatedTime: 505382

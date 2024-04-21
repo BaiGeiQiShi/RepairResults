@@ -1,0 +1,26 @@
+1 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 280
+Faulty:
+Object key=new Integer(style);
+Seed:
+if (locale == null) {
+  locale=Locale.getDefault();
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 305
+Faulty:
+return format;
+Seed:
+cInstanceCache.put(format,format);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1721
+Faulty:
+if (!(obj instanceof Pair)) {
+  return false;
+}
+Seed:
+if (!(cInstanceCache instanceof Pair)) {
+  return false;
+}
+**************************************************
+Evaluations: 7618
+EstimatedTime: 880860

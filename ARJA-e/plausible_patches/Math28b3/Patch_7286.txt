@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getOriginalNumDecisionVariables();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 186
+Faulty:
+return sb.toString();
+Seed:
+msgPatterns=new ArrayList<Localizable>(len);
+**************************************************
+Evaluations: 7380
+EstimatedTime: 1809390

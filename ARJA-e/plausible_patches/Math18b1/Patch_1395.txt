@@ -1,0 +1,30 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1035
+Faulty:
+double diff=Math.abs(x[i] - repaired[i]);
+Seed:
+isMinimize=(getGoalType() == GoalType.MINIMIZE);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 109
+Faulty:
+if (upper.length != dim) {
+  throw new DimensionMismatchException(upper.length,dim);
+}
+Seed:
+if (upper.length != dim) {
+  throw new DimensionMismatchException(upper.length,dim);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1021
+Faulty:
+repaired[i]=x[i];
+Seed:
+if (x != null && repaired != null) repaired[i]=x[i];
+**************************************************
+Evaluations: 1427
+EstimatedTime: 11735101

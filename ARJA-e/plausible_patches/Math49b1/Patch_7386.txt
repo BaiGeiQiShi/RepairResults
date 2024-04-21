@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 180
+Faulty:
+final int hash=hashOf(key);
+Seed:
+if (shouldGrowTable()) {
+  growTable();
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+NULL
+**************************************************
+Evaluations: 7451
+EstimatedTime: 4424504

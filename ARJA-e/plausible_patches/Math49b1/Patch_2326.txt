@@ -1,0 +1,32 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 666
+Faulty:
+if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+entries.remove(index);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 664
+Faulty:
+if (!isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (!isDefaultValue(value) || entries.containsKey(index)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/exception/util/LocalizedFormats.java 380
+Faulty:
+return sourceFormat;
+Seed:
+return getSourceString();
+**************************************************
+Evaluations: 2420
+EstimatedTime: 1641458

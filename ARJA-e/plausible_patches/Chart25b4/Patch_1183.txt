@@ -1,0 +1,24 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 354
+Faulty:
+if (entities != null) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+Seed:
+if (generator != null && isItemLabelVisible(row,column)) {
+  drawItemLabel(g2,dataset,row,column,plot,generator,bar,(value < 0.0));
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 303
+Faulty:
+Rectangle2D bar=new Rectangle2D.Double(rectX,rectY,rectWidth,rectHeight);
+Seed:
+Rectangle2D bar=new Rectangle2D.Double(value,rectY,rectWidth,rectHeight);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return minimumRangeValue;
+**************************************************
+Evaluations: 1055
+EstimatedTime: 212895

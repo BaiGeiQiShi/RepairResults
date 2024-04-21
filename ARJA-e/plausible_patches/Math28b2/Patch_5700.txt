@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 378
+Faulty:
+final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+Seed:
+final String path=LocalizedFormats.class.toGenericString().replaceAll("\\.","/");
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (Precision.equals(DEFAULT_EPSILON,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+**************************************************
+Evaluations: 6023
+EstimatedTime: 1392965

@@ -1,0 +1,36 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 451
+Faulty:
+g2.fill(bar);
+Seed:
+g2.setPaint(getItemFillPaint(row,column));
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 445
+Faulty:
+double rectHeight=Math.abs(transY2 - transY1);
+Seed:
+double rectHeight=Math.nextUp(transY2 - transY1);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 211
+Faulty:
+if (orientation == PlotOrientation.VERTICAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+Seed:
+if (orientation == PlotOrientation.VERTICAL && !(data instanceof StatisticalCategoryDataset)) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 402
+Faulty:
+Number meanValue=dataset.getMeanValue(row,column);
+Seed:
+Number meanValue=dataset.getMeanValue(row,hashCode());
+**************************************************
+5 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 447
+Faulty:
+Rectangle2D bar=new Rectangle2D.Double(rectX,rectY,rectWidth,rectHeight);
+Seed:
+Rectangle2D bar=new Rectangle2D.Double(rectX,rectY,getLowerClip(),rectHeight);
+**************************************************
+Evaluations: 16
+EstimatedTime: 3886

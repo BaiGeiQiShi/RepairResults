@@ -1,0 +1,34 @@
+1 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 245
+Faulty:
+if (className == null) {
+  return StringUtils.EMPTY;
+}
+Seed:
+if (StringUtils.uncapitalize(className) == null) {
+  return StringUtils.EMPTY;
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 254
+Faulty:
+return StringUtils.EMPTY;
+Seed:
+return WordUtils.capitalize(StringUtils.EMPTY);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 232
+Faulty:
+return getPackageName(cls.getName());
+Seed:
+return getPackageName(cls.getTypeName());
+**************************************************
+4 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 229
+Faulty:
+if (cls == null) {
+  return StringUtils.EMPTY;
+}
+Seed:
+if (cls == null || Long.TYPE.equals(cls)) {
+  return StringUtils.EMPTY;
+}
+**************************************************
+Evaluations: 7441
+EstimatedTime: 774388

@@ -1,0 +1,24 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 143
+Faulty:
+if (row == tableau.getBasicRow(i)) {
+  if (i < minIndex) {
+    minIndex=i;
+    minRow=row;
+  }
+}
+Seed:
+if (row == tableau.getBasicRow(i) || !(minRatioPositions.size() == 0)) {
+  if (i < minIndex) {
+    minIndex=i;
+    minRow=row;
+  }
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 146
+Faulty:
+minRow=row;
+Seed:
+NULL
+**************************************************
+Evaluations: 691
+EstimatedTime: 197948

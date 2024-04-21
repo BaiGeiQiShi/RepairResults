@@ -1,0 +1,46 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 956
+Faulty:
+for (int i=0; i < x.length; i++) {
+  double diff=boundaries[1][i] - boundaries[0][i];
+  res[i]=diff * x[i] + boundaries[0][i];
+}
+Seed:
+boundaries=null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 521
+Faulty:
+for (int i=0; i < lB.length; i++) {
+  if (Double.isInfinite(lB[i]) || Double.isInfinite(uB[i])) {
+    hasInfiniteBounds=true;
+    break;
+  }
+}
+Seed:
+if (!(lB != null)) return;
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 975
+Faulty:
+value=CMAESOptimizer.this.computeObjectiveValue(decode(point));
+Seed:
+isMinimize=getGoalType().equals(GoalType.MINIMIZE);
+**************************************************
+5 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+return isMinimize ? diagonalOnly : -penalty;
+**************************************************
+6 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 960
+Faulty:
+return res;
+Seed:
+return getStartPoint();
+**************************************************
+Evaluations: 770
+EstimatedTime: 6172537

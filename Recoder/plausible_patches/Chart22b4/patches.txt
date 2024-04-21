@@ -1,0 +1,1 @@
+Chart22b4/source/org/jfree/data/KeyedObjects2D.java	 231	replace:0,1$if(((row >= 0) && (row == column))){

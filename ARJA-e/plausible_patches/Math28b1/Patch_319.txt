@@ -1,0 +1,16 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 352
+Faulty:
+columnsToDrop.add(col);
+Seed:
+if (getBasicRow(col) == null) {
+  columnsToDrop.add(col);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=row;
+**************************************************
+Evaluations: 413
+EstimatedTime: 92144

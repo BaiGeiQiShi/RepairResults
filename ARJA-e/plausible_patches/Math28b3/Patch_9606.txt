@@ -1,0 +1,37 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 368
+Faulty:
+for (int i=drop.length - 1; i >= 0; i--) {
+  columnLabels.remove((int)drop[i]);
+}
+Seed:
+for (int i=getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+  final double entry=tableau.getEntry(0,i);
+  if (Precision.compareTo(entry,0d,epsilon) > 0) {
+    columnsToDrop.add(i);
+  }
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 143
+Faulty:
+if (row == tableau.getBasicRow(i)) {
+  if (i < minIndex) {
+    minIndex=i;
+    minRow=row;
+  }
+}
+Seed:
+if (row == tableau.getBasicRow(i) || !(minRatioPositions.size() == 0)) {
+  if (i < minIndex) {
+    minIndex=i;
+    minRow=row;
+  }
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(row,i);
+**************************************************
+Evaluations: 9748
+EstimatedTime: 2370166

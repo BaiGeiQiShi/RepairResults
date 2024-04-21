@@ -1,0 +1,36 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && Double.isNaN(this.minimumRangeValue)) {
+  result=masd.getMean();
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 451
+Faulty:
+g2.fill(bar);
+Seed:
+NULL
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 477
+Faulty:
+Line2D line=null;
+Seed:
+if (seriesCount > 1) {
+  double seriesGap=dataArea.getWidth() * getItemMargin() / (categoryCount * (seriesCount - 1));
+  rectX=rectX + row * (state.getBarWidth() + seriesGap);
+}
+ else {
+  rectX=rectX + row * state.getBarWidth();
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 391
+Faulty:
+int categoryCount=getColumnCount();
+Seed:
+float categoryCount=getColumnCount();
+**************************************************
+Evaluations: 3309
+EstimatedTime: 704921

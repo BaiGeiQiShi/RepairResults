@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 263
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getMinimumBarLength();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 300
+Faulty:
+double rectHeight=state.getBarWidth();
+Seed:
+double rectHeight=Math.abs(transY2 - transY1);
+**************************************************
+Evaluations: 9048
+EstimatedTime: 1810683

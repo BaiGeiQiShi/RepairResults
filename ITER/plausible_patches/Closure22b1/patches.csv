@@ -1,0 +1,65 @@
+FL-1 File: src/com/google/javascript/jscomp/CheckSideEffects.java
+Closure22b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+
+Number of failing tests: 2 
+Buggy Location: 115
+Patch Found in iteration 0 
+Repair Action: replace 
+ - continue;  
+ + if(ancestorType  ==  Token.EXPR_RESULT  &&  ancestorType  ==  Token.BLOCK)return;  else  break; 
+ --------------------------------------------------,
+Closure22b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+
+Number of failing tests: 2 
+Buggy Location: 115
+Patch Found in iteration 0 
+Repair Action: replace 
+ - continue;  
+ + if(ancestorType!=  Token.EXPR_RESULT  &&  ancestorType  ==  Token.BLOCK)return;  else  break; 
+ --------------------------------------------------
+Closure22b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+
+Number of failing tests: 2 
+Buggy Location: 115
+Patch Found in iteration 0 
+Repair Action: replace 
+ - continue;  
+ + if(ancestorType  ==  Token.EXPR_RESULT  &&  ancestorType  ==  Token.COMMA)  {  continue;  }  else  {  break;  } 
+ --------------------------------------------------
+Closure22b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+
+Number of failing tests: 2 
+Buggy Location: 115
+Patch Found in iteration 0 
+Repair Action: replace 
+ - continue;  
+ + if(ancestorType  ==  Token.COMMA  ||  ancestorType  ==  Token.COMMA)  {  break;  } 
+ --------------------------------------------------,
+Closure22b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 2 
+Buggy Location: 115
+
+Iteration: 0, Diagnostic: [FE] junit.framework.AssertionFailedError: There should be one warning Repair Action: replace 
+ - continue; 
+ + if(ancestorType!= Token.COMMA || ancestorType == Token.EXPR_RESULT) { continue; }
+Iteration: 1, Repair Action: replace
+ - if(ancestorType!= Token.COMMA || ancestorType == Token.EXPR_RESULT) { continue; } 
+ + if(ancestorType == Token.COMMA || ancestorType == Token.EXPR_RESULT) { break; } 
+ ----------------------------------------------------------------------------------------------------
+Closure22b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 2 
+Buggy Location: 115
+
+Iteration: 0, Diagnostic: [FE] junit.framework.AssertionFailedError: There should be one warning Repair Action: replace 
+ - continue; 
+ + if(ancestorType!= Token.EXPR_RESULT && ancestorType == Token.COMMA) { continue; }
+Iteration: 1, Repair Action: replace
+ - if(ancestorType!= Token.EXPR_RESULT && ancestorType == Token.COMMA) { continue; } 
+ + if(ancestorType!= Token.EXPR_RESULT && ancestorType == Token.COMMA) { break; } 
+ ----------------------------------------------------------------------------------------------------

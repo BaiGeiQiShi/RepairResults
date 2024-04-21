@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 406
+Faulty:
+double lclip=getLowerClip();
+Seed:
+double lclip=hashCode();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 392
+Faulty:
+if (seriesCount > 1) {
+  double seriesGap=dataArea.getWidth() * getItemMargin() / (categoryCount * (seriesCount - 1));
+  rectX=rectX + row * (state.getBarWidth() + seriesGap);
+}
+ else {
+  rectX=rectX + row * state.getBarWidth();
+}
+Seed:
+g2.setPaint(getItemPaint(row,column));
+**************************************************
+Evaluations: 1225
+EstimatedTime: 261078

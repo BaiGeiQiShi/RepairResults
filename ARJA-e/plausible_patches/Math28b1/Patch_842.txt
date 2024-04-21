@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 358
+Faulty:
+int col=0;
+Seed:
+this.numArtificialVariables=0;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(i,col);
+**************************************************
+Evaluations: 981
+EstimatedTime: 224800

@@ -1,0 +1,7 @@
+----------------------------------------
+Patch Number :1474
+Faulty Line :/tmp/Time-23-1/src/main/java/org/joda/time/DateTimeZone.java:175
++ System.exit(0);
+mask:Before  <mask><mask><mask><mask><mask><mask>
+-1.0406207422104974
+Success (Plausible Patch)

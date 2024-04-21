@@ -1,0 +1,16 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 254
+Faulty:
+rectY=rectY + row * state.getBarWidth();
+Seed:
+rectY=getColumnCount() + row * state.getBarWidth();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+this.data=new KeyedObjects2D();
+**************************************************
+Evaluations: 4840
+EstimatedTime: 978177

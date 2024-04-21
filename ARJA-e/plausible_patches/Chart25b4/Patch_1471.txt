@@ -1,0 +1,8 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return minimumRangeValueIncStdDev;
+**************************************************
+Evaluations: 1297
+EstimatedTime: 264838

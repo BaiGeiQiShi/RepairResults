@@ -1,0 +1,329 @@
+FL-1: src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+
+Number of failing tests: 2 
+Buggy Location: 138
+Patch Found in iteration 0 
+Repair Action: replace 
+ - Integer  minRow  =  null;  
+ + Integer  minRow  =(int)Math.rint(col); 
+ --------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+
+Number of failing tests: 2 
+Buggy Location: 138
+Patch Found in iteration 0 
+Repair Action: replace 
+ - Integer  minRow  =  null;  
+ + Integer  minRow  =  col; 
+ --------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+
+Number of failing tests: 2 
+Buggy Location: 138
+Patch Found in iteration 0 
+Repair Action: replace 
+ - Integer  minRow  =  null;  
+ + Integer  minRow  =  new  Integer(col).intValue(); 
+ --------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+
+Number of failing tests: 2 
+Buggy Location: 138
+Patch Found in iteration 0 
+Repair Action: replace 
+ - Integer  minRow  =  null;  
+ + Integer  minRow  =(int)Math.floor(col); 
+ --------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow = new Integer(col + 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow = new Integer(col + 1); 
+ + int minRow = new Integer(col - 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow = new Integer(col - 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow = new Integer(col - 1); 
+ + Integer minRow = new Integer(col - 1).intValue(); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [CE] bad operand types for binary operator '-' Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)Math.min(minRatioPositions - 1, col);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)Math.min(minRatioPositions - 1, col); 
+ + Integer minRow =(int)Math.min(maxUlps - 1, col); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow = this.maxUlps - 1;
+Iteration: 1, Repair Action: replace 
+ - Integer minRow = this.maxUlps - 1; 
+ + Integer minRow = Math.min(this.maxUlps, col - 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow = 1;
+Iteration: 1, Repair Action: replace 
+ - Integer minRow = 1; 
+ + Integer minRow = 2; 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow = 1;
+Iteration: 1, Repair Action: replace 
+ - Integer minRow = 1; 
+ + Integer minRow =(int)Math.rint(col - 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow = 1;
+Iteration: 1, Repair Action: replace 
+ - Integer minRow = 1; 
+ + Integer minRow = 3; 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol minRow Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow = this.minRow - 1;
+Iteration: 1, Repair Action: replace 
+ - Integer minRow = this.minRow - 1; 
+ + Integer minRow = col - 1; 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [CE] no suitable method found for min(List<Integer>,int) Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)Math.min(minRatioPositions, col);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)Math.min(minRatioPositions, col); 
+ + Integer minRow =(int)Math.min(maxUlps, col); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)(col + 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)(col + 1); 
+ + Integer minRow =(int)(col - 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)(col + 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)(col + 1); 
+ + Integer minRow =(int)(col / 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)(col + 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)(col + 1); 
+ + Integer minRow =(int)(col * 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)(col + 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)(col + 1); 
+ + Integer minRow =(int)(col + 1 - 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)(col + 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)(col + 1); 
+ + Integer minRow =(Integer)(col - 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)(col + 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)(col + 1); 
+ + Integer minRow =(int)(col); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)(col + 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)(col + 1); 
+ + int minRow =(int)(col - 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)(col + 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)(col + 1); 
+ + Integer minRow =(Integer)(col / 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)(col + 1);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)(col + 1); 
+ + Integer minRow =(int)(minRatioPositions.size() + 1); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [CE] variable minRow might not have been initialized Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)Math.min(minRow, col);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)Math.min(minRow, col); 
+ + Integer minRow =(int)Math.min(col, maxUlps); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow = new Integer(col);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow = new Integer(col); 
+ + int minRow = new Integer(col); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol minimum Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)Math.min(minimum, col);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)Math.min(minimum, col); 
+ + Integer minRow =(int)Math.min(minRatioPositions.size(), col); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol minimum Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow =(int)Math.min(minimum, col);
+Iteration: 1, Repair Action: replace 
+ - Integer minRow =(int)Math.min(minimum, col); 
+ + Integer minRow =(int)Math.min(col, col); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow = 0;
+Iteration: 1, Repair Action: replace 
+ - Integer minRow = 0; 
+ + Integer minRow = Character.toUpperCase(col); 
+ ----------------------------------------------------------------------------------------------------
+Math28b3 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 138
+
+Iteration: 0, Diagnostic: [FE] MaxCountExceededException Repair Action: replace 
+ - Integer minRow = null; 
+ + Integer minRow = 0;
+Iteration: 1, Repair Action: replace 
+ - Integer minRow = 0; 
+ + Integer minRow = Character.toLowerCase(col); 
+ ----------------------------------------------------------------------------------------------------

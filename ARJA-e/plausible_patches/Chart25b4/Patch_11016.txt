@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 263
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getLowerClip();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 335
+Faulty:
+line=new Line2D.Double(lowVal,rectY + rectHeight / 2.0d,highVal,rectY + rectHeight / 2.0d);
+Seed:
+line=new Line2D.Double(base,rectY + rectHeight / 2.0d,highVal,rectY + rectHeight / 2.0d);
+**************************************************
+Evaluations: 9021
+EstimatedTime: 1805063

@@ -1,0 +1,38 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 459
+Faulty:
+break generationLoop;
+Seed:
+if (lambda <= 0) {
+  lambda=4 + (int)(3. * Math.log(dimension));
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1016
+Faulty:
+if (x[i] < 0) {
+  repaired[i]=0;
+}
+ else if (x[i] > 1.0) {
+  repaired[i]=1.0;
+}
+ else {
+  repaired[i]=x[i];
+}
+Seed:
+if (x[i] < 0 && !(diagonalOnly > 1 && iterations > diagonalOnly)) {
+  repaired[i]=0;
+}
+ else if (x[i] > 1.0) {
+  repaired[i]=1.0;
+}
+ else {
+  repaired[i]=x[i];
+}
+**************************************************
+Evaluations: 1539
+EstimatedTime: 12767682

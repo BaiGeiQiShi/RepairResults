@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 379
+Faulty:
+ResourceBundle bundle=ResourceBundle.getBundle("assets/" + path,locale);
+Seed:
+ResourceBundle bundle=ResourceBundle.getBundle("assets/" + sourceFormat,locale);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 124
+Faulty:
+return row;
+Seed:
+row=i;
+**************************************************
+Evaluations: 6231
+EstimatedTime: 1438896

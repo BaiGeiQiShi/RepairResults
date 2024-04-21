@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 141
+Faulty:
+int i=tableau.getNumObjectiveFunctions();
+Seed:
+int i=tableau.getNumSlackVariables();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 227
+Faulty:
+doIteration(tableau);
+Seed:
+if (!(tableau != null)) throw new org.apache.commons.math3.optimization.linear.UnboundedSolutionException();
+**************************************************
+Evaluations: 3808
+EstimatedTime: 884913

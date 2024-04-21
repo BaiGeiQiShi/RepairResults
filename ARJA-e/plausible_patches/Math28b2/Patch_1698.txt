@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 175
+Faulty:
+final Localizable pat=msgPatterns.get(i);
+Seed:
+final Localizable pat=msgPatterns.get(count);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+row=i;
+**************************************************
+Evaluations: 1849
+EstimatedTime: 430829

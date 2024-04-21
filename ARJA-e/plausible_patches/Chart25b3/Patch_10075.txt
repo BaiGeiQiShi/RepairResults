@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 211
+Faulty:
+if (orientation == PlotOrientation.VERTICAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+Seed:
+if (orientation == PlotOrientation.VERTICAL && orientation == PlotOrientation.HORIZONTAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 423
+Faulty:
+if (value <= lclip) {
+  value=lclip;
+}
+Seed:
+if (value <= getColumnCount()) {
+  value=lclip;
+}
+**************************************************
+Evaluations: 9005
+EstimatedTime: 1843447

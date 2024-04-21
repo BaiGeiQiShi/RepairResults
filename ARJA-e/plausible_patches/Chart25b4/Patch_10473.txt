@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 354
+Faulty:
+if (entities != null) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+Seed:
+if (entities != null && this.errorIndicatorStroke != null) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && !(!Double.isNaN(this.minimumRangeValue) && !Double.isNaN(this.maximumRangeValue))) {
+  result=masd.getMean();
+}
+**************************************************
+Evaluations: 8596
+EstimatedTime: 1722663

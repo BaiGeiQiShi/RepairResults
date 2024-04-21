@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return maximumRangeValueIncStdDev;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 294
+Faulty:
+RectangleEdge yAxisLocation=plot.getRangeAxisEdge();
+Seed:
+if (!(plot != null)) return;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 246
+Faulty:
+int seriesCount=getRowCount();
+Seed:
+int seriesCount=dataset.getRowCount();
+**************************************************
+Evaluations: 1023
+EstimatedTime: 206740

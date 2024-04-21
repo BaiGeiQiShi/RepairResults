@@ -1,0 +1,38 @@
+1 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 408
+Faulty:
+residuals=oldRes;
+Seed:
+ratio=(preRed == 0) ? 0 : (actRed / preRed);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 405
+Faulty:
+point[pj]=oldX[pj];
+Seed:
+if (((Math.abs(actRed) <= costRelativeTolerance) && (preRed <= costRelativeTolerance) && (ratio <= 2.0)) || (delta <= parRelativeTolerance * xNorm)) {
+  return new VectorialPointValuePair(point,objective);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 530
+Faulty:
+for (int j=0; j < solvedCols; ++j) {
+  int pj=permutation[j];
+  double sum=0;
+  for (int i=0; i <= j; ++i) {
+    sum+=jacobian[i][pj] * qy[i];
+  }
+  sum/=diag[pj];
+  sum2+=sum * sum;
+}
+Seed:
+for (int j=0; j < rank; ++j) {
+  lmDir[permutation[j]]=qy[j];
+}
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 381
+Faulty:
+tmp=0.1;
+Seed:
+cost=0;
+**************************************************
+Evaluations: 8815
+EstimatedTime: 2839521

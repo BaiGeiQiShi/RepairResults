@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 211
+Faulty:
+if (orientation == PlotOrientation.VERTICAL) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+Seed:
+if (orientation == PlotOrientation.VERTICAL && isDrawBarOutline() && state.getBarWidth() > 3) {
+  drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,row,column);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 438
+Faulty:
+RectangleEdge yAxisLocation=plot.getRangeAxisEdge();
+Seed:
+RectangleEdge yAxisLocation=plot.getDomainAxisEdge();
+**************************************************
+Evaluations: 4291
+EstimatedTime: 910787

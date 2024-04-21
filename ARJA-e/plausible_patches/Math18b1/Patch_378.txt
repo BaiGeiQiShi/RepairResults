@@ -1,0 +1,62 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 751
+Faulty:
+negccov=negcovMax;
+Seed:
+if (ccov1 + ccovmu + negccov > 0 && (iterations % 1. / (ccov1 + ccovmu + negccov) / dimension / 10.) < 1.) {
+  C=triu(C,0).add(triu(C,1).transpose());
+  EigenDecomposition eig=new EigenDecomposition(C);
+  B=eig.getV();
+  D=eig.getD();
+  diagD=diag(D);
+  if (min(diagD) <= 0) {
+    for (int i=0; i < dimension; i++) {
+      if (diagD.getEntry(i,0) < 0) {
+        diagD.setEntry(i,0,0.);
+      }
+    }
+    double tfac=max(diagD) / 1e14;
+    C=C.add(eye(dimension,dimension).scalarMultiply(tfac));
+    diagD=diagD.add(ones(dimension,1).scalarMultiply(tfac));
+  }
+  if (max(diagD) > 1e14 * min(diagD)) {
+    double tfac=max(diagD) / 1e14 - min(diagD);
+    C=C.add(eye(dimension,dimension).scalarMultiply(tfac));
+    diagD=diagD.add(ones(dimension,1).scalarMultiply(tfac));
+  }
+  diagC=diag(C);
+  diagD=sqrt(diagD);
+  BD=times(B,repmat(diagD.transpose(),dimension,1));
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1024
+Faulty:
+return repaired;
+Seed:
+return getUpperBound();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 482
+Faulty:
+sigma=sigma * Math.exp(0.2 + cs / damps);
+Seed:
+sigma=sigma * Math.toDegrees(0.2 + cs / damps);
+**************************************************
+5 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+return isMinimize ? maxIterations : -penalty;
+**************************************************
+6 Delete /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 958
+Faulty:
+res[i]=diff * x[i] + boundaries[0][i];
+Seed:
+NULL
+**************************************************
+Evaluations: 514
+EstimatedTime: 3756125

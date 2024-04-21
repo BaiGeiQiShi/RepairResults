@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 406
+Faulty:
+double lclip=getLowerClip();
+Seed:
+double lclip=hashCode();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 391
+Faulty:
+int categoryCount=getColumnCount();
+Seed:
+double categoryCount=getColumnCount();
+**************************************************
+Evaluations: 2901
+EstimatedTime: 616270

@@ -1,0 +1,34 @@
+1 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 245
+Faulty:
+if (className == null) {
+  return StringUtils.EMPTY;
+}
+Seed:
+if (className == null || className.length() == 0) {
+  return StringUtils.EMPTY;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 254
+Faulty:
+return StringUtils.EMPTY;
+Seed:
+if (className == null) {
+  return StringUtils.EMPTY;
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 232
+Faulty:
+return getPackageName(cls.getName());
+Seed:
+return getPackageName(cls.getTypeName());
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 253
+Faulty:
+if (i == -1) {
+  return StringUtils.EMPTY;
+}
+Seed:
+className=className.substring(0,className.length() - 2);
+**************************************************
+Evaluations: 6543
+EstimatedTime: 683485

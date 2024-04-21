@@ -1,0 +1,32 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+minRatioPositions.add(i);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 349
+Faulty:
+for (int i=0; i < getNumArtificialVariables(); i++) {
+  int col=i + getArtificialVariableOffset();
+  if (getBasicRow(col) == null) {
+    columnsToDrop.add(col);
+  }
+}
+Seed:
+for (int i=getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+  final double entry=tableau.getEntry(0,i);
+  if (Precision.compareTo(entry,0d,epsilon) > 0) {
+    columnsToDrop.add(i);
+  }
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions=new ArrayList<Integer>();
+**************************************************
+Evaluations: 4827
+EstimatedTime: 1210195

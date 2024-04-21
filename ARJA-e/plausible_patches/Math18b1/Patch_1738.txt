@@ -1,0 +1,31 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+return isMinimize ? valueRange : -penalty;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 930
+Faulty:
+for (int i=0; i < x.length; i++) {
+  double diff=boundaries[1][i] - boundaries[0][i];
+  res[i]=(x[i] - boundaries[0][i]) / diff;
+}
+Seed:
+if (boundaries == null) {
+  return x;
+}
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 958
+Faulty:
+res[i]=diff * x[i] + boundaries[0][i];
+Seed:
+boundaries=new double[2][];
+**************************************************
+Evaluations: 1711
+EstimatedTime: 14498875

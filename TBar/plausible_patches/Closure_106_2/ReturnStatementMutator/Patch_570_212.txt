@@ -1,0 +1,13 @@
+diff --git a/src/com/google/javascript/rhino/JSDocInfoBuilder.java b/src/com/google/javascript/rhino/JSDocInfoBuilder.java
+index 1311638f..abef34ae 100644
+--- a/src/com/google/javascript/rhino/JSDocInfoBuilder.java
++++ b/src/com/google/javascript/rhino/JSDocInfoBuilder.java
+@@ -113,7 +113,8 @@ final public class JSDocInfoBuilder {
+       currentInfo = new JSDocInfo(this.parseDocumentation);
+       return built;
+     } else {
+-      return null;
++      return this.currentInfo;
++
+     }
+   }

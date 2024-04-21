@@ -1,0 +1,27 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (Precision.equals(DEFAULT_ULPS,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 357
+Faulty:
+for (int i=1; i < getHeight(); i++) {
+  int col=0;
+  for (int j=0; j < getWidth(); j++) {
+    if (!columnsToDrop.contains(j)) {
+      matrix[i - 1][col++]=tableau.getEntry(i,j);
+    }
+  }
+}
+Seed:
+for (int i=0; i < getNumSlackVariables(); i++) {
+  columnLabels.add("s" + i);
+}
+**************************************************
+Evaluations: 4052
+EstimatedTime: 1029633

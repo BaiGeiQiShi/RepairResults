@@ -1,0 +1,25 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 357
+Faulty:
+for (int i=1; i < getHeight(); i++) {
+  int col=0;
+  for (int j=0; j < getWidth(); j++) {
+    if (!columnsToDrop.contains(j)) {
+      matrix[i - 1][col++]=tableau.getEntry(i,j);
+    }
+  }
+}
+Seed:
+columnLabels.add("Z");
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column)) && tableau.getNumArtificialVariables() == 0) {
+  return row;
+}
+**************************************************
+Evaluations: 6888
+EstimatedTime: 1594943

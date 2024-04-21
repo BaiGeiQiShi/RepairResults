@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=row;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 227
+Faulty:
+doIteration(tableau);
+Seed:
+if (tableau != null) doIteration(tableau);
+**************************************************
+Evaluations: 3315
+EstimatedTime: 856173

@@ -1,0 +1,30 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 361
+Faulty:
+matrix[i - 1][col++]=tableau.getEntry(i,j);
+Seed:
+if (!(tableau != null && matrix[i - 1] != null && matrix != null)) continue;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (Precision.equals(entry,1d,DEFAULT_MAX_ITERATIONS) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getNumDecisionVariables();
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+if (minRatioPositions != null) minRatioPositions.add(i);
+**************************************************
+Evaluations: 2310
+EstimatedTime: 546492

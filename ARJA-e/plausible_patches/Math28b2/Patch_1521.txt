@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/AbstractLinearOptimizer.java 128
+Faulty:
+throw new MaxCountExceededException(maxIterations);
+Seed:
+throw new MaxCountExceededException(getIterations());
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 173
+Faulty:
+final int len=msgPatterns.size();
+Seed:
+final double len=msgPatterns.size();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(i,column);
+**************************************************
+Evaluations: 1666
+EstimatedTime: 384281

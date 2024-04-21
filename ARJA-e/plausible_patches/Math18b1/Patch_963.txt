@@ -1,0 +1,29 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 482
+Faulty:
+sigma=sigma * Math.exp(0.2 + cs / damps);
+Seed:
+sigma=sigma * Math.exp(0.2 + getEvaluations() / damps);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 459
+Faulty:
+break generationLoop;
+Seed:
+break;
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 960
+Faulty:
+return res;
+Seed:
+for (int i=0; i < x.length; i++) {
+  double diff=boundaries[1][i] - boundaries[0][i];
+  res[i]=(x[i] - boundaries[0][i]) / diff;
+}
+**************************************************
+Evaluations: 1060
+EstimatedTime: 8616508

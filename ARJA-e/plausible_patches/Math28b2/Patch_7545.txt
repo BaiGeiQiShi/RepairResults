@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 139
+Faulty:
+int minIndex=tableau.getWidth();
+Seed:
+double minIndex=tableau.getWidth();
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 7906
+EstimatedTime: 1852148

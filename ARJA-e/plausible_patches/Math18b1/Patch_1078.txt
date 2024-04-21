@@ -1,0 +1,68 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 521
+Faulty:
+for (int i=0; i < lB.length; i++) {
+  if (Double.isInfinite(lB[i]) || Double.isInfinite(uB[i])) {
+    hasInfiniteBounds=true;
+    break;
+  }
+}
+Seed:
+if (!(lB != null)) return;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 529
+Faulty:
+if (hasInfiniteBounds) {
+  throw new MathUnsupportedOperationException();
+}
+ else {
+  boundaries=new double[2][];
+  boundaries[0]=lB;
+  boundaries[1]=uB;
+  for (int i=0; i < lB.length; i++) {
+    if (Double.isInfinite(boundaries[1][i] - boundaries[0][i])) {
+      final double max=Double.MAX_VALUE + boundaries[0][i];
+      final NumberIsTooLargeException e=new NumberIsTooLargeException(boundaries[1][i],max,true);
+      e.getContext().addMessage(LocalizedFormats.OVERFLOW);
+      e.getContext().addMessage(LocalizedFormats.INDEX,i);
+      throw e;
+    }
+  }
+}
+Seed:
+if (hasFiniteBounds) {
+  for (int i=0; i < lB.length; i++) {
+    if (Double.isInfinite(lB[i]) || Double.isInfinite(uB[i])) {
+      hasInfiniteBounds=true;
+      break;
+    }
+  }
+  if (hasInfiniteBounds) {
+    throw new MathUnsupportedOperationException();
+  }
+ else {
+    boundaries=new double[2][];
+    boundaries[0]=lB;
+    boundaries[1]=uB;
+    for (int i=0; i < lB.length; i++) {
+      if (Double.isInfinite(boundaries[1][i] - boundaries[0][i])) {
+        final double max=Double.MAX_VALUE + boundaries[0][i];
+        final NumberIsTooLargeException e=new NumberIsTooLargeException(boundaries[1][i],max,true);
+        e.getContext().addMessage(LocalizedFormats.OVERFLOW);
+        e.getContext().addMessage(LocalizedFormats.INDEX,i);
+        throw e;
+      }
+    }
+  }
+}
+ else {
+  boundaries=null;
+}
+**************************************************
+Evaluations: 1169
+EstimatedTime: 9506611

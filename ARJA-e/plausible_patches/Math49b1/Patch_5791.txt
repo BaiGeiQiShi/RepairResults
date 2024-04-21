@@ -1,0 +1,38 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 664
+Faulty:
+if (!isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (!isDefaultValue(value) || entries.containsKey(index)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 546
+Faulty:
+if (referenceCount != count) {
+  throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
+}
+Seed:
+if (referenceCount != FastMath.abs(count)) {
+  throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/AbstractRealVector.java 64
+Faulty:
+if (d != n) {
+  throw new DimensionMismatchException(d,n);
+}
+Seed:
+if (d > n) {
+  throw new DimensionMismatchException(d,n);
+}
+**************************************************
+Evaluations: 5855
+EstimatedTime: 3625644

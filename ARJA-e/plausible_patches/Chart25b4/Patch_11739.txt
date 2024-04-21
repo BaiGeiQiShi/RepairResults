@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return row;
+**************************************************
+2 Delete /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 338
+Faulty:
+line=new Line2D.Double(highVal,rectY + rectHeight * 0.25,highVal,rectY + rectHeight * 0.75);
+Seed:
+NULL
+**************************************************
+Evaluations: 9599
+EstimatedTime: 1916190

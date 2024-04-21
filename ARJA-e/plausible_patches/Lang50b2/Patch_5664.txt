@@ -1,0 +1,26 @@
+1 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 280
+Faulty:
+Object key=new Integer(style);
+Seed:
+timeZone=TimeZone.getDefault();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 286
+Faulty:
+key=new Pair(key,locale);
+Seed:
+if (locale != null) {
+  key=new Pair(key,locale);
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1721
+Faulty:
+if (!(obj instanceof Pair)) {
+  return false;
+}
+Seed:
+if (!(obj instanceof Pair) || obj instanceof FastDateFormat == false) {
+  return false;
+}
+**************************************************
+Evaluations: 5853
+EstimatedTime: 670151

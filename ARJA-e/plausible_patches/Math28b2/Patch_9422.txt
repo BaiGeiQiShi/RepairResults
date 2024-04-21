@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 141
+Faulty:
+int i=tableau.getNumObjectiveFunctions();
+Seed:
+if (!(tableau != null)) return null;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+return minRatioPositions.get(0);
+**************************************************
+Evaluations: 9838
+EstimatedTime: 2308435

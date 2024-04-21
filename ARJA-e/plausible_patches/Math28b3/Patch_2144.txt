@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 179
+Faulty:
+sb.append(fmt.format(args));
+Seed:
+if (!(fmt != null && sb != null)) return sb.toString();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=minIndex;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java 80
+Faulty:
+return context.getMessage();
+Seed:
+return getContext().getMessage();
+**************************************************
+Evaluations: 2191
+EstimatedTime: 569397

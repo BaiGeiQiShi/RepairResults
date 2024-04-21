@@ -1,0 +1,8 @@
+1 Delete /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+NULL
+**************************************************
+Evaluations: 3200
+EstimatedTime: 2150125

@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 751
+Faulty:
+negccov=negcovMax;
+Seed:
+weights=log(sequence(1,mu,1)).scalarMultiply(-1.).scalarAdd(logMu2);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 535
+Faulty:
+boundaries=new double[2][];
+Seed:
+hasInfiniteBounds=true;
+**************************************************
+Evaluations: 1673
+EstimatedTime: 14103104

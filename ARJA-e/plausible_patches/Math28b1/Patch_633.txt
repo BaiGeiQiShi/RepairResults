@@ -1,0 +1,16 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 227
+Faulty:
+doIteration(tableau);
+Seed:
+while (!tableau.isOptimal()) {
+  doIteration(tableau);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(row,row);
+**************************************************
+Evaluations: 756
+EstimatedTime: 179095

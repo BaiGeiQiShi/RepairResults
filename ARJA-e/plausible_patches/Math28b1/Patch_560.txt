@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(i,col);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java 86
+Faulty:
+return context.getLocalizedMessage();
+Seed:
+context.addMessage(LocalizedFormats.ARITHMETIC_EXCEPTION);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 141
+Faulty:
+int i=tableau.getNumObjectiveFunctions();
+Seed:
+if (!(tableau != null)) continue;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+i=i;
+**************************************************
+Evaluations: 685
+EstimatedTime: 156530

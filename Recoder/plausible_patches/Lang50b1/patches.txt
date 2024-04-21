@@ -1,0 +1,44 @@
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	469		replace:0,1$FastDateFormat format = (FastDateFormat)cInstanceCache.get(key);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	469		replace:0,1$FastDateFormat format = (FastDateFormat)cDateInstanceCache.get(key);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	469 	replace:0,1$FastDateFormat format = (FastDateFormat)cTimeInstanceCache.get(key);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	469 	replace:0,1$FastDateFormat format = (FastDateFormat)cTimeZoneDisplayCache.get(key);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	469 	replace:0,1$FastDateFormat format = (FastDateFormat)cDateTimeInstanceCache.get(timeZone);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	469 	replace:0,1$FastDateFormat format = (FastDateFormat)cDateTimeInstanceCache.get(locale);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	470 	replace:0,1$if(((format == null) || (format != null))){
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	470 	replace:0,1$if(((format == null) || (key != null))){
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	470 	replace:0,1$if(((format == null) || (locale == null))){
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	470 	insert-before:0$key = new Pair(key, timeZone);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	470 	replace:0,1$if((timeZone == null)){
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	471 	insert-before:0$key = new Pair(key, timeZone);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	471 	insert-before:0$key = new Pair(key, locale);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	472 	insert-before:0$key = new Pair(key, timeZone);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	472		insert-before:0$key = new Pair(key, locale);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	475 	insert-before:0$key = new Pair(key, timeZone);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	475		insert-before:0$key = new Pair(key, locale);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479		replace:0,1$cInstanceCache.put(key, format);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479 	replace:0,1$cDateInstanceCache.put(key, format);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479 	replace:0,1$cTimeInstanceCache.put(key, format);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479 	replace:0,1$cTimeZoneDisplayCache.put(key, format);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479		replace:0,1$cDateTimeInstanceCache.put(pattern, format);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479		insert-before:0$key = new Pair(key, timeZone);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479		replace:0,1$cDateTimeInstanceCache.put(format, format);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479		replace:0,1$cDateTimeInstanceCache.put(formatter, format);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479		replace:0,1$cDateTimeInstanceCache.put(timeZone, format);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479		replace:0,1$cDateTimeInstanceCache.put(key, timeZone);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479 	insert-before:0$key = new Pair(key, locale);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	479		replace:0,1$cDateTimeInstanceCache.put(format, key);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1721	replace:0,1$if((obj instanceof Pair)){
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1721	replace:0,1$if((obj instanceof Pair)){
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1721	replace:0,1$if(((obj instanceof Pair) && (obj instanceof Pair))){
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1721	replace:0,1$if((obj instanceof Object)){
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1721	insert-before:0$if((obj instanceof Pair)){ return false;}
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1721	replace:0,1$if(((obj instanceof Pair) && (obj == obj))){
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1721	replace:0,1$if(((obj instanceof Pair) || (obj instanceof Pair))){
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1725	insert-before:0$if((obj instanceof Pair)){ return false;}
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1727	replace:0,5$return (key.mObj1 == null);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1727	replace:0,5$return (key.mObj2 == null);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1727	replace:0,5$return (((mObj1 == null))?(key.mObj1 == null):mObj1.equals(key.mObj1) && ((mObj2 == null))?(key.mObj2 == null):key.equals(key.mObj2));
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1727	replace:0,5$return (((mObj1 == null))?(key.mObj1 == null):mObj1.equals(key.mObj1) && ((mObj2 == null))?(key.mObj2 == null):obj.equals(key.mObj2));
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1727	replace:0,5$return false;
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1727	replace:0,5$return (mObj1 == null);
+Lang50b1/src/java/org/apache/commons/lang/time/FastDateFormat.java	1727	replace:0,5$return (mObj2 == null);

@@ -1,0 +1,42 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+if (row == tableau.getBasicRow(i)) {
+  if (i < minIndex) {
+    minIndex=i;
+    minRow=row;
+  }
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 186
+Faulty:
+return sb.toString();
+Seed:
+msgArguments=new ArrayList<Object[]>(len);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+if (!(tableau != null)) continue;
+**************************************************
+4 Delete /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 119
+Faulty:
+for (Integer row : minRatioPositions) {
+  for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+    int column=i + tableau.getArtificialVariableOffset();
+    final double entry=tableau.getEntry(row,column);
+    if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+      return row;
+    }
+  }
+}
+Seed:
+NULL
+**************************************************
+Evaluations: 2547
+EstimatedTime: 598428

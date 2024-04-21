@@ -1,0 +1,40 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/MathRuntimeException.java 132
+Faulty:
+return new MessageFormat(pattern.getLocalizedString(locale),locale).format(arguments);
+Seed:
+return new MessageFormat(pattern.getLocalizedString(locale)).format(arguments);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 186
+Faulty:
+if (states[index] == FREE) {
+  return missingEntries;
+}
+Seed:
+if (!(states != null)) throw new java.util.NoSuchElementException();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 664
+Faulty:
+if (!isDefaultValue(value)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (!isDefaultValue(value) || entries.containsKey(index)) {
+  entries.put(index,value);
+}
+ else if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 665
+Faulty:
+entries.put(index,value);
+Seed:
+for (int i=0; i < virtualSize; i++) {
+  setEntry(i,value);
+}
+**************************************************
+Evaluations: 5128
+EstimatedTime: 3260747

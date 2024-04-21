@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 263
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getBase();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 337
+Faulty:
+g2.draw(line);
+Seed:
+g2.setPaint(this.errorIndicatorPaint);
+**************************************************
+Evaluations: 9744
+EstimatedTime: 1943950

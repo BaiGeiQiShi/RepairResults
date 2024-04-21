@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 481
+Faulty:
+line=new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d,highVal,rectX + rectWidth / 2.0d + 5.0d,highVal);
+Seed:
+line=new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d,highVal,rectX + column / 2.0d + 5.0d,highVal);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 484
+Faulty:
+line=new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d,lowVal,rectX + rectWidth / 2.0d + 5.0d,lowVal);
+Seed:
+line=new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d,lowVal,rectX + transY2 / 2.0d + 5.0d,lowVal);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 459
+Faulty:
+double valueDelta=dataset.getStdDevValue(row,column).doubleValue();
+Seed:
+double valueDelta=dataset.getStdDevValue(row,row).doubleValue();
+**************************************************
+Evaluations: 1714
+EstimatedTime: 364788

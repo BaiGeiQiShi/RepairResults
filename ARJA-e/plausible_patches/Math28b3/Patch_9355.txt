@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 360
+Faulty:
+if (!columnsToDrop.contains(j)) {
+  matrix[i - 1][col++]=tableau.getEntry(i,j);
+}
+Seed:
+if (!columnsToDrop.contains(j) && getNumObjectiveFunctions() == 2) {
+  matrix[i - 1][col++]=tableau.getEntry(i,j);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(row,getIterations());
+**************************************************
+Evaluations: 9500
+EstimatedTime: 2310893

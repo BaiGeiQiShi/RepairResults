@@ -1,0 +1,27 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(row,i);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+for (; i < tableau.getWidth() - 1 && minRow != row; i++) {
+  if (row == tableau.getBasicRow(i)) {
+    if (i < minIndex) {
+      minIndex=i;
+      minRow=row;
+    }
+  }
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 146
+Faulty:
+minRow=row;
+Seed:
+minRatioPositions=new ArrayList<Integer>();
+**************************************************
+Evaluations: 4005
+EstimatedTime: 1019008

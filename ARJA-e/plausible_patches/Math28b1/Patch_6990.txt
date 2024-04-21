@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+if (cmp < 0) {
+  minRatio=ratio;
+  minRatioPositions=new ArrayList<Integer>();
+  minRatioPositions.add(i);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 139
+Faulty:
+int minIndex=tableau.getWidth();
+Seed:
+int minIndex=tableau.hashCode();
+**************************************************
+Evaluations: 7797
+EstimatedTime: 1705772

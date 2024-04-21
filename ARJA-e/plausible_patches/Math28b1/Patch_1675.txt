@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 231
+Faulty:
+matrix.setEntry(row,getSlackVariableOffset() + slackVar++,-1);
+Seed:
+if (!restrictToNonNegative) {
+  matrix.setEntry(zIndex,getSlackVariableOffset() - 1,getInvertedCoefficientSum(objectiveCoefficients));
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getNumObjectiveFunctions();
+**************************************************
+Evaluations: 1895
+EstimatedTime: 407042

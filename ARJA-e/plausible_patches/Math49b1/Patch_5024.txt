@@ -1,0 +1,40 @@
+1 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 186
+Faulty:
+if (states[index] == FREE) {
+  return missingEntries;
+}
+Seed:
+if (containsKey(key,index)) {
+  return values[index];
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+NULL
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/AbstractRealVector.java 76
+Faulty:
+if (index < 0 || index >= getDimension()) {
+  throw new OutOfRangeException(LocalizedFormats.INDEX,index,0,getDimension() - 1);
+}
+Seed:
+if (index >= getDimension()) {
+  throw new OutOfRangeException(LocalizedFormats.INDEX,index,0,getDimension() - 1);
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 371
+Faulty:
+while (iter.hasNext()) {
+  iter.advance();
+  res.setEntry(iter.key(),iter.value() * v.getEntry(iter.key()));
+}
+Seed:
+if (iter != null) while (iter.hasNext()) {
+  iter.advance();
+  res.setEntry(iter.key(),iter.value() * v.getEntry(iter.key()));
+}
+**************************************************
+Evaluations: 5087
+EstimatedTime: 3238674

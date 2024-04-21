@@ -1,0 +1,18 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 359
+Faulty:
+for (int j=0; j < getWidth(); j++) {
+  if (!columnsToDrop.contains(j)) {
+    matrix[i - 1][col++]=tableau.getEntry(i,j);
+  }
+}
+Seed:
+columnLabels.add("W");
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(0,i);
+**************************************************
+Evaluations: 3053
+EstimatedTime: 795868

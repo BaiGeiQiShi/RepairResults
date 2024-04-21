@@ -1,0 +1,28 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 442
+Faulty:
+double rectY=Math.min(transY2,transY1);
+Seed:
+double rectY=Math.pow(transY2,transY1);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 110
+Faulty:
+if (masd != null) {
+  result=masd.getMean();
+}
+Seed:
+if (masd != null && Double.isNaN(this.maximumRangeValueIncStdDev)) {
+  result=masd.getMean();
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 497
+Faulty:
+if (entities != null) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+Seed:
+if (entities != null && generator != null && isItemLabelVisible(row,column)) {
+  addItemEntity(entities,dataset,row,column,bar);
+}
+**************************************************
+Evaluations: 5447
+EstimatedTime: 1159604

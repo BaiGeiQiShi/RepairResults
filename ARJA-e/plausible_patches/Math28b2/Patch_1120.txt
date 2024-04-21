@@ -1,0 +1,42 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 141
+Faulty:
+int i=tableau.getNumObjectiveFunctions();
+Seed:
+int i=tableau.getNumSlackVariables();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 172
+Faulty:
+int count=0;
+Seed:
+float count=0;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 392
+Faulty:
+return sourceFormat;
+Seed:
+try {
+  final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+  ResourceBundle bundle=ResourceBundle.getBundle("assets/" + path,locale);
+  if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {
+    return bundle.getString(toString());
+  }
+}
+ catch (MissingResourceException mre) {
+}
+**************************************************
+4 Delete /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 119
+Faulty:
+for (Integer row : minRatioPositions) {
+  for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+    int column=i + tableau.getArtificialVariableOffset();
+    final double entry=tableau.getEntry(row,column);
+    if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+      return row;
+    }
+  }
+}
+Seed:
+NULL
+**************************************************
+Evaluations: 1228
+EstimatedTime: 284236

@@ -1,0 +1,52 @@
+Closure106b2/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java		252	replace:0,1$jsdocBuilder.recordTemplateTypeName(blockInfo.string);
+Closure106b2/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java		252	replace:0,1$jsdocBuilder.addAuthor(blockInfo.string);
+Closure106b2/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java		252	replace:0,1$jsdocBuilder.addReference(blockInfo.string);
+Closure106b2/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java		252	replace:0,1$jsdocBuilder.recordVersion(blockInfo.string);
+Closure106b2/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java		252	replace:0,1$jsdocBuilder.recordDeprecationReason(blockInfo.string);
+Closure106b2/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java		252	replace:0,1$jsdocBuilder.recordReturnDescription(blockInfo.string);
+Closure106b2/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java		252	replace:0,1$jsdocBuilder.recordDescription(blockInfo.string);
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		116	replace:0,1$return currentInfo;
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordConstancy()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordHiddenness()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordNoTypeCheck()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordConstructor()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordPreserveTry()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordOverride()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordNoAlias()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordDeprecated()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordInterface()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordExport()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordNoShadow()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordImplicitCast()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(recordNoSideEffects()){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(!populated){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(!parseDocumentation){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if(!parseDocumentation){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordConstancy())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordHiddenness())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordNoTypeCheck())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordConstructor())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordPreserveTry())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordOverride())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordNoAlias())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordDeprecated())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordInterface())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordExport())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordNoShadow())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordImplicitCast())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	replace:0,1$if((parseDocumentation || recordNoSideEffects())){
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordConstancy()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordHiddenness()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordNoTypeCheck()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordConstructor()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordPreserveTry()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordOverride()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordNoAlias()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordDeprecated()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordInterface()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordExport()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordNoShadow()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordImplicitCast()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$if(recordNoSideEffects()){ return false;}
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		189	insert-before:0$populated = true;
+Closure106b2/src/com/google/javascript/rhino/JSDocInfoBuilder.java		192	insert-before:0$populated = true;

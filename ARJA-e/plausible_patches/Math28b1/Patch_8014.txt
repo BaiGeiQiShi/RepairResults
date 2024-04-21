@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java 80
+Faulty:
+return context.getMessage();
+Seed:
+return getContext().getMessage();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=minIndex;
+**************************************************
+Evaluations: 8890
+EstimatedTime: 1963648

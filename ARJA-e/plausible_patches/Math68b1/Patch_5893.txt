@@ -1,0 +1,26 @@
+1 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 405
+Faulty:
+point[pj]=oldX[pj];
+Seed:
+if (((Math.abs(actRed) <= costRelativeTolerance) && (preRed <= costRelativeTolerance) && (ratio <= 2.0)) || (delta <= parRelativeTolerance * xNorm)) {
+  return new VectorialPointValuePair(point,objective);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 529
+Faulty:
+sum2=0;
+Seed:
+determineLMDirection(qy,work1,work2,work3);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 549
+Faulty:
+if (lmPar == 0) {
+  lmPar=gNorm / dxNorm;
+}
+Seed:
+if (getChiSquare() == 0) {
+  lmPar=gNorm / dxNorm;
+}
+**************************************************
+Evaluations: 7298
+EstimatedTime: 2392867

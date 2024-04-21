@@ -1,0 +1,19 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/util/Precision.java 117
+Faulty:
+return -1;
+Seed:
+if (equals(x,y,maxUlps)) {
+  return 0;
+}
+ else if (x < y) {
+  return -1;
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 9614
+EstimatedTime: 2120490

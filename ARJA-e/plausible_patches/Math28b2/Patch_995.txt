@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 372
+Faulty:
+this.tableau=new Array2DRowRealMatrix(matrix);
+Seed:
+this.numArtificialVariables=getConstraintTypeCounts(Relationship.EQ) + getConstraintTypeCounts(Relationship.GEQ);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+row=i;
+**************************************************
+Evaluations: 1079
+EstimatedTime: 248625

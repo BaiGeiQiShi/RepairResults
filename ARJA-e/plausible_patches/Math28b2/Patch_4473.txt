@@ -1,0 +1,8 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+row=i;
+**************************************************
+Evaluations: 4770
+EstimatedTime: 1108557

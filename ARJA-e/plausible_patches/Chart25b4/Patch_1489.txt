@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return minimumRangeValueIncStdDev;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 294
+Faulty:
+RectangleEdge yAxisLocation=plot.getRangeAxisEdge();
+Seed:
+RectangleEdge yAxisLocation=plot.getDomainAxisEdge();
+**************************************************
+Evaluations: 1315
+EstimatedTime: 268056

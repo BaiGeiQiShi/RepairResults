@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 254
+Faulty:
+rectY=rectY + row * state.getBarWidth();
+Seed:
+rectY=rectY + hashCode() * state.getBarWidth();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return minimumRangeValueIncStdDev;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 305
+Faulty:
+Paint seriesPaint=getItemPaint(row,column);
+Seed:
+rectWidth=0.0;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 345
+Faulty:
+CategoryItemLabelGenerator generator=getItemLabelGenerator(row,column);
+Seed:
+CategoryItemLabelGenerator generator=getItemLabelGenerator(row,getColumnCount());
+**************************************************
+Evaluations: 4735
+EstimatedTime: 957690

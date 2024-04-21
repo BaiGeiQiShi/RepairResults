@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 368
+Faulty:
+for (int i=drop.length - 1; i >= 0; i--) {
+  columnLabels.remove((int)drop[i]);
+}
+Seed:
+columnsToDrop.add(0);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+if (cmp < 0) {
+  minRatio=ratio;
+  minRatioPositions=new ArrayList<Integer>();
+  minRatioPositions.add(i);
+}
+**************************************************
+Evaluations: 6667
+EstimatedTime: 1638704

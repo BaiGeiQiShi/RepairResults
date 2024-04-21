@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 476
+Faulty:
+break generationLoop;
+Seed:
+for (int i=0; i < historySize; i++) {
+  fitnessHistory[i]=Double.MAX_VALUE;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+Evaluations: 1797
+EstimatedTime: 15283558

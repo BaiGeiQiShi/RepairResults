@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return column;
+**************************************************
+2 Delete /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 306
+Faulty:
+g2.setPaint(seriesPaint);
+Seed:
+NULL
+**************************************************
+Evaluations: 9000
+EstimatedTime: 1800801

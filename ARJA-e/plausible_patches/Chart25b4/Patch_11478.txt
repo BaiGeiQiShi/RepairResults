@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 263
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getLowerClip();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 337
+Faulty:
+g2.draw(line);
+Seed:
+if (row < dataset.getRowCount() - 1) {
+  return;
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 301
+Faulty:
+double rectWidth=Math.abs(transY2 - transY1);
+Seed:
+double rectWidth=Math.abs(transY2 - hashCode());
+**************************************************
+Evaluations: 9400
+EstimatedTime: 1877240

@@ -1,0 +1,165 @@
+FL-1 File: src/com/google/javascript/rhino/JSDocInfoBuilder.java
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+
+Number of failing tests: 1 
+Buggy Location: 116
+Patch Found in iteration 0 
+Repair Action: replace 
+ - return  null;  
+ + if(currentInfo!=  null)  {  return  new  JSDocInfo(this.parseDocumentation);  }  else  {  throw  new  IllegalArgumentException( " ");  } 
+ --------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+
+Number of failing tests: 1 
+Buggy Location: 116
+Patch Found in iteration 0 
+Repair Action: replace 
+ - return  null;  
+ + if(currentInfo!=  null)  {  return  new  JSDocInfo(this.parseDocumentation);  }  else  {  throw  new  IllegalStateException( " ");  } 
+ --------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol built Repair Action: replace 
+ - return null; 
+ + if(this.parseDocumentation!= false) { return built; } else { throw new IllegalStateException( " "); }
+Iteration: 1, Repair Action: replace 
+ - if(this.parseDocumentation!= false) { return built; } else { throw new IllegalStateException( " "); } 
+ + if(this.parseDocumentation == false) { return currentInfo; } else { throw new IllegalStateException( " "); } 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol built Repair Action: replace 
+ - return null; 
+ + if(this.parseDocumentation!= false) { return built; } else { throw new IllegalStateException( " "); }
+Iteration: 1, Repair Action: replace 
+ - if(this.parseDocumentation!= false) { return built; } else { throw new IllegalStateException( " "); } 
+ + if(this.parseDocumentation == false) { return this.currentInfo; } else { throw new IllegalStateException( " "); } 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] incomparable types: boolean and <null> Repair Action: replace 
+ - return null; 
+ + if(this.parseDocumentation!= null) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalArgumentException( " "); }
+Iteration: 1, Repair Action: replace 
+ - if(this.parseDocumentation!= null) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalArgumentException( " "); } 
+ + if(this.parseDocumentation == false) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalArgumentException( " "); } 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] incomparable types: boolean and <null> Repair Action: replace 
+ - return null; 
+ + if(this.parseDocumentation!= null) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalArgumentException( " "); }
+Iteration: 1, Repair Action: replace 
+ - if(this.parseDocumentation!= null) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalArgumentException( " "); } 
+ + if(this.currentInfo!= null) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalArgumentException( " "); } 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol built Repair Action: replace 
+ - return null; 
+ + if(this.parseDocumentation == false) { return built; } else { throw new IllegalArgumentException( " "); }
+Iteration: 1, Repair Action: replace 
+ - if(this.parseDocumentation == false) { return built; } else { throw new IllegalArgumentException( " "); } 
+ + if(this.parseDocumentation == false) { return currentInfo; } else { throw new IllegalArgumentException( " "); } 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol built Repair Action: replace 
+ - return null; 
+ + if(this.parseDocumentation == false) { return built; } else { throw new IllegalArgumentException( " "); }
+Iteration: 1, Repair Action: replace 
+ - if(this.parseDocumentation == false) { return built; } else { throw new IllegalArgumentException( " "); } 
+ + if(this.parseDocumentation == false) { return this.currentInfo; } else { throw new IllegalArgumentException( " "); } 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol built Repair Action: replace 
+ - return null; 
+ + if(this.parseDocumentation == false) { return built; } else { throw new IllegalArgumentException( " "); }
+Iteration: 1, Repair Action: replace 
+ - if(this.parseDocumentation == false) { return built; } else { throw new IllegalArgumentException( " "); } 
+ + if(this.parseDocumentation == false) { return currentInfo; } else { throw new IllegalArgumentException(sourceName); } 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] missing return statement Repair Action: replace 
+ - return null; 
+ + if(currentInfo!= null) { return new JSDocInfo(this.parseDocumentation); }
+Iteration: 1, Repair Action: replace 
+ - if(currentInfo!= null) { return new JSDocInfo(this.parseDocumentation); } 
+ + return new JSDocInfo(this.parseDocumentation); 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol built Repair Action: replace 
+ - return null; 
+ + return built;
+Iteration: 1, Repair Action: replace 
+ - return built; 
+ + return currentInfo; 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] incomparable types: boolean and <null> Repair Action: replace 
+ - return null; 
+ + if(this.parseDocumentation!= null) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalStateException( " "); }
+Iteration: 1, Repair Action: replace 
+ - if(this.parseDocumentation!= null) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalStateException( " "); } 
+ + if(this.parseDocumentation == false) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalStateException( " "); } 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] incomparable types: boolean and <null> Repair Action: replace 
+ - return null; 
+ + if(this.parseDocumentation!= null) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalStateException( " "); }
+Iteration: 1, Repair Action: replace 
+ - if(this.parseDocumentation!= null) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalStateException( " "); } 
+ + if(this.currentInfo!= null) { return new JSDocInfo(this.parseDocumentation); } else { throw new IllegalStateException( " "); } 
+ ----------------------------------------------------------------------------------------------------
+Closure106b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.7071067811865475
+
+Number of failing tests: 1 
+Buggy Location: 116
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol built Repair Action: replace 
+ - return null; 
+ + if(currentInfo!= null) { return built; } else { throw new IllegalArgumentException( " "); }
+Iteration: 1, Repair Action: replace 
+ - if(currentInfo!= null) { return built; } else { throw new IllegalArgumentException( " "); } 
+ + if(currentInfo!= null) { return currentInfo; } else { throw new IllegalArgumentException( " "); } 
+ ----------------------------------------------------------------------------------------------------

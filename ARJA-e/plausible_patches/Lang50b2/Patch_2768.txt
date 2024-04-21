@@ -1,0 +1,36 @@
+1 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 281
+Faulty:
+if (timeZone != null) {
+  key=new Pair(key,timeZone);
+}
+Seed:
+key=new Pair(key,timeZone);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 285
+Faulty:
+if (locale != null) {
+  key=new Pair(key,locale);
+}
+Seed:
+if (locale != null || cDefaultPattern == null) {
+  key=new Pair(key,locale);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 305
+Faulty:
+return format;
+Seed:
+cInstanceCache.put(format,format);
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1717
+Faulty:
+if (this == obj) {
+  return true;
+}
+Seed:
+if (obj instanceof FastDateFormat == false) {
+  return false;
+}
+**************************************************
+Evaluations: 2829
+EstimatedTime: 328923

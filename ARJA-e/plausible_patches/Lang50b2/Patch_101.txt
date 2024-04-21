@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 280
+Faulty:
+Object key=new Integer(style);
+Seed:
+if (timeZone == null) {
+  timeZone=TimeZone.getDefault();
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1717
+Faulty:
+if (this == obj) {
+  return true;
+}
+Seed:
+if (obj instanceof FastDateFormat == false) {
+  return false;
+}
+**************************************************
+Evaluations: 115
+EstimatedTime: 15056

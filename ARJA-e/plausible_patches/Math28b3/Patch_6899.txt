@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getNumArtificialVariables();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 139
+Faulty:
+int minIndex=tableau.getWidth();
+Seed:
+long minIndex=tableau.getWidth();
+**************************************************
+Evaluations: 6972
+EstimatedTime: 1710543

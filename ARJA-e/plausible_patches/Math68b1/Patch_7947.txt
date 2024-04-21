@@ -1,0 +1,22 @@
+1 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 594
+Faulty:
+work1[permutation[i]]-=jacobian[i][pj] * tmp;
+Seed:
+if (!(work1 != null && jacobian[i] != null && jacobian != null && permutation != null)) continue;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 405
+Faulty:
+point[pj]=oldX[pj];
+Seed:
+if (((Math.abs(actRed) <= costRelativeTolerance) && (preRed <= costRelativeTolerance) && (ratio <= 2.0)) || (delta <= parRelativeTolerance * xNorm)) {
+  return new VectorialPointValuePair(point,objective);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 512
+Faulty:
+work1[pj]*=diag[pj] / dxNorm;
+Seed:
+sum2=0;
+**************************************************
+Evaluations: 9895
+EstimatedTime: 3104404

@@ -1,0 +1,29 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(i,col);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 351
+Faulty:
+if (getBasicRow(col) == null) {
+  columnsToDrop.add(col);
+}
+Seed:
+this.numArtificialVariables=getConstraintTypeCounts(Relationship.EQ) + getConstraintTypeCounts(Relationship.GEQ);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 341
+Faulty:
+for (int i=getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+  final double entry=tableau.getEntry(0,i);
+  if (Precision.compareTo(entry,0d,epsilon) > 0) {
+    columnsToDrop.add(i);
+  }
+}
+Seed:
+if (getNumObjectiveFunctions() == 2) {
+  columnLabels.add("W");
+}
+**************************************************
+Evaluations: 922
+EstimatedTime: 212985

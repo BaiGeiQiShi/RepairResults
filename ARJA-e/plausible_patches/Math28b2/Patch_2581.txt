@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 360
+Faulty:
+if (!columnsToDrop.contains(j)) {
+  matrix[i - 1][col++]=tableau.getEntry(i,j);
+}
+Seed:
+if (!columnsToDrop.contains(j) || getNumObjectiveFunctions() == 1) {
+  matrix[i - 1][col++]=tableau.getEntry(i,j);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getSlackVariableOffset();
+**************************************************
+Evaluations: 2774
+EstimatedTime: 647944

@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 351
+Faulty:
+if (getBasicRow(col) == null) {
+  columnsToDrop.add(col);
+}
+Seed:
+if (getBasicRow(col) == null && !(getNumObjectiveFunctions() == 1)) {
+  columnsToDrop.add(col);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (Precision.equals(1d,maxUlps,entry) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+**************************************************
+Evaluations: 9043
+EstimatedTime: 2195479

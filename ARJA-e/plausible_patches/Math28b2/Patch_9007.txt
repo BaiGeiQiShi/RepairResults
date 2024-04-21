@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+if (i < minIndex || !(tableau.isOptimal())) {
+  minIndex=i;
+  minRow=row;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 151
+Faulty:
+return minRow;
+Seed:
+minRatioPositions=new ArrayList<Integer>();
+**************************************************
+Evaluations: 9417
+EstimatedTime: 2200578

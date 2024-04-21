@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 356
+Faulty:
+double[][] matrix=new double[getHeight() - 1][getWidth() - columnsToDrop.size()];
+Seed:
+if (!(columnsToDrop != null)) return;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getNumArtificialVariables();
+**************************************************
+Evaluations: 1235
+EstimatedTime: 285742

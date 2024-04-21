@@ -1,0 +1,29 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 667
+Faulty:
+entries.remove(index);
+Seed:
+entries.put(index,value);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/exception/util/LocalizedFormats.java 367
+Faulty:
+ResourceBundle bundle=ResourceBundle.getBundle("META-INF/localization/LocalizedFormats",locale);
+Seed:
+try {
+  ResourceBundle bundle=ResourceBundle.getBundle("META-INF/localization/LocalizedFormats",locale);
+  if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {
+    return bundle.getString(toString());
+  }
+}
+ catch (MissingResourceException mre) {
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 564
+Faulty:
+throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
+Seed:
+if (referenceCount != count) {
+  throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
+}
+**************************************************
+Evaluations: 8585
+EstimatedTime: 5010638

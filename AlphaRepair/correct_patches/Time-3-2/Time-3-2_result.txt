@@ -1,0 +1,7 @@
+----------------------------------------
+Patch Number :529
+Faulty Line :/tmp/Time-3-2/src/main/java/org/joda/time/MutableDateTime.java:660
++ if (years!= 0)
+mask:Before  <mask><mask><mask><mask><mask><mask>
+-0.4714790719832915
+Success (Plausible Patch)

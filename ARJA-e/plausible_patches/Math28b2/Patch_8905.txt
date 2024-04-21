@@ -1,0 +1,29 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/util/Precision.java 115
+Faulty:
+return 0;
+Seed:
+if (equals(x,y,maxUlps)) {
+  return 0;
+}
+ else if (x < y) {
+  return -1;
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 143
+Faulty:
+if (row == tableau.getBasicRow(i)) {
+  if (i < minIndex) {
+    minIndex=i;
+    minRow=row;
+  }
+}
+Seed:
+if (row == tableau.getBasicRow(i) || minRow != row) {
+  if (i < minIndex) {
+    minIndex=i;
+    minRow=row;
+  }
+}
+**************************************************
+Evaluations: 9311
+EstimatedTime: 2179589

@@ -1,0 +1,19 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 367
+Faulty:
+Integer[] drop=columnsToDrop.toArray(new Integer[columnsToDrop.size()]);
+Seed:
+for (int i=getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+  final double entry=tableau.getEntry(0,i);
+  if (Precision.compareTo(entry,0d,epsilon) > 0) {
+    columnsToDrop.add(i);
+  }
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=getMaxIterations();
+**************************************************
+Evaluations: 2186
+EstimatedTime: 567948

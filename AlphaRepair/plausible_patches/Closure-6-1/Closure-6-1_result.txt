@@ -1,0 +1,15 @@
+----------------------------------------
+Patch Number :36
+Faulty Line :/tmp/Closure-6-1/src/com/google/javascript/jscomp/TypeValidator.java:406
+- registerMismatch(rightType, leftType, null);
++ mismatch(t, n, msg, rightType, leftType);
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.086862769648308
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :186
+Faulty Line :/tmp/Closure-6-1/src/com/google/javascript/jscomp/TypeValidator.java:406
++ mismatch(t, n, msg, rightType, leftType);
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.3029768512725631
+Success (Plausible Patch)

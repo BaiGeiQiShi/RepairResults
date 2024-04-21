@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 175
+Faulty:
+final Localizable pat=msgPatterns.get(i);
+Seed:
+final Localizable pat=msgPatterns.get(count);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+return minRatioPositions.get(0);
+**************************************************
+Evaluations: 6181
+EstimatedTime: 1356261

@@ -1,0 +1,16 @@
+1 Delete /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+NULL
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 211
+Faulty:
+int index=hash & mask;
+Seed:
+if (shouldGrowTable()) {
+  growTable();
+}
+**************************************************
+Evaluations: 8066
+EstimatedTime: 4729435

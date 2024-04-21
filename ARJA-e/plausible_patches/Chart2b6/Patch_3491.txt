@@ -1,0 +1,75 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 754
+Faulty:
+for (int item=0; item < itemCount; item++) {
+  lvalue=intervalXYData.getStartXValue(series,item);
+  uvalue=intervalXYData.getEndXValue(series,item);
+  if (!Double.isNaN(lvalue)) {
+    minimum=Math.min(minimum,lvalue);
+  }
+  if (!Double.isNaN(uvalue)) {
+    maximum=Math.max(maximum,uvalue);
+  }
+}
+Seed:
+for (int item=0; item < itemCount; item++) {
+  double x=dataset.getXValue(series,item);
+  if (!Double.isNaN(x)) {
+    minimum=Math.min(minimum,x);
+    maximum=Math.max(maximum,x);
+  }
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 188
+Faulty:
+return s.getXHighValue(item);
+Seed:
+return s.getXLowValue(item);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 174
+Faulty:
+return s.getXLowValue(item);
+Seed:
+return s.getXHighValue(item);
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/ComparableObjectSeries.java 226
+Faulty:
+if (this.allowDuplicateXValues) {
+  int size=this.data.size();
+  while (index < size && item.compareTo(this.data.get(index)) == 0) {
+    index++;
+  }
+  if (index < this.data.size()) {
+    this.data.add(index,item);
+  }
+ else {
+    this.data.add(item);
+  }
+}
+ else {
+  throw new SeriesException("X-value already exists.");
+}
+Seed:
+if (this.allowDuplicateXValues && !(item == null)) {
+  int size=this.data.size();
+  while (index < size && item.compareTo(this.data.get(index)) == 0) {
+    index++;
+  }
+  if (index < this.data.size()) {
+    this.data.add(index,item);
+  }
+ else {
+    this.data.add(item);
+  }
+}
+ else {
+  throw new SeriesException("X-value already exists.");
+}
+**************************************************
+5 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 726
+Faulty:
+return iterateDomainBounds(dataset,true);
+Seed:
+if (!(dataset != null)) return iterateDomainBounds(dataset,true);
+**************************************************
+Evaluations: 5116
+EstimatedTime: 1377208

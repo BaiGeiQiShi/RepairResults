@@ -1,0 +1,14 @@
+1 Delete /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 231
+Faulty:
+matrix.setEntry(row,getSlackVariableOffset() + slackVar++,-1);
+Seed:
+matrix.setEntry(row,getSlackVariableOffset() + slackVar++,-2);
+**************************************************
+Evaluations: 2432
+EstimatedTime: 624226

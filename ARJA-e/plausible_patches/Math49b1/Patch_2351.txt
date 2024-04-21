@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 667
+Faulty:
+entries.remove(index);
+Seed:
+entries.put(index,value);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 385
+Faulty:
+return (key != 0 || states[index] == FULL) && keys[index] == key;
+Seed:
+if (!(index < states.length && index < keys.length)) throw new java.util.NoSuchElementException();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 217
+Faulty:
+return false;
+Seed:
+index=changeIndexSign(index);
+**************************************************
+Evaluations: 2447
+EstimatedTime: 1652590

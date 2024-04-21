@@ -1,0 +1,7 @@
+----------------------------------------
+Patch Number :712
+Faulty Line :/tmp/Closure-141-2/src/com/google/javascript/jscomp/NodeUtil.java:608
++ if (c == n.getFirstChild()) return false;
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.6147776913757508
+Success (Plausible Patch)

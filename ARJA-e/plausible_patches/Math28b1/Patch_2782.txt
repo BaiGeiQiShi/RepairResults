@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 369
+Faulty:
+columnLabels.remove((int)drop[i]);
+Seed:
+if (drop != null && columnLabels != null) columnLabels.remove((int)drop[i]);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+if (i < minIndex || minRow != row) {
+  minIndex=i;
+  minRow=row;
+}
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 3129
+EstimatedTime: 679343

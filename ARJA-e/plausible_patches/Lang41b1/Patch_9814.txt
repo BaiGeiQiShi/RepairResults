@@ -1,0 +1,24 @@
+1 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 254
+Faulty:
+return StringUtils.EMPTY;
+Seed:
+return StringUtils.strip(StringUtils.EMPTY);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 232
+Faulty:
+return getPackageName(cls.getName());
+Seed:
+return getPackageName(cls.getTypeName());
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 229
+Faulty:
+if (cls == null) {
+  return StringUtils.EMPTY;
+}
+Seed:
+if (cls == null || Byte.TYPE.equals(cls)) {
+  return StringUtils.EMPTY;
+}
+**************************************************
+Evaluations: 8445
+EstimatedTime: 876425

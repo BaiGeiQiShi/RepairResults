@@ -1,0 +1,16 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+size();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 220
+Faulty:
+return FastMath.abs(value) < epsilon;
+Seed:
+if (Double.isNaN(value)) {
+  return false;
+}
+**************************************************
+Evaluations: 7305
+EstimatedTime: 4359737

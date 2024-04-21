@@ -1,0 +1,22 @@
+----------------------------------------
+Patch Number :10
+Faulty Line :/tmp/Time-3-2/src/main/java/org/joda/time/MutableDateTime.java:660
+- setMillis(getChronology().years().add(getMillis(), years));
++ setMillis(getChronology().year().add(getMillis(), years));
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>().add(getMillis(), years));
+-0.009440475273731864
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :529
+Faulty Line :/tmp/Time-3-2/src/main/java/org/joda/time/MutableDateTime.java:660
++ if (years!= 0)
+mask:Before  <mask><mask><mask><mask><mask><mask>
+-0.4714790719832915
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :777
+Faulty Line :/tmp/Time-3-2/src/main/java/org/joda/time/MutableDateTime.java:660
++ if (years > 0)
+mask:Before  <mask><mask><mask><mask><mask><mask>
+-0.6446984559491588
+Success (Plausible Patch)

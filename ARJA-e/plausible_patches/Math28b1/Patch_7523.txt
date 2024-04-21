@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 151
+Faulty:
+return minRow;
+Seed:
+return getMaxIterations();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+if (cmp < 0) {
+  minRatio=ratio;
+  minRatioPositions=new ArrayList<Integer>();
+  minRatioPositions.add(i);
+}
+**************************************************
+Evaluations: 8356
+EstimatedTime: 1845301

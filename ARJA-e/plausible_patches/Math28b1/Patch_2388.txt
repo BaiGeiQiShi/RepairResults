@@ -1,0 +1,24 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 180
+Faulty:
+if (++count < len) {
+  sb.append(separator);
+}
+Seed:
+if (++count < len && i < len) {
+  sb.append(separator);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 369
+Faulty:
+columnLabels.remove((int)drop[i]);
+Seed:
+if (drop != null && columnLabels != null) columnLabels.remove((int)drop[i]);
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 2699
+EstimatedTime: 566347

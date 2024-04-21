@@ -1,0 +1,33 @@
+1 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 252
+Faulty:
+int i=className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
+Seed:
+int i=WordUtils.uncapitalize(className).lastIndexOf(PACKAGE_SEPARATOR_CHAR);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 254
+Faulty:
+return StringUtils.EMPTY;
+Seed:
+if (className.startsWith("L")) {
+  className=className.substring(1,className.endsWith(";") ? className.length() - 1 : className.length());
+}
+ else {
+  if (className.length() > 0) {
+    className=reverseAbbreviationMap.get(className.substring(0,1));
+  }
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 232
+Faulty:
+return getPackageName(cls.getName());
+Seed:
+return getPackageName(cls.getTypeName());
+**************************************************
+4 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 256
+Faulty:
+return className.substring(0,i);
+Seed:
+return StringEscapeUtils.escapeXml(className).substring(0,i);
+**************************************************
+Evaluations: 3029
+EstimatedTime: 322292

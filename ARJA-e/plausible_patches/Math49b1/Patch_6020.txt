@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 666
+Faulty:
+if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (entries.containsKey(index) || FastMath.abs(value) < epsilon) {
+  entries.remove(index);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+size();
+**************************************************
+Evaluations: 6100
+EstimatedTime: 3754285

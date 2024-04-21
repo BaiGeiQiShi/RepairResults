@@ -1,0 +1,24 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 360
+Faulty:
+if (!columnsToDrop.contains(j)) {
+  matrix[i - 1][col++]=tableau.getEntry(i,j);
+}
+Seed:
+if (!columnsToDrop.contains(j) && this.numArtificialVariables > 0) {
+  matrix[i - 1][col++]=tableau.getEntry(i,j);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 182
+Faulty:
+sb.append(separator);
+Seed:
+if (!(sb != null)) continue;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+return minRatioPositions.get(0);
+**************************************************
+Evaluations: 2122
+EstimatedTime: 504132

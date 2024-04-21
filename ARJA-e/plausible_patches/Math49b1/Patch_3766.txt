@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 368
+Faulty:
+checkVectorDimensions(v.getDimension());
+Seed:
+checkVectorDimensions(unitVector().getDimension());
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+NULL
+**************************************************
+Evaluations: 3860
+EstimatedTime: 2519709

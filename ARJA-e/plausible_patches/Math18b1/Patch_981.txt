@@ -1,0 +1,25 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1018
+Faulty:
+if (x[i] > 1.0) {
+  repaired[i]=1.0;
+}
+ else {
+  repaired[i]=x[i];
+}
+Seed:
+if (!(x != null)) return repaired;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 971
+Faulty:
+value=CMAESOptimizer.this.computeObjectiveValue(decode(repaired)) + penalty(point,repaired);
+Seed:
+value=CMAESOptimizer.this.computeObjectiveValue(decode(repaired)) + penalty(point,getStartPoint());
+**************************************************
+Evaluations: 1078
+EstimatedTime: 8758574

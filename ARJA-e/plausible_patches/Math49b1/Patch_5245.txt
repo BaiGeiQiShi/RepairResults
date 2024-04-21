@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/MathRuntimeException.java 132
+Faulty:
+return new MessageFormat(pattern.getLocalizedString(locale),locale).format(arguments);
+Seed:
+return buildMessage(Locale.getDefault(),pattern,arguments);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+computeCapacity(count);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 396
+Faulty:
+final double previous=values[index];
+Seed:
+final double previous=values[count];
+**************************************************
+Evaluations: 5310
+EstimatedTime: 3347194

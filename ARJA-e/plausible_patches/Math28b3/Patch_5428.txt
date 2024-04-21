@@ -1,0 +1,27 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/MathIllegalStateException.java 86
+Faulty:
+return context.getLocalizedMessage();
+Seed:
+if (!(context != null)) return context.getLocalizedMessage();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 142
+Faulty:
+for (; i < tableau.getWidth() - 1 && minRow != row; i++) {
+  if (row == tableau.getBasicRow(i)) {
+    if (i < minIndex) {
+      minIndex=i;
+      minRow=row;
+    }
+  }
+}
+Seed:
+if (!(tableau != null)) return null;
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 5531
+EstimatedTime: 1375611

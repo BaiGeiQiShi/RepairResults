@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+return isMinimize ? getMaxEvaluations() : -penalty;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 360
+Faulty:
+final double[] guess=fitfun.encode(getStartPoint());
+Seed:
+cs=(mueff + 2.) / (dimension + mueff + 3.);
+**************************************************
+Evaluations: 1496
+EstimatedTime: 12333355

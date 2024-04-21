@@ -1,0 +1,29 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 351
+Faulty:
+if (getBasicRow(col) == null) {
+  columnsToDrop.add(col);
+}
+Seed:
+if (getBasicRow(col) == null) {
+  columnsToDrop.add(col);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 372
+Faulty:
+this.tableau=new Array2DRowRealMatrix(matrix);
+Seed:
+for (int i=0; i < getNumArtificialVariables(); i++) {
+  int col=i + getArtificialVariableOffset();
+  if (getBasicRow(col) == null) {
+    columnsToDrop.add(col);
+  }
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+row=i;
+**************************************************
+Evaluations: 1860
+EstimatedTime: 433487

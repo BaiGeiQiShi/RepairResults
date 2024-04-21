@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 379
+Faulty:
+ResourceBundle bundle=ResourceBundle.getBundle("assets/" + path,locale);
+Seed:
+ResourceBundle bundle=ResourceBundle.getBundle("assets/" + path);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+return minRatioPositions.get(0);
+**************************************************
+Evaluations: 5702
+EstimatedTime: 1247024

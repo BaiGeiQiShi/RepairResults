@@ -1,0 +1,287 @@
+----------------------------------------
+Patch Number :50
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:234
+- return getDateInstance(style, null, null);
++ return getInstance ( ) ;
+mask:<mask><mask><mask><mask><mask><mask>
+-0.19319134509714786
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :780
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:293
+- locale = Locale.getDefault();
++ key = new Pair(key, locale); locale= Locale.getDefault();
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>= Locale.getDefault();
+-0.4573649240366649
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :877
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:293
+- locale = Locale.getDefault();
++ return getInstance();
+mask:<mask><mask><mask>();
+-0.5670865923166275
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :994
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:293
+- locale = Locale.getDefault();
++ locale = Locale.getDefault(); key= Locale.getDefault();
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask>= Locale.getDefault();
+-0.7292371320484866
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :1858
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:280
+- Object key = new Integer(style);
++ Object key = new  Object ( ) ;
+mask:Object key = new <mask><mask><mask><mask>
+-0.14047665166435763
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4044
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:290
+- FastDateFormat format = (FastDateFormat) cDateInstanceCache.get(key);
++ FastDateFormat  format = null;
+mask:FastDateFormat <mask><mask><mask><mask>
+-0.060551139555172995
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4134
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:290
+- FastDateFormat format = (FastDateFormat) cDateInstanceCache.get(key);
++ FastDateFormat format = (FastDateFormat)  cInstanceCache.get(key);
+mask:FastDateFormat format = (FastDateFormat) <mask><mask><mask><mask><mask>(key);
+-0.38213822404795794
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4142
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:290
+- FastDateFormat format = (FastDateFormat) cDateInstanceCache.get(key);
++ FastDateFormat format = (null);
+mask:FastDateFormat format = (<mask><mask>
+-0.39164946181699634
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4434
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:290
+- FastDateFormat format = (FastDateFormat) cDateInstanceCache.get(key);
++ FastDateFormat format = (FastDateFormat) null;
+mask:FastDateFormat format = (<mask><mask><mask><mask><mask><mask>
+-0.7693536820127823
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4724
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:290
+- FastDateFormat format = (FastDateFormat) cDateInstanceCache.get(key);
++ FastDateFormat  format = null ; {}
+mask:FastDateFormat <mask><mask><mask><mask><mask><mask>
+-1.4411953051264088
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4871
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:291
+- if (format == null) {
++ if (format == null || locale == null) {
+mask:if (format == null ||<mask><mask><mask>) {
+-0.044281672375897564
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4940
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:291
+- if (format == null) {
++ if (format == null || timeZone ==null) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask>null) {
+-0.39153052313486114
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :5051
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:291
+- if (format == null) {
++ if (format == null || format == null || locale == null) {
+mask:if (format == null ||<mask><mask><mask><mask><mask><mask><mask>) {
+-0.6221460646816662
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :5086
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:291
+- if (format == null) {
++ if (format == null || cDateInstanceCache!= null) {
+mask:if (format == null ||<mask><mask><mask><mask><mask><mask>) {
+-0.7262948691592707
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :5682
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:292
+- if (locale == null) {
++ key = null; if(locale == null) {
+mask:<mask><mask><mask><mask><mask>(locale == null) {
+-0.8834507181687513
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :7781
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:298
+- format = getInstance(pattern, timeZone, locale);
++ format = getInstance(pattern, timeZone, locale) ; if (format == null)
+mask:format = getInstance(pattern, timeZone, locale)<mask><mask><mask><mask><mask><mask><mask>
+-0.5090851433259169
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8358
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ return format;
+mask:<mask><mask>;
+-0.009101784322410822
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8367
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ cInstanceCache.put(key, format);
+mask:<mask><mask><mask><mask>put(key, format);
+-0.14690231882468652
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8368
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ cDateInstanceCache. remove ( key ) ;
+mask:cDateInstanceCache<mask><mask><mask><mask><mask><mask>
+-0.15068253510916443
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8411
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ cDateInstanceCache.clear();
+mask:cDateInstanceCache.<mask><mask>
+-0.319831574044656
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8483
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ if ( format == null ) { locale = null ; }
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.438394073532739
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8520
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ if ( format == null ) { return null ; }
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.48325648481576616
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8599
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ cDateInstanceCache.put(key + pattern, format);
+mask:cDateInstanceCache.put(<mask><mask><mask>, format);
+-0.5770605802536011
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8661
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ format = getInstance(pattern, null, locale);
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>);
+-0.6553370846435428
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8670
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ cDateInstanceCache.put(key + ".", format);
+mask:cDateInstanceCache.put(<mask><mask><mask><mask>, format);
+-0.6757462257519364
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8690
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ cDateInstanceCache.put(key + "Pattern", format);
+mask:cDateInstanceCache.put(<mask><mask><mask><mask><mask>, format);
+-0.7058884184807539
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8699
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ cDateInstanceCache.put(key + "_", format);
+mask:cDateInstanceCache.put(<mask><mask><mask><mask>, format);
+-0.7261943891644478
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8704
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ return getInstance(pattern, locale);
+mask:<mask><mask><mask><mask><mask><mask><mask>);
+-0.7337903087692601
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8708
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ format = (FastDateFormat) (format);
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>format);
+-0.7378111616999377
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8718
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ return(format);
+mask:<mask><mask>format);
+-0.7550409734249115
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8720
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ cDateInstanceCache.put(key + " ", format);
+mask:cDateInstanceCache.put(<mask><mask><mask><mask>, format);
+-0.7585208648815751
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8742
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ if ( format == null ) { }
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>
+-0.7927828089159448
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8810
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ cDateInstanceCache.put(formatter, format);
+mask:cDateInstanceCache.put(<mask><mask>, format);
+-0.9395794668816961
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8824
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ cDateInstanceCache.put(locale, format);
+mask:cDateInstanceCache.put(<mask><mask>, format);
+-0.9685827482790046
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8854
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
++ if (format == null)
+mask:Before  <mask><mask><mask><mask><mask><mask>
+-1.0792057269330446
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8881
+Faulty Line :/tmp/Lang-50-2/src/java/org/apache/commons/lang/time/FastDateFormat.java:299
+- cDateInstanceCache.put(key, format);
++ format = format;
+mask:<mask><mask><mask>;
+-1.2496507621059816
+Success (Plausible Patch)

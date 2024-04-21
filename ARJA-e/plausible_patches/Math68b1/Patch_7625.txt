@@ -1,0 +1,64 @@
+1 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 553
+Faulty:
+for (int countdown=10; countdown >= 0; --countdown) {
+  if (lmPar == 0) {
+    lmPar=Math.max(2.2251e-308,0.001 * paru);
+  }
+  double sPar=Math.sqrt(lmPar);
+  for (int j=0; j < solvedCols; ++j) {
+    int pj=permutation[j];
+    work1[pj]=sPar * diag[pj];
+  }
+  determineLMDirection(qy,work1,work2,work3);
+  dxNorm=0;
+  for (int j=0; j < solvedCols; ++j) {
+    int pj=permutation[j];
+    double s=diag[pj] * lmDir[pj];
+    work3[pj]=s;
+    dxNorm+=s * s;
+  }
+  dxNorm=Math.sqrt(dxNorm);
+  double previousFP=fp;
+  fp=dxNorm - delta;
+  if ((Math.abs(fp) <= 0.1 * delta) || ((parl == 0) && (fp <= previousFP) && (previousFP < 0))) {
+    return;
+  }
+  for (int j=0; j < solvedCols; ++j) {
+    int pj=permutation[j];
+    work1[pj]=work3[pj] * diag[pj] / dxNorm;
+  }
+  for (int j=0; j < solvedCols; ++j) {
+    int pj=permutation[j];
+    work1[pj]/=work2[j];
+    double tmp=work1[pj];
+    for (int i=j + 1; i < solvedCols; ++i) {
+      work1[permutation[i]]-=jacobian[i][pj] * tmp;
+    }
+  }
+  sum2=0;
+  for (int j=0; j < solvedCols; ++j) {
+    double s=work1[permutation[j]];
+    sum2+=s * s;
+  }
+  double correction=fp / (delta * sum2);
+  if (fp > 0) {
+    parl=Math.max(parl,lmPar);
+  }
+ else   if (fp < 0) {
+    paru=Math.min(paru,lmPar);
+  }
+  lmPar=Math.max(parl,lmPar + correction);
+}
+Seed:
+fp=dxNorm - delta;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math68b1/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java 405
+Faulty:
+point[pj]=oldX[pj];
+Seed:
+if (((Math.abs(actRed) <= costRelativeTolerance) && (preRed <= costRelativeTolerance) && (ratio <= 2.0)) || (delta <= parRelativeTolerance * xNorm)) {
+  return new VectorialPointValuePair(point,objective);
+}
+**************************************************
+Evaluations: 9482
+EstimatedTime: 3004212

@@ -1,0 +1,37 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 100
+Faulty:
+for (int i=0; i < dim; i++) {
+  final double v=startPoint[i];
+  final double lo=lower[i];
+  if (v < lo) {
+    throw new NumberIsTooSmallException(v,lo,true);
+  }
+}
+Seed:
+if (upper != null) {
+  if (upper.length != dim) {
+    throw new DimensionMismatchException(upper.length,dim);
+  }
+  for (int i=0; i < dim; i++) {
+    final double v=startPoint[i];
+    final double hi=upper[i];
+    if (v > hi) {
+      throw new NumberIsTooLargeException(v,hi,true);
+    }
+  }
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1014
+Faulty:
+double[] repaired=new double[x.length];
+Seed:
+double[] repaired=new double[getEvaluations()];
+**************************************************
+Evaluations: 1287
+EstimatedTime: 10586674

@@ -1,0 +1,32 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1034
+Faulty:
+for (int i=0; i < x.length; i++) {
+  double diff=Math.abs(x[i] - repaired[i]);
+  penalty+=diff * valueRange;
+}
+Seed:
+for (int i=0; i < historySize; i++) {
+  double diff=Math.abs(x[i] - repaired[i]);
+  penalty+=diff * valueRange;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1021
+Faulty:
+repaired[i]=x[i];
+Seed:
+getLowerBound()[i]=x[i];
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 958
+Faulty:
+res[i]=diff * x[i] + boundaries[0][i];
+Seed:
+boundaries=new double[2][];
+**************************************************
+Evaluations: 1212
+EstimatedTime: 9897885

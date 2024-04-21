@@ -1,0 +1,18 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 262
+Faulty:
+double lclip=getLowerClip();
+Seed:
+double lclip=hashCode();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 172
+Faulty:
+if (masd != null) {
+  result=masd.getStandardDeviation();
+}
+Seed:
+if (masd != null && !(Double.isNaN(this.maximumRangeValueIncStdDev))) {
+  result=masd.getStandardDeviation();
+}
+**************************************************
+Evaluations: 521
+EstimatedTime: 105442

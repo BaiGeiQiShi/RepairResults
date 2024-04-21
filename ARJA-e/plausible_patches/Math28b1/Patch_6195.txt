@@ -1,0 +1,17 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions.add(getIterations());
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+**************************************************
+Evaluations: 6924
+EstimatedTime: 1519635

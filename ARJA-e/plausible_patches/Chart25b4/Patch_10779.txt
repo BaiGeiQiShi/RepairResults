@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+return row;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 301
+Faulty:
+double rectWidth=Math.abs(transY2 - transY1);
+Seed:
+double rectWidth=Math.abs(value - transY1);
+**************************************************
+Evaluations: 8832
+EstimatedTime: 1768798

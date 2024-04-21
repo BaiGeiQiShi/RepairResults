@@ -1,0 +1,34 @@
+1 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 252
+Faulty:
+int i=className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
+Seed:
+int i=StringUtils.chomp(className).lastIndexOf(PACKAGE_SEPARATOR_CHAR);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 254
+Faulty:
+return StringUtils.EMPTY;
+Seed:
+if (className.endsWith("[]")) {
+  StringBuffer classNameBuffer=new StringBuffer();
+  while (className.endsWith("[]")) {
+    className=className.substring(0,className.length() - 2);
+    classNameBuffer.append("[");
+  }
+  String abbreviation=abbreviationMap.get(className);
+  if (abbreviation != null) {
+    classNameBuffer.append(abbreviation);
+  }
+ else {
+    classNameBuffer.append("L").append(className).append(";");
+  }
+  className=classNameBuffer.toString();
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Lang41b1/src/java/org/apache/commons/lang/ClassUtils.java 232
+Faulty:
+return getPackageName(cls.getName());
+Seed:
+return getPackageName(cls.getTypeName());
+**************************************************
+Evaluations: 3534
+EstimatedTime: 373636

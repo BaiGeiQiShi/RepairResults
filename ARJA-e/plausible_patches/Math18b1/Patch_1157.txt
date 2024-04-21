@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 957
+Faulty:
+double diff=boundaries[1][i] - boundaries[0][i];
+Seed:
+fitnessHistory[i]=Double.MAX_VALUE;
+**************************************************
+Evaluations: 1235
+EstimatedTime: 10121894

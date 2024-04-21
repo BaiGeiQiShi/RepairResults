@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java b/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+index bc754a592..82fcbd666 100644
+--- a/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
++++ b/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java
+@@ -250,7 +250,7 @@ public class CMAESOptimizer
+      * @param lambda Population size.
+      */
+     public CMAESOptimizer(int lambda) {
+-        this(lambda, null, DEFAULT_MAXITERATIONS, DEFAULT_STOPFITNESS,
++        this(lambda, null, CMAESOptimizer.DEFAULT_CHECKFEASABLECOUNT, DEFAULT_STOPFITNESS,
+              DEFAULT_ISACTIVECMA, DEFAULT_DIAGONALONLY,
+              DEFAULT_CHECKFEASABLECOUNT, DEFAULT_RANDOMGENERATOR, false);
+     }

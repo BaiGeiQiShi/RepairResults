@@ -1,0 +1,94 @@
+----------------------------------------
+Patch Number :859
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
+- return res;
++ return res; } else { return null;
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>;
+-0.16079154695034958
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :865
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
++ return res; } if (res == null) {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.23482947470620275
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :871
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
++ res = res; } else { res = null ; } if ( res!= null ) { res = res ; } else {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.291641680993892
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :873
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
++ return res; } else {
+mask:Before  <mask><mask><mask><mask><mask><mask>
+-0.2986342205355565
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :880
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
++ return res; } if (res!= null) { return res; } if (res == null) {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.31072886364894325
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :882
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
++ if (res!= null) { return res; } } else {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.3167727983257334
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :886
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
++ return res; } if (res!= null) { return res; } else {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.3281670049216379
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :888
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
++ return res; } if (res == null && n!= null) {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.3325442566730393
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :898
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
++ res = res; } if (res!= null) { return res; } else {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.33944153180345893
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :920
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
++ res = res; } if (res!= null) { res = res; } else {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.3761872718184206
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :954
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
+- return res;
++ return res; } else { return res = null;
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>;
+-0.44132587015628816
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :992
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
++ res = res; } else { res = null ; } if ( res!= null ) { res = res ; } {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.5365712043270469
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :1004
+Faulty Line :/tmp/Closure-173-2/src/com/google/javascript/rhino/Node.java:1459
+- return res;
++ return  res; } else { break ;
+mask:return <mask><mask><mask><mask><mask><mask><mask>
+-0.5679500651146684
+Success (Plausible Patch)

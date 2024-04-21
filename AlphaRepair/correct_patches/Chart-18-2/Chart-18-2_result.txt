@@ -1,0 +1,234 @@
+----------------------------------------
+Patch Number :3400
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:316
+- this.keys.remove(index);
++ this.keys.remove(index); rebuildIndex();
+mask:this.keys.remove(<mask><mask><mask><mask><mask>);
+-0.6522817271761596
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :3619
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:317
++ if (index >= 0) { rebuildIndex(); }
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.21367521357553249
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :3632
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:317
+- this.values.remove(index);
++ this.values.remove(index); index --;
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>;
+-0.24145829907211008
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :3845
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:317
+- this.values.remove(index);
++ this.values.remove(index); rebuildIndex();
+mask:this.values.remove(<mask><mask><mask><mask><mask>);
+-0.5090089712291956
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :3965
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:317
+- this.values.remove(index);
++ this.values.remove(index) ; index = - 1 ;
+mask:this.values.remove(index)<mask><mask><mask><mask><mask><mask>
+-0.9914928327004114
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4068
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index >= 0) {
+mask:<mask><mask><mask><mask><mask>) {
+-0.16581968031823635
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4090
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index > - 1){
+mask:<mask><mask><mask><mask><mask><mask><mask>{
+-0.23488315530786558
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4160
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index >= - 1){
+mask:<mask><mask><mask><mask><mask><mask><mask>{
+-0.3553535725721823
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4185
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index < this.keys.size() || index > -1) {
+mask:if (index < this.keys.size() ||<mask><mask><mask><mask>) {
+-0.37410605093464255
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4218
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index < 0) { } else{
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask>{
+-0.39909134267104995
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4220
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index < this.indexMap.size()) {
+mask:if (index < this<mask><mask><mask><mask><mask><mask><mask>
+-0.40000529651297256
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4272
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index <  0) { return; } else {
+mask:if (index < <mask><mask><mask><mask><mask><mask><mask><mask>
+-0.43237919663079083
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4273
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index < 0 || index > - 1) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>) {
+-0.43273955793119967
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4297
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index < this.keys.size() || index >= 0) {
+mask:if (index < this.keys.size() ||<mask><mask><mask>) {
+-0.44904797330188256
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4431
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index < 0) { }{
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>{
+-0.5239997496828437
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4442
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index < getItemCount()) {
+mask:<mask><mask><mask><mask><mask><mask><mask>()) {
+-0.5337210779876581
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4450
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index >= 0 && index <= 1) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask>) {
+-0.53761492535058
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4513
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index < indexMap.size()) {
+mask:<mask><mask><mask><mask><mask><mask>.size()) {
+-0.5783191892939309
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4526
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index >= 0 && index < indexMap.size()) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>.size()) {
+-0.5897947769612074
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4551
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index + 1 >= 0) {
+mask:<mask><mask><mask><mask><mask><mask><mask>) {
+-0.6155906319618225
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4563
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index >= 0) { }{
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>{
+-0.6258252197876573
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4573
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index < this.keys.size() || index >= -1) {
+mask:if (index < this.keys.size() ||<mask><mask><mask><mask>) {
+-0.6329020126722753
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4661
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
++ index = - 1 ;
+mask:Before  <mask><mask><mask><mask><mask>
+-0.7258358891122043
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4678
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index >= - this.keys.size()) {
+mask:<mask><mask><mask><mask><mask><mask><mask>keys.size()) {
+-0.7600308252073903
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4706
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index - 1< this.keys.size()) {
+mask:<mask><mask><mask><mask><mask>< this.keys.size()) {
+-0.8225306421518326
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4727
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:318
+- if (index < this.keys.size()) {
++ if (index < this.keys.size() + 1) {
+mask:if (index < this.keys.size()<mask><mask><mask><mask>
+-0.8791945376433432
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4886
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:321
++ else { rebuildIndex(); }
+mask:Before  <mask><mask><mask><mask><mask><mask>
+-0.13519540580455214
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4904
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:321
++ else { rebuildIndex(); } if ( index > 0 ) { rebuildIndex(); }
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.33077000276706015
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4927
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:321
++ else { rebuildIndex(); } if ( index < 0 ) { rebuildIndex(); }
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.360812229799408
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4938
+Faulty Line :/tmp/Chart-18-2/source/org/jfree/data/DefaultKeyedValues.java:321
++ else { rebuildIndex(); } if ( index > 0 ) { return ; }
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.3808690307796496
+Success (Plausible Patch)

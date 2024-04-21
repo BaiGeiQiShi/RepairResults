@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/exception/util/LocalizedFormats.java 380
+Faulty:
+return sourceFormat;
+Seed:
+return getSourceString();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+FastMath.round(count);
+**************************************************
+Evaluations: 8830
+EstimatedTime: 5137819

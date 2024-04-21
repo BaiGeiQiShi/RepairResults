@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 955
+Faulty:
+double[] res=new double[x.length];
+Seed:
+double[] res=new double[CMAESOptimizer.DEFAULT_MAXITERATIONS];
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 459
+Faulty:
+break generationLoop;
+Seed:
+if (hsig) {
+  pc=pc.add(xmean.subtract(xold).scalarMultiply(Math.sqrt(cc * (2. - cc) * mueff) / sigma));
+}
+**************************************************
+Evaluations: 1735
+EstimatedTime: 14726796

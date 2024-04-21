@@ -1,0 +1,21 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 180
+Faulty:
+if (++count < len) {
+  sb.append(separator);
+}
+Seed:
+if (++count < len || !(msgArguments.add(args))) {
+  sb.append(separator);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+minRow=row;
+**************************************************
+Evaluations: 6335
+EstimatedTime: 1387160

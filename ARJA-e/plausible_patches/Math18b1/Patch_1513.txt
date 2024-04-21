@@ -1,0 +1,36 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 540
+Faulty:
+for (int i=0; i < lB.length; i++) {
+  if (Double.isInfinite(boundaries[1][i] - boundaries[0][i])) {
+    final double max=Double.MAX_VALUE + boundaries[0][i];
+    final NumberIsTooLargeException e=new NumberIsTooLargeException(boundaries[1][i],max,true);
+    e.getContext().addMessage(LocalizedFormats.OVERFLOW);
+    e.getContext().addMessage(LocalizedFormats.INDEX,i);
+    throw e;
+  }
+}
+Seed:
+for (int i=0; i < init.length; i++) {
+  if (Double.isInfinite(boundaries[1][i] - boundaries[0][i])) {
+    final double max=Double.MAX_VALUE + boundaries[0][i];
+    final NumberIsTooLargeException e=new NumberIsTooLargeException(boundaries[1][i],max,true);
+    e.getContext().addMessage(LocalizedFormats.OVERFLOW);
+    e.getContext().addMessage(LocalizedFormats.INDEX,i);
+    throw e;
+  }
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 957
+Faulty:
+double diff=boundaries[1][i] - boundaries[0][i];
+Seed:
+double diff=boundaries[1][i] - boundaries[0][diagonalOnly];
+**************************************************
+Evaluations: 1527
+EstimatedTime: 12636972

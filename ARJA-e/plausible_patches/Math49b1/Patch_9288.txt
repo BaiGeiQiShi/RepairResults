@@ -1,0 +1,24 @@
+1 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 159
+Faulty:
+return capacity;
+Seed:
+if (powerOfTwo == capacity) {
+  return capacity;
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+size();
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 210
+Faulty:
+final int hash=hashOf(key);
+Seed:
+if (shouldGrowTable()) {
+  growTable();
+}
+**************************************************
+Evaluations: 9413
+EstimatedTime: 5474205

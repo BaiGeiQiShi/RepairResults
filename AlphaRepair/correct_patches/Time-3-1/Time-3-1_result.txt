@@ -1,0 +1,28 @@
+----------------------------------------
+Patch Number :215
+Faulty Line :/tmp/Time-3-1/src/main/java/org/joda/time/MutableDateTime.java:639
++ if ( type == null ) { throw new IllegalArgumentException ( "Field must not be null"); } if ( amount!= 0 )
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.30687901039935434
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :249
+Faulty Line :/tmp/Time-3-1/src/main/java/org/joda/time/MutableDateTime.java:639
++ if ( type == null ) { throw new IllegalArgumentException ( "Field must be null"); } if ( amount!= 0 )
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.32603028739792234
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :294
+Faulty Line :/tmp/Time-3-1/src/main/java/org/joda/time/MutableDateTime.java:639
++ if ( amount == 0 ) { return ; }
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.350388486974407
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :411
+Faulty Line :/tmp/Time-3-1/src/main/java/org/joda/time/MutableDateTime.java:639
++ if ( amount!= 0 )
+mask:Before  <mask><mask><mask><mask><mask><mask>
+-0.430765622916321
+Success (Plausible Patch)

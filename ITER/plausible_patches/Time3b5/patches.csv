@@ -1,0 +1,13 @@
+FL-1 File: src/main/java/org/joda/time/MutableDateTime.java
+Time3b5 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.5
+
+Number of failing tests: 1 
+Buggy Location: 764
+
+Iteration: 0, Diagnostic: [FE] ComparisonFailure Repair Action: replace 
+ - setMillis(getChronology().days().add(getMillis(), days)); 
+ + if(getChronology().days()!= null) { setMillis(getChronology().days().add(getMillis(), days)); } else { setMillis(getChronology().hourOfDay().add(getMillis(), days)); }
+Iteration: 1, Repair Action: replace 
+ - if(getChronology().days()!= null) { setMillis(getChronology().days().add(getMillis(), days)); } else { setMillis(getChronology().hourOfDay().add(getMillis(), days)); } 
+ + setMillis(getChronology().dayOfMonth().add(getMillis(), days)); 
+ ----------------------------------------------------------------------------------------------------

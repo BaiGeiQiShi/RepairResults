@@ -1,0 +1,83 @@
+FL-1 File: src/com/google/javascript/jscomp/TypeValidator.java
+Closure6b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 1.0
+
+
+Number of failing tests: 1 
+Buggy Location: 406
+Patch Found in iteration 0 
+Repair Action: replace 
+ - registerMismatch(rightType,  leftType,  null);  
+ + mismatch(t,  n,  msg,  rightType,  leftType); 
+ --------------------------------------------------
+Closure6b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 1.0
+
+Number of failing tests: 1 
+Buggy Location: 406
+
+Iteration: 0, Diagnostic: [FE] AssertionFailedError Repair Action: replace 
+ - registerMismatch(rightType, leftType, null); 
+ + 
+Iteration: 1, Repair Action: add 
+ - 
+ +   if(rightType.isConstructor() || rightType.isEnumType()) { mismatch(t, n, msg, rightType, leftType); } else { mismatch(t, n, msg, rightType, leftType); } 
+ ----------------------------------------------------------------------------------------------------
+Closure6b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 1.0
+
+Number of failing tests: 1 
+Buggy Location: 406
+
+Iteration: 0, Diagnostic: [FE] AssertionFailedError Repair Action: replace 
+ - registerMismatch(rightType, leftType, null); 
+ + 
+Iteration: 1, Repair Action: add 
+ - 
+ +   if(leftType.isConstructor() || rightType.isEnumType()) { mismatch(t, n, msg, rightType, leftType); } else { mismatch(t, n, msg, rightType, leftType); } 
+ ----------------------------------------------------------------------------------------------------
+Closure6b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 1.0
+
+Number of failing tests: 1 
+Buggy Location: 406
+
+Iteration: 0, Diagnostic: [FE] AssertionFailedError Repair Action: replace 
+ - registerMismatch(rightType, leftType, null); 
+ + 
+Iteration: 1, Repair Action: add 
+ - 
+ +   if(leftType.isConstructor() || leftType.isEnumType()) { mismatch(t, n, msg, rightType, leftType); } else { mismatch(t, n, msg, rightType, leftType); } 
+ ----------------------------------------------------------------------------------------------------
+Closure6b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 1.0
+
+Number of failing tests: 1 
+Buggy Location: 406
+
+Iteration: 0, Diagnostic: [FE] AssertionFailedError Repair Action: replace 
+ - registerMismatch(rightType, leftType, null); 
+ + 
+Iteration: 1, Repair Action: add 
+ - 
+ +   if(!rightType.canAssignTo(leftType)) { mismatch(t, n, msg, rightType, leftType); } else { mismatch(t, n, msg, rightType, leftType); } 
+ ----------------------------------------------------------------------------------------------------
+Closure6b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 1.0
+
+Number of failing tests: 1 
+Buggy Location: 406
+
+Iteration: 0, Diagnostic: [FE] AssertionFailedError Repair Action: replace 
+ - registerMismatch(rightType, leftType, null); 
+ + 
+Iteration: 1, Repair Action: add 
+ - 
+ +   if(rightType.isConstructor() || rightType.isEnumType()) { mismatch(t, n, msg, rightType, leftType); } else { mismatch(t, n, msg, rightType, leftType); return false; } 
+ ----------------------------------------------------------------------------------------------------
+Closure6b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 1.0
+
+Number of failing tests: 1 
+Buggy Location: 406
+
+Iteration: 0, Diagnostic: [FE] AssertionFailedError Repair Action: replace 
+ - registerMismatch(rightType, leftType, null); 
+ + 
+Iteration: 1, Repair Action: add 
+ - 
+ +   if(leftType.isConstructor() || rightType.isEnumType()) { mismatch(t, n, msg, rightType, leftType); } else { mismatch(t, n, msg, rightType, leftType); return false; } 
+ ----------------------------------------------------------------------------------------------------

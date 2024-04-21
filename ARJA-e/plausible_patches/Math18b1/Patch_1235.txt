@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 476
+Faulty:
+break generationLoop;
+Seed:
+continue;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1033
+Faulty:
+double penalty=0;
+Seed:
+this.valueRange=valueRange;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 364
+Faulty:
+iterations=0;
+Seed:
+this.sigma=sigma;
+**************************************************
+Evaluations: 1298
+EstimatedTime: 10685894

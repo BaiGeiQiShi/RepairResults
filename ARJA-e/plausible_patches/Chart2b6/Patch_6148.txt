@@ -1,0 +1,56 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 780
+Faulty:
+return null;
+Seed:
+for (int series=0; series < seriesCount; series++) {
+  int itemCount=dataset.getItemCount(series);
+  for (int item=0; item < itemCount; item++) {
+    double value=dataset.getYValue(series,item);
+    if (!Double.isNaN(value)) {
+      minimum=Math.min(minimum,value);
+      maximum=Math.max(maximum,value);
+    }
+  }
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 753
+Faulty:
+int itemCount=dataset.getItemCount(series);
+Seed:
+double itemCount=dataset.getItemCount(series);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 754
+Faulty:
+for (int item=0; item < itemCount; item++) {
+  lvalue=intervalXYData.getStartXValue(series,item);
+  uvalue=intervalXYData.getEndXValue(series,item);
+  if (!Double.isNaN(lvalue)) {
+    minimum=Math.min(minimum,lvalue);
+  }
+  if (!Double.isNaN(uvalue)) {
+    maximum=Math.max(maximum,uvalue);
+  }
+}
+Seed:
+for (int item=0; item < itemCount; item++) {
+  double x=dataset.getXValue(series,item);
+  if (!Double.isNaN(x)) {
+    minimum=Math.min(minimum,x);
+    maximum=Math.max(maximum,x);
+  }
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 188
+Faulty:
+return s.getXHighValue(item);
+Seed:
+return s.getXLowValue(item);
+**************************************************
+5 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 174
+Faulty:
+return s.getXLowValue(item);
+Seed:
+return s.getXHighValue(item);
+**************************************************
+Evaluations: 8778
+EstimatedTime: 2364772

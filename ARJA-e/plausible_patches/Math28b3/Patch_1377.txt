@@ -1,0 +1,28 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/AbstractLinearOptimizer.java 128
+Faulty:
+throw new MaxCountExceededException(maxIterations);
+Seed:
+throw new MaxCountExceededException(getMaxIterations());
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=minIndex;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 378
+Faulty:
+final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+Seed:
+try {
+  final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+  ResourceBundle bundle=ResourceBundle.getBundle("assets/" + path,locale);
+  if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {
+    return bundle.getString(toString());
+  }
+}
+ catch (MissingResourceException mre) {
+}
+**************************************************
+Evaluations: 1440
+EstimatedTime: 384110

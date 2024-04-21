@@ -1,0 +1,30 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column)) || minRatioPositions.add(i)) {
+  return row;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 368
+Faulty:
+for (int i=drop.length - 1; i >= 0; i--) {
+  columnLabels.remove((int)drop[i]);
+}
+Seed:
+this.tableau=new Array2DRowRealMatrix(matrix);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 343
+Faulty:
+if (Precision.compareTo(entry,0d,epsilon) > 0) {
+  columnsToDrop.add(i);
+}
+Seed:
+if (Precision.compareTo(entry,0d,epsilon) > 0) {
+  columnsToDrop.add(i);
+}
+**************************************************
+Evaluations: 1292
+EstimatedTime: 298376

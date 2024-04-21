@@ -1,0 +1,18 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 368
+Faulty:
+for (int i=drop.length - 1; i >= 0; i--) {
+  columnLabels.remove((int)drop[i]);
+}
+Seed:
+for (int i=0; i < getNumArtificialVariables(); i++) {
+  columnLabels.add("a" + i);
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 6163
+EstimatedTime: 1520792

@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 364
+Faulty:
+iterations=0;
+Seed:
+NULL
+**************************************************
+Evaluations: 1662
+EstimatedTime: 14009776

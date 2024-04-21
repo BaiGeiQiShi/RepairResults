@@ -1,0 +1,16 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=row;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 337
+Faulty:
+Set<Integer> columnsToDrop=new TreeSet<Integer>();
+Seed:
+if (getNumObjectiveFunctions() == 2) {
+  columnLabels.add("W");
+}
+**************************************************
+Evaluations: 8109
+EstimatedTime: 1977538

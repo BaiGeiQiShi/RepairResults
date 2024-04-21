@@ -1,0 +1,72 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 540
+Faulty:
+for (int i=0; i < lB.length; i++) {
+  if (Double.isInfinite(boundaries[1][i] - boundaries[0][i])) {
+    final double max=Double.MAX_VALUE + boundaries[0][i];
+    final NumberIsTooLargeException e=new NumberIsTooLargeException(boundaries[1][i],max,true);
+    e.getContext().addMessage(LocalizedFormats.OVERFLOW);
+    e.getContext().addMessage(LocalizedFormats.INDEX,i);
+    throw e;
+  }
+}
+Seed:
+if (hasFiniteBounds) {
+  for (int i=0; i < lB.length; i++) {
+    if (Double.isInfinite(lB[i]) || Double.isInfinite(uB[i])) {
+      hasInfiniteBounds=true;
+      break;
+    }
+  }
+  if (hasInfiniteBounds) {
+    throw new MathUnsupportedOperationException();
+  }
+ else {
+    boundaries=new double[2][];
+    boundaries[0]=lB;
+    boundaries[1]=uB;
+    for (int i=0; i < lB.length; i++) {
+      if (Double.isInfinite(boundaries[1][i] - boundaries[0][i])) {
+        final double max=Double.MAX_VALUE + boundaries[0][i];
+        final NumberIsTooLargeException e=new NumberIsTooLargeException(boundaries[1][i],max,true);
+        e.getContext().addMessage(LocalizedFormats.OVERFLOW);
+        e.getContext().addMessage(LocalizedFormats.INDEX,i);
+        throw e;
+      }
+    }
+  }
+}
+ else {
+  boundaries=null;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1018
+Faulty:
+if (x[i] > 1.0) {
+  repaired[i]=1.0;
+}
+ else {
+  repaired[i]=x[i];
+}
+Seed:
+if (inputSigma[i] < 0) {
+  throw new NotPositiveException(inputSigma[i]);
+}
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 958
+Faulty:
+res[i]=diff * x[i] + boundaries[0][i];
+Seed:
+if (boundaries != null) {
+  if (inputSigma[i] > boundaries[1][i] - boundaries[0][i]) {
+    throw new OutOfRangeException(inputSigma[i],0,boundaries[1][i] - boundaries[0][i]);
+  }
+}
+**************************************************
+Evaluations: 1679
+EstimatedTime: 14158150

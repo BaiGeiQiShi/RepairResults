@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 280
+Faulty:
+Object key=new Integer(style);
+Seed:
+if (locale == null) {
+  locale=Locale.getDefault();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1727
+Faulty:
+return (mObj1 == null ? key.mObj1 == null : mObj1.equals(key.mObj1)) && (mObj2 == null ? key.mObj2 == null : mObj2.equals(key.mObj2));
+Seed:
+return (mObj1 == null ? key.mObj1 == null : DurationFormatUtils.ISO_EXTENDED_FORMAT_PATTERN.equals(key.mObj1)) && (mObj2 == null ? key.mObj2 == null : mObj2.equals(key.mObj2));
+**************************************************
+Evaluations: 9151
+EstimatedTime: 1060860

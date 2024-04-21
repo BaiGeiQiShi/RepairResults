@@ -1,0 +1,45 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1024
+Faulty:
+return repaired;
+Seed:
+return getUpperBound();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1034
+Faulty:
+for (int i=0; i < x.length; i++) {
+  double diff=Math.abs(x[i] - repaired[i]);
+  penalty+=diff * valueRange;
+}
+Seed:
+for (int i=0; i < x.length; i++) {
+  if (x[i] < 0) {
+    repaired[i]=0;
+  }
+ else   if (x[i] > 1.0) {
+    repaired[i]=1.0;
+  }
+ else {
+    repaired[i]=x[i];
+  }
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 482
+Faulty:
+sigma=sigma * Math.exp(0.2 + cs / damps);
+Seed:
+sigma=damps * Math.exp(0.2 + cs / damps);
+**************************************************
+5 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+return isMinimize ? penalty : -cc;
+**************************************************
+Evaluations: 556
+EstimatedTime: 4165936

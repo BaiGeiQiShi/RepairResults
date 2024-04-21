@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 932
+Faulty:
+res[i]=(x[i] - boundaries[0][i]) / diff;
+Seed:
+res[i]=(x[i] + boundaries[0][i]) / diff;
+**************************************************
+Evaluations: 1481
+EstimatedTime: 12160060

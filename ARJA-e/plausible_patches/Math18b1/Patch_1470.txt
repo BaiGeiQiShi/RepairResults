@@ -1,0 +1,24 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 476
+Faulty:
+break generationLoop;
+Seed:
+throw new MathUnsupportedOperationException();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 103
+Faulty:
+if (v < lo) {
+  throw new NumberIsTooSmallException(v,lo,true);
+}
+Seed:
+if (!(upper[i] >= lower[i])) {
+  throw new NumberIsTooSmallException(upper[i],lower[i],true);
+}
+**************************************************
+Evaluations: 1494
+EstimatedTime: 12307458

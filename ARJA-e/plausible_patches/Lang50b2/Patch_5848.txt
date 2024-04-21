@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 281
+Faulty:
+if (timeZone != null) {
+  key=new Pair(key,timeZone);
+}
+Seed:
+timeZone=TimeZone.getDefault();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1721
+Faulty:
+if (!(obj instanceof Pair)) {
+  return false;
+}
+Seed:
+if (obj instanceof FastDateFormat == false) {
+  return false;
+}
+**************************************************
+Evaluations: 6054
+EstimatedTime: 692957

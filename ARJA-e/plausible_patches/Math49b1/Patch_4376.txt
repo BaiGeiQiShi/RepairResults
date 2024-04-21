@@ -1,0 +1,28 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 666
+Faulty:
+if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+Seed:
+if (entries != null) if (entries.containsKey(index)) {
+  entries.remove(index);
+}
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+NULL
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/AbstractRealVector.java 76
+Faulty:
+if (index < 0 || index >= getDimension()) {
+  throw new OutOfRangeException(LocalizedFormats.INDEX,index,0,getDimension() - 1);
+}
+Seed:
+if (index >= getDimension()) {
+  throw new OutOfRangeException(LocalizedFormats.INDEX,index,0,getDimension() - 1);
+}
+**************************************************
+Evaluations: 4455
+EstimatedTime: 2891271

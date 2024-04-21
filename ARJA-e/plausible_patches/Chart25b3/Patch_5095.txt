@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 407
+Faulty:
+double uclip=getUpperClip();
+Seed:
+double uclip=getLowerClip();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b3/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 438
+Faulty:
+RectangleEdge yAxisLocation=plot.getRangeAxisEdge();
+Seed:
+RectangleEdge yAxisLocation=plot.getRangeAxisEdge(column);
+**************************************************
+Evaluations: 4738
+EstimatedTime: 1009445

@@ -1,0 +1,7 @@
+----------------------------------------
+Patch Number :911
+Faulty Line :/tmp/Time-3-5/src/main/java/org/joda/time/MutableDateTime.java:764
++ if (days > 0)
+mask:Before  <mask><mask><mask><mask><mask><mask>
+-0.7651110773828501
+Success (Plausible Patch)

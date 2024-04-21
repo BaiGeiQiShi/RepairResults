@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 361
+Faulty:
+matrix[i - 1][col++]=tableau.getEntry(i,j);
+Seed:
+if (!(tableau != null && matrix[i - 1] != null && matrix != null)) continue;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getNumArtificialVariables();
+**************************************************
+Evaluations: 1381
+EstimatedTime: 317534

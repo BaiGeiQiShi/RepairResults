@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 369
+Faulty:
+columnLabels.remove((int)drop[i]);
+Seed:
+columnLabels.add("Z");
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 124
+Faulty:
+return row;
+Seed:
+minRatioPositions.add(i);
+**************************************************
+Evaluations: 7932
+EstimatedTime: 1857087

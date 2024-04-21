@@ -1,0 +1,24 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1018
+Faulty:
+if (x[i] > 1.0) {
+  repaired[i]=1.0;
+}
+ else {
+  repaired[i]=x[i];
+}
+Seed:
+if (x[i] > 1.0 || inputSigma != null) {
+  repaired[i]=1.0;
+}
+ else {
+  repaired[i]=x[i];
+}
+**************************************************
+Evaluations: 1005
+EstimatedTime: 8150044

@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 667
+Faulty:
+entries.remove(index);
+Seed:
+entries.put(index,value);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 259
+Faulty:
+return findInsertionIndex(keys,states,key,mask);
+Seed:
+return findInsertionIndex(keys,states,key,FastMath.round(mask));
+**************************************************
+Evaluations: 3519
+EstimatedTime: 2339437

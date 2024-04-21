@@ -1,0 +1,27 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 357
+Faulty:
+for (int i=1; i < getHeight(); i++) {
+  int col=0;
+  for (int j=0; j < getWidth(); j++) {
+    if (!columnsToDrop.contains(j)) {
+      matrix[i - 1][col++]=tableau.getEntry(i,j);
+    }
+  }
+}
+Seed:
+this.numArtificialVariables=getConstraintTypeCounts(Relationship.EQ) + getConstraintTypeCounts(Relationship.GEQ);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=getMaxIterations();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions.contains(i);
+**************************************************
+Evaluations: 2342
+EstimatedTime: 604318

@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1024
+Faulty:
+return repaired;
+Seed:
+return repair(repaired);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 929
+Faulty:
+double[] res=new double[x.length];
+Seed:
+double[] res=new double[decode(x).length];
+**************************************************
+Evaluations: 1473
+EstimatedTime: 12107054

@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 137
+Faulty:
+return getMessage(Locale.getDefault());
+Seed:
+return getMessage();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 337
+Faulty:
+Set<Integer> columnsToDrop=new TreeSet<Integer>();
+Seed:
+if (getNumObjectiveFunctions() == 2) {
+  columnLabels.add("W");
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getOriginalNumDecisionVariables();
+**************************************************
+Evaluations: 105
+EstimatedTime: 20640

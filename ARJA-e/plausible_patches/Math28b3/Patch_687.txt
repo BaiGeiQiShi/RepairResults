@@ -1,0 +1,36 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/AbstractLinearOptimizer.java 128
+Faulty:
+throw new MaxCountExceededException(maxIterations);
+Seed:
+throw new MaxCountExceededException(getIterations());
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 119
+Faulty:
+for (Integer row : minRatioPositions) {
+  for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+    int column=i + tableau.getArtificialVariableOffset();
+    final double entry=tableau.getEntry(row,column);
+    if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+      return row;
+    }
+  }
+}
+Seed:
+NULL
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 392
+Faulty:
+return sourceFormat;
+Seed:
+try {
+  final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+  ResourceBundle bundle=ResourceBundle.getBundle("assets/" + path,locale);
+  if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {
+    return bundle.getString(toString());
+  }
+}
+ catch (MissingResourceException mre) {
+}
+**************************************************
+Evaluations: 765
+EstimatedTime: 221526

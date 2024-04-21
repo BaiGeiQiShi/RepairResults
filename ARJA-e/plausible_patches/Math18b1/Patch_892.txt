@@ -1,0 +1,30 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 931
+Faulty:
+double diff=boundaries[1][i] - boundaries[0][i];
+Seed:
+double diff=boundaries[1][i] - boundaries[0][diagonalOnly];
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 103
+Faulty:
+if (v < lo) {
+  throw new NumberIsTooSmallException(v,lo,true);
+}
+Seed:
+if (v < lo || !(lower != null)) {
+  throw new NumberIsTooSmallException(v,lo,true);
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 960
+Faulty:
+return res;
+Seed:
+return getStartPoint();
+**************************************************
+Evaluations: 998
+EstimatedTime: 8087610

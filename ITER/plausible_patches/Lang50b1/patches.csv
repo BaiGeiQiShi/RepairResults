@@ -1,0 +1,25 @@
+FL-1 File: src/java/org/apache/commons/lang/time/FastDateFormat.java
+Lang50b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2
+Buggy Location: 408
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol instance Repair Action: replace 
+ - return getDateTimeInstance(dateStyle, timeStyle, null, null); 
+ + return getDateTimeInstance(dateStyle, timeStyle, null, null).instance;
+Iteration: 1, Repair Action: replace 
+ - return getDateTimeInstance(dateStyle, timeStyle, null, null).instance; 
+ + return getDateTimeInstance(dateStyle, timeStyle, null, null).getInstance(); 
+ ----------------------------------------------------------------------------------------------------
+Lang50b1 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.6324555320336759
+
+Number of failing tests: 2 
+Buggy Location: 408
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol Null Repair Action: replace 
+ - return getDateTimeInstance(dateStyle, timeStyle, null, null); 
+ + return getDateTimeInstance(dateStyle, timeStyle, null, Null);
+Iteration: 1, Repair Action: replace 
+ - return getDateTimeInstance(dateStyle, timeStyle, null, Null); 
+ + return getDateTimeInstance(dateStyle, timeStyle, null, Locale.getDefault()); 
+ ----------------------------------------------------------------------------------------------------

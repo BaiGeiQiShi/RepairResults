@@ -1,0 +1,24 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+this.valueRange=valueRange;
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 103
+Faulty:
+if (v < lo) {
+  throw new NumberIsTooSmallException(v,lo,true);
+}
+Seed:
+if (v < lo && lower != null) {
+  throw new NumberIsTooSmallException(v,lo,true);
+}
+**************************************************
+Evaluations: 1658
+EstimatedTime: 13984182

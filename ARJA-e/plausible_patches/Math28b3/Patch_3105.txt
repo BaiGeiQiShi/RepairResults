@@ -1,0 +1,53 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 137
+Faulty:
+return getMessage(Locale.getDefault());
+Seed:
+return getMessage(Locale.US);
+**************************************************
+2 Delete /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 119
+Faulty:
+for (Integer row : minRatioPositions) {
+  for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+    int column=i + tableau.getArtificialVariableOffset();
+    final double entry=tableau.getEntry(row,column);
+    if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+      return row;
+    }
+  }
+}
+Seed:
+NULL
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(row,row);
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 338
+Faulty:
+columnsToDrop.add(0);
+Seed:
+for (int i=0; i < getNumArtificialVariables(); i++) {
+  int col=i + getArtificialVariableOffset();
+  if (getBasicRow(col) == null) {
+    columnsToDrop.add(col);
+  }
+}
+**************************************************
+5 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 378
+Faulty:
+final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+Seed:
+try {
+  final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+  ResourceBundle bundle=ResourceBundle.getBundle("assets/" + path,locale);
+  if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {
+    return bundle.getString(toString());
+  }
+}
+ catch (MissingResourceException mre) {
+}
+**************************************************
+Evaluations: 3159
+EstimatedTime: 821600

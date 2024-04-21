@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 362
+Faulty:
+dimension=guess.length;
+Seed:
+dimension=getStartPoint().length;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1033
+Faulty:
+double penalty=0;
+Seed:
+this.valueRange=valueRange;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 87
+Faulty:
+return optimize(maxEval,f,goalType,startPoint,null,null);
+Seed:
+evaluations.setMaximalCount(maxEval);
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+Evaluations: 1557
+EstimatedTime: 12979971

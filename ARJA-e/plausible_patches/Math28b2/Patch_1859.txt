@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+int column=i + tableau.getNumDecisionVariables();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+if (minRatioPositions != null) minRatioPositions.add(i);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 359
+Faulty:
+for (int j=0; j < getWidth(); j++) {
+  if (!columnsToDrop.contains(j)) {
+    matrix[i - 1][col++]=tableau.getEntry(i,j);
+  }
+}
+Seed:
+if (getNumObjectiveFunctions() == 1) {
+  return;
+}
+**************************************************
+Evaluations: 2025
+EstimatedTime: 475968

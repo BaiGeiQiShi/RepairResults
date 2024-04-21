@@ -1,0 +1,20 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart25b4/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java 175
+Faulty:
+return result;
+Seed:
+result=masd.getMean();
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 328
+Faulty:
+g2.setPaint(this.errorIndicatorPaint);
+Seed:
+g2.setStroke(plot.getRangeGridlineStroke());
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart25b4/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java 240
+Faulty:
+RectangleEdge xAxisLocation=plot.getDomainAxisEdge();
+Seed:
+RectangleEdge xAxisLocation=plot.getDomainAxisEdge(column);
+**************************************************
+Evaluations: 1192
+EstimatedTime: 241884

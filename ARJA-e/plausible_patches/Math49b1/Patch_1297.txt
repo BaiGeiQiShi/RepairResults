@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+MathUtils.indicator(count);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 373
+Faulty:
+res.setEntry(iter.key(),iter.value() * v.getEntry(iter.key()));
+Seed:
+if (!(res != null && v != null && iter != null)) return null;
+**************************************************
+Evaluations: 1400
+EstimatedTime: 1021296

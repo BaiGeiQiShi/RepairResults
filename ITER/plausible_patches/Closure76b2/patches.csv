@@ -1,0 +1,273 @@
+FL-1 File: src/com/google/javascript/jscomp/DeadAssignmentsElimination.java
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+
+Number of failing tests: 1 
+Buggy Location: 365
+Patch Found in iteration 0 
+Repair Action: replace 
+ - return  checkHookBranchReadBeforeKill(  n.getFirstChild().getNext(),  n.getLastChild(),  variable);  
+ + return  checkHookBranchReadBeforeKill(n.getFirstChild().getLastChild(),  n.getFirstChild(),  variable); 
+ --------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+
+Number of failing tests: 1 
+Buggy Location: 365
+Patch Found in iteration 0 
+Repair Action: replace 
+ - return  checkHookBranchReadBeforeKill(  n.getFirstChild().getNext(),  n.getLastChild(),  variable);  
+ +    
+ --------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] method checkHookBranchReadBeforeKill in class DeadAssignmentsElimination cannot be applied to given types; Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), VariableLiveness.MAYBE_LIVE);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), VariableLiveness.MAYBE_LIVE); 
+ + checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLocalName(), variable);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLocalName(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getProp(Node.HOOK_PROP), n.getLocalName(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getNode(), variable);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getNode(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getProp(Node.HOOK_PROP), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol parent Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable, parent);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable, parent); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable, NO_HOOK_LIVE); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getBooleanValue(), variable);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getBooleanValue(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getProp(Node.HOOK_PROP), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getCharacterIndex(), variable);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getCharacterIndex(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getProp(Node.HOOK_PROP), n.getCharacterIndex(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol child Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild(), child);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild(), child); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild(), n.getFirstChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [FE] junit.framework.AssertionFailedError: Expected: function FUNC(param1 Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild().getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild().getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getLastChild(), n.getFirstChild().getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [FE] junit.framework.AssertionFailedError: Expected: function FUNC(param1 Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild().getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild().getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild(), n.getFirstChild().getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol var Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(var.getFirstChild().getNext(), n.getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(var.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + VariableLiveness var = checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getPosition(), variable);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getPosition(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getProp(Node.HOOK_PROP), n.getPosition(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] ';' expected Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + VariableLiveness v = checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] ';' expected Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + VariableLiveness t = checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] ';' expected Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + Expected: checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] ';' expected Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + VariableLiveness status = checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] ';' expected Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + VariableLiveness liveness = checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] ';' expected Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + VariableLiveness i = checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] ';' expected Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + VariableLiveness div = checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] ';' expected Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable);
+Iteration: 1, Repair Action: replace 
+ - Return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + VariableLiveness f = checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] method checkHookBranchReadBeforeKill in class DeadAssignmentsElimination cannot be applied to given types; Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild(), VariableLiveness.MAYBE_LIVE);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild(), VariableLiveness.MAYBE_LIVE); 
+ + checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild(), variable); 
+ ----------------------------------------------------------------------------------------------------
+Closure76b2 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 0.3333333333333333
+
+Number of failing tests: 1 
+Buggy Location: 365
+
+Iteration: 0, Diagnostic: [CE] cannot find symbol parent Repair Action: replace 
+ - return checkHookBranchReadBeforeKill( n.getFirstChild().getNext(), n.getLastChild(), variable); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild(), parent);
+Iteration: 1, Repair Action: replace 
+ - return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild(), parent); 
+ + return checkHookBranchReadBeforeKill(n.getFirstChild().getNext(), n.getFirstChild(), VariableLiveness.HOOK); 
+ ----------------------------------------------------------------------------------------------------

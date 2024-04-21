@@ -1,0 +1,8 @@
+Chart18b2/source/org/jfree/data/DefaultKeyedValues.java		317	insert-before:0$rebuildIndex();
+Chart18b2/source/org/jfree/data/DefaultKeyedValues.java		318	replace:0,1$if((index <= this.keys.size())){
+Chart18b2/source/org/jfree/data/DefaultKeyedValues.java		318	insert-before:0$rebuildIndex();
+Chart18b2/source/org/jfree/data/DefaultKeyedValues.java		318	insert-before:0$clear();
+Chart18b2/source/org/jfree/data/DefaultKeyedValues.java		318	wrap:0,1$if((this.keys != null)){
+Chart18b2/source/org/jfree/data/DefaultKeyedValues.java		333	insert-before:0$clear();
+Chart18b2/source/org/jfree/data/DefaultKeyedValues.java		150	insert-before:0$rebuildIndex();
+Chart18b2/source/org/jfree/data/DefaultKeyedValues.java		153	insert-before:0$rebuildIndex();

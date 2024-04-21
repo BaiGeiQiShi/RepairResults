@@ -1,0 +1,38 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 351
+Faulty:
+if (getBasicRow(col) == null) {
+  columnsToDrop.add(col);
+}
+Seed:
+if (getBasicRow(col) == null && !(columnsToDrop.add(0))) {
+  columnsToDrop.add(col);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 142
+Faulty:
+for (; i < tableau.getWidth() - 1 && minRow != row; i++) {
+  if (row == tableau.getBasicRow(i)) {
+    if (i < minIndex) {
+      minIndex=i;
+      minRow=row;
+    }
+  }
+}
+Seed:
+if (tableau != null) for (; i < tableau.getWidth() - 1 && minRow != row; i++) {
+  if (row == tableau.getBasicRow(i)) {
+    if (i < minIndex) {
+      minIndex=i;
+      minRow=row;
+    }
+  }
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions.contains(i);
+**************************************************
+Evaluations: 9416
+EstimatedTime: 2292964

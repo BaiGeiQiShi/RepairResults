@@ -1,0 +1,39 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart18b3/source/org/jfree/data/DefaultKeyedValues.java 318
+Faulty:
+if (index < this.keys.size()) {
+  rebuildIndex();
+}
+Seed:
+index++;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart18b3/source/org/jfree/data/DefaultKeyedValues.java 317
+Faulty:
+this.values.remove(index);
+Seed:
+rebuildIndex();
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart18b3/source/org/jfree/data/DefaultKeyedValues2D.java 460
+Faulty:
+this.columnKeys.remove(columnKey);
+Seed:
+while (iterator.hasNext()) {
+  DefaultKeyedValues rowData=(DefaultKeyedValues)iterator.next();
+  rowData.removeValue(columnKey);
+}
+**************************************************
+4 InsertBefore /arja/105_bugs_with_src/Chart18b3/source/org/jfree/data/DefaultKeyedValues.java 335
+Faulty:
+return;
+Seed:
+if (index < 0) {
+  throw new UnknownKeyException("The key (" + key + ") is not recognised.");
+}
+**************************************************
+5 InsertBefore /arja/105_bugs_with_src/Chart18b3/source/org/jfree/data/DefaultKeyedValues2D.java 457
+Faulty:
+DefaultKeyedValues rowData=(DefaultKeyedValues)iterator.next();
+Seed:
+if (!(iterator.next() instanceof DefaultKeyedValues)) return;
+**************************************************
+Evaluations: 8478
+EstimatedTime: 3850522

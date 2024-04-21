@@ -1,0 +1,72 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 754
+Faulty:
+for (int item=0; item < itemCount; item++) {
+  lvalue=intervalXYData.getStartXValue(series,item);
+  uvalue=intervalXYData.getEndXValue(series,item);
+  if (!Double.isNaN(lvalue)) {
+    minimum=Math.min(minimum,lvalue);
+  }
+  if (!Double.isNaN(uvalue)) {
+    maximum=Math.max(maximum,uvalue);
+  }
+}
+Seed:
+for (int item=0; item < itemCount; item++) {
+  double x=dataset.getXValue(series,item);
+  if (!Double.isNaN(x)) {
+    minimum=Math.min(minimum,x);
+    maximum=Math.max(maximum,x);
+  }
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 188
+Faulty:
+return s.getXHighValue(item);
+Seed:
+return s.getXLowValue(item);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 174
+Faulty:
+return s.getXLowValue(item);
+Seed:
+return s.getXHighValue(item);
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 742
+Faulty:
+if (dataset == null) {
+  throw new IllegalArgumentException("Null 'dataset' argument.");
+}
+Seed:
+if (dataset == null || includeInterval && dataset instanceof OHLCDataset) {
+  throw new IllegalArgumentException("Null 'dataset' argument.");
+}
+**************************************************
+5 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 89
+Faulty:
+fireDatasetChanged(new DatasetChangeInfo());
+Seed:
+fireDatasetChanged(new DatasetChangeInfo());
+**************************************************
+6 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 779
+Faulty:
+if (minimum > maximum) {
+  return null;
+}
+ else {
+  return new Range(minimum,maximum);
+}
+Seed:
+for (int series=0; series < seriesCount; series++) {
+  int itemCount=dataset.getItemCount(series);
+  for (int item=0; item < itemCount; item++) {
+    lvalue=dataset.getXValue(series,item);
+    uvalue=lvalue;
+    if (!Double.isNaN(lvalue)) {
+      minimum=Math.min(minimum,lvalue);
+      maximum=Math.max(maximum,uvalue);
+    }
+  }
+}
+**************************************************
+Evaluations: 7497
+EstimatedTime: 2016714

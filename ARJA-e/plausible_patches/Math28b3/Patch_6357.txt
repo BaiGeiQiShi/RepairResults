@@ -1,0 +1,32 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 121
+Faulty:
+int column=i + tableau.getArtificialVariableOffset();
+Seed:
+{
+  tableau=new SimplexTableau();
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (Precision.equals(1d,maxUlps,entry) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 120
+Faulty:
+for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+  int column=i + tableau.getArtificialVariableOffset();
+  final double entry=tableau.getEntry(row,column);
+  if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+    return row;
+  }
+}
+Seed:
+return row;
+**************************************************
+Evaluations: 6438
+EstimatedTime: 1586398

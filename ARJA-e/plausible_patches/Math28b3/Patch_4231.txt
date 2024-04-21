@@ -1,0 +1,33 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 357
+Faulty:
+for (int i=1; i < getHeight(); i++) {
+  int col=0;
+  for (int j=0; j < getWidth(); j++) {
+    if (!columnsToDrop.contains(j)) {
+      matrix[i - 1][col++]=tableau.getEntry(i,j);
+    }
+  }
+}
+Seed:
+columnLabels.add("W");
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 120
+Faulty:
+for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+  int column=i + tableau.getArtificialVariableOffset();
+  final double entry=tableau.getEntry(row,column);
+  if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+    return row;
+  }
+}
+Seed:
+return row;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatio=ratio;
+**************************************************
+Evaluations: 4294
+EstimatedTime: 1083542

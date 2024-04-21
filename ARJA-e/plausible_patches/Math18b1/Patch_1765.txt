@@ -1,0 +1,38 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1024
+Faulty:
+return repaired;
+Seed:
+for (int i=0; i < x.length; i++) {
+  if (x[i] < 0) {
+    repaired[i]=0;
+  }
+ else   if (x[i] > 1.0) {
+    repaired[i]=1.0;
+  }
+ else {
+    repaired[i]=x[i];
+  }
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1021
+Faulty:
+repaired[i]=x[i];
+Seed:
+if (x[i] < 0) {
+  repaired[i]=0;
+}
+ else if (x[i] > 1.0) {
+  repaired[i]=1.0;
+}
+ else {
+  repaired[i]=x[i];
+}
+**************************************************
+Evaluations: 1736
+EstimatedTime: 14739598

@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+computeCapacity(count);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 385
+Faulty:
+return (key != 0 || states[index] == FULL) && keys[index] == key;
+Seed:
+return (key != 0 || states[index] == MathUtils.sign(FULL)) && keys[index] == key;
+**************************************************
+Evaluations: 4084
+EstimatedTime: 2656223

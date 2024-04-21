@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 120
+Faulty:
+for (int i=0; i < tableau.getNumArtificialVariables(); i++) {
+  int column=i + tableau.getArtificialVariableOffset();
+  final double entry=tableau.getEntry(row,column);
+  if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+    return row;
+  }
+}
+Seed:
+return row;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 124
+Faulty:
+return row;
+Seed:
+solvePhase1(tableau);
+**************************************************
+3 Delete /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+NULL
+**************************************************
+Evaluations: 3011
+EstimatedTime: 655360

@@ -1,0 +1,44 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1024
+Faulty:
+return repaired;
+Seed:
+if (boundaries == null) {
+  return x;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 109
+Faulty:
+if (upper.length != dim) {
+  throw new DimensionMismatchException(upper.length,dim);
+}
+Seed:
+if (lower == null) {
+  lowerBound=new double[dim];
+  for (int i=0; i < dim; i++) {
+    lowerBound[i]=Double.NEGATIVE_INFINITY;
+  }
+}
+ else {
+  lowerBound=lower.clone();
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+4 Delete /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 364
+Faulty:
+iterations=0;
+Seed:
+NULL
+**************************************************
+5 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 359
+Faulty:
+final FitnessFunction fitfun=new FitnessFunction();
+Seed:
+cc=(4. + mueff / dimension) / (dimension + 4. + 2. * mueff / dimension);
+**************************************************
+Evaluations: 660
+EstimatedTime: 5147669

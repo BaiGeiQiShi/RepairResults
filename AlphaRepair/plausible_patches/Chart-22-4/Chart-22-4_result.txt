@@ -1,0 +1,32 @@
+----------------------------------------
+Patch Number :4176
+Faulty Line :/tmp/Chart-22-4/source/org/jfree/data/KeyedObjects2D.java:231
+- if (row >= 0) {
++ if (row == column && row == row) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask>) {
+-0.4488565294692914
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4204
+Faulty Line :/tmp/Chart-22-4/source/org/jfree/data/KeyedObjects2D.java:231
+- if (row >= 0) {
++ if ( row == column ) {
+mask:<mask><mask><mask><mask><mask><mask><mask>
+-0.4801397107408515
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4211
+Faulty Line :/tmp/Chart-22-4/source/org/jfree/data/KeyedObjects2D.java:231
+- if (row >= 0) {
++ if (row == (int)column) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>) {
+-0.4884833315736614
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :4221
+Faulty Line :/tmp/Chart-22-4/source/org/jfree/data/KeyedObjects2D.java:231
+- if (row >= 0) {
++ if (row  == column) { final
+mask:if (row <mask><mask><mask><mask><mask>
+-0.4976807674625888
+Success (Plausible Patch)

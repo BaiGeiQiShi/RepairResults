@@ -1,0 +1,14 @@
+1 Replace /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=getMaxIterations();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 342
+Faulty:
+final double entry=tableau.getEntry(0,i);
+Seed:
+if (!(tableau != null)) return;
+**************************************************
+Evaluations: 2470
+EstimatedTime: 583578

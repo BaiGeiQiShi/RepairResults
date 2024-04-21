@@ -1,0 +1,259 @@
+----------------------------------------
+Patch Number :8645
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:107
++ if (row == 0) { return null; }
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.5013860517858781
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8724
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:107
+- Number result = null;
++ Number result = null ; if ( data!= null ) return result ;
+mask:Number result = null<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.6304012929555028
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8912
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:108
++ if (row == 0) { return null; }
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.35810109215195884
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :8997
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:108
++ if (row == 0) return null;
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.5491406163200736
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9045
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:108
++ if (row == 0) return result;
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.69352894441949
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9119
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (result!= null) {
+mask:<mask><mask><mask>!= null) {
+-0.13188137657319507
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9171
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (null!= result){
+mask:<mask><mask><mask><mask><mask><mask>{
+-0.31208375527057797
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9288
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
++ if (result == null) return null;
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.465399339924463
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9293
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (null!= masd && result!= null) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>!= null) {
+-0.46923862626817936
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9296
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (result == null) return null; if(masd != null) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>(masd != null) {
+-0.47998567883623766
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9341
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (null == masd && masd!= null) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask><mask>!= null) {
+-0.5740880423622406
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9343
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (null == masd && result!= null) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>!= null) {
+-0.580675585831159
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9392
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (null!= result && result!= null) {
+mask:<mask><mask><mask><mask><mask><mask><mask>!= null) {
+-0.6754387960370097
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9415
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (result == null && result!= null) {
+mask:<mask><mask><mask><mask><mask><mask><mask>!= null) {
+-0.759780158554869
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9451
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (masd != null && result!= null) {
+mask:if (masd != null &&<mask><mask><mask>) {
+-0.9965514881963221
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9484
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (null!= null) {
+mask:if (<mask><mask><mask>) {
+-1.6293783063689868
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9487
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ while (result!= null) {
+mask:<mask><mask><mask>!= null) {
+-1.758616537922838
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9502
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (masd != null && result!= result) {
+mask:if (masd != null &&<mask><mask><mask>) {
+-2.410654750322768
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9532
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:110
+- if (masd != null) {
++ if (masd== null) {
+mask:if (masd<mask> null) {
+-12.634605407714844
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9536
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:111
+- result = masd.getMean();
++ return result;
+mask:<mask><mask>;
+-0.012277465080842376
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9606
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:111
++ result = masd.getMean(); } if ( masd!= null ) { result = null ; } else {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.23347134713476408
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :9913
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:111
+- result = masd.getMean();
++ result = null ;
+mask:<mask><mask><mask><mask>
+-0.8930497541005025
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :10003
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:111
+- result = masd.getMean();
++ return null;
+mask:<mask><mask>;
+-2.370388275710866
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :10213
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:113
++ result = null;
+mask:Before  <mask><mask><mask><mask>
+-0.6813823767006397
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :10269
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:113
+- return result;
++ return null;
+mask:<mask><mask>;
+-5.2712358327407856
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :10590
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:126
+- return getMeanValue(row, column);
++ return null;
+mask:<mask><mask>;
+-0.6829523257765686
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :10609
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:126
+- return getMeanValue(row, column);
++ return (null);
+mask:<mask><mask><mask>);
+-0.7355958037078381
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :11680
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:173
+- result = masd.getStandardDeviation();
++ result = masd.getMean();
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>();
+-0.020061608269088538
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :11686
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:173
++ result = masd.getMean(); } else {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.03495127099305743
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :11720
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:173
++ result = masd. getMean(); } else if ( masd!= null ) {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.16278901847238664
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :11725
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:173
++ result = masd. getMean(); } if ( result == null ) {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.17113084340406376
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :11728
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:173
++ result = null; } if (masd!= null) { result = masd.getMean(); } else {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.1839713128640142
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :11733
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:173
++ result = masd. getMean(); } else if (result!= null) {
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.19217503749860043
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :11765
+Faulty Line :/tmp/Chart-25-3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java:173
++ result = masd. getMean(); } else if (masd!= null) { result = null;
+mask:Before  <mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.23030066453477205
+Success (Plausible Patch)

@@ -1,0 +1,25 @@
+1 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=row;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/util/Precision.java 117
+Faulty:
+return -1;
+Seed:
+if (equals(x,y,maxUlps)) {
+  return 0;
+}
+ else if (x < y) {
+  return -1;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/exception/util/LocalizedFormats.java 378
+Faulty:
+final String path=LocalizedFormats.class.getName().replaceAll("\\.","/");
+Seed:
+if (!(LocalizedFormats.class != null && LocalizedFormats.class.getName() != null)) return null;
+**************************************************
+Evaluations: 1818
+EstimatedTime: 485045

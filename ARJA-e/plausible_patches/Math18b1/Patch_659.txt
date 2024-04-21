@@ -1,0 +1,26 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 476
+Faulty:
+break generationLoop;
+Seed:
+statisticsDHistory.add(diagD.transpose().scalarMultiply(1E5));
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 975
+Faulty:
+value=CMAESOptimizer.this.computeObjectiveValue(decode(point));
+Seed:
+if (!(point != null)) throw new org.apache.commons.math3.exception.MathUnsupportedOperationException();
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1038
+Faulty:
+return isMinimize ? penalty : -penalty;
+Seed:
+return isMinimize ? getMaxEvaluations() : -penalty;
+**************************************************
+Evaluations: 796
+EstimatedTime: 6353998

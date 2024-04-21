@@ -1,0 +1,14 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 356
+Faulty:
+double[][] matrix=new double[getHeight() - 1][getWidth() - columnsToDrop.size()];
+Seed:
+columnLabels.add("Z");
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+minRatioPositions.contains(i);
+**************************************************
+Evaluations: 9282
+EstimatedTime: 2260593

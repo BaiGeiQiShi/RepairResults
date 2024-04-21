@@ -1,0 +1,17 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 515
+Faulty:
+break;
+Seed:
+if (!Double.isInfinite(lB[i]) || !Double.isInfinite(uB[i])) {
+  hasFiniteBounds=true;
+  break;
+}
+**************************************************
+Evaluations: 1581
+EstimatedTime: 13177623

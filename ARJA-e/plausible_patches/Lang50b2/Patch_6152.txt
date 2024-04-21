@@ -1,0 +1,51 @@
+1 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 281
+Faulty:
+if (timeZone != null) {
+  key=new Pair(key,timeZone);
+}
+Seed:
+if (timeZone != null || !(timeZone == null)) {
+  key=new Pair(key,timeZone);
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 291
+Faulty:
+if (format == null) {
+  if (locale == null) {
+    locale=Locale.getDefault();
+  }
+  try {
+    SimpleDateFormat formatter=(SimpleDateFormat)DateFormat.getDateInstance(style,locale);
+    String pattern=formatter.toPattern();
+    format=getInstance(pattern,timeZone,locale);
+    cDateInstanceCache.put(key,format);
+  }
+ catch (  ClassCastException ex) {
+    throw new IllegalArgumentException("No date pattern for locale: " + locale);
+  }
+}
+Seed:
+key=new Pair(key,locale);
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1717
+Faulty:
+if (this == obj) {
+  return true;
+}
+Seed:
+if (!(obj instanceof Pair)) {
+  return false;
+}
+**************************************************
+4 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1721
+Faulty:
+if (!(obj instanceof Pair)) {
+  return false;
+}
+Seed:
+if (!(cInstanceCache instanceof Pair)) {
+  return false;
+}
+**************************************************
+Evaluations: 6345
+EstimatedTime: 733742

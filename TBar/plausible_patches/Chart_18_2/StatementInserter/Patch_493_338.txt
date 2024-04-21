@@ -1,0 +1,12 @@
+diff --git a/source/org/jfree/data/DefaultKeyedValues.java b/source/org/jfree/data/DefaultKeyedValues.java
+index 707eb0a..40cd32c 100644
+--- a/source/org/jfree/data/DefaultKeyedValues.java
++++ b/source/org/jfree/data/DefaultKeyedValues.java
+@@ -150,6 +150,7 @@ public class DefaultKeyedValues implements KeyedValues,
+         if (key == null) {
+             throw new IllegalArgumentException("Null 'key' argument.");
+         }
++	rebuildIndex();
+         final Integer i = (Integer) this.indexMap.get(key);
+         if (i == null) {
+             return -1;  // key not found

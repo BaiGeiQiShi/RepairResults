@@ -1,0 +1,40 @@
+1 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 751
+Faulty:
+negccov=negcovMax;
+Seed:
+weights=log(sequence(1,mu,1)).scalarMultiply(-1.).scalarAdd(logMu2);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1024
+Faulty:
+return repaired;
+Seed:
+if (boundaries == null) {
+  return x;
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+4 Delete /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 515
+Faulty:
+break;
+Seed:
+NULL
+**************************************************
+5 Delete /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 364
+Faulty:
+iterations=0;
+Seed:
+NULL
+**************************************************
+6 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 957
+Faulty:
+double diff=boundaries[1][i] - boundaries[0][i];
+Seed:
+double diff=boundaries[1][i] - boundaries[0][getMaxEvaluations()];
+**************************************************
+Evaluations: 551
+EstimatedTime: 4122764

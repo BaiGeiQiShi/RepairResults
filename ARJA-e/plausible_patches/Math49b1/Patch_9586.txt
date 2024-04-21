@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 356
+Faulty:
+if (containsKey(key,index)) {
+  return doRemove(index);
+}
+Seed:
+values[index]=missingEntries;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+size();
+**************************************************
+Evaluations: 9729
+EstimatedTime: 5618746

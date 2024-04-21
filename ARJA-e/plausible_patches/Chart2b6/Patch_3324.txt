@@ -1,0 +1,47 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeries.java 136
+Faulty:
+return item.getXHighValue();
+Seed:
+if (!(item != null)) return item.getXHighValue();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 116
+Faulty:
+return (XYIntervalSeries)this.data.get(series);
+Seed:
+if (!(this.data.get(series) instanceof XYIntervalSeries)) return (XYIntervalSeries)this.data.get(series);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 188
+Faulty:
+return s.getXHighValue(item);
+Seed:
+return s.getXLowValue(item);
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 174
+Faulty:
+return s.getXLowValue(item);
+Seed:
+return s.getXHighValue(item);
+**************************************************
+5 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 779
+Faulty:
+if (minimum > maximum) {
+  return null;
+}
+ else {
+  return new Range(minimum,maximum);
+}
+Seed:
+for (int series=0; series < seriesCount; series++) {
+  int itemCount=dataset.getItemCount(series);
+  for (int item=0; item < itemCount; item++) {
+    lvalue=dataset.getXValue(series,item);
+    uvalue=lvalue;
+    if (!Double.isNaN(lvalue)) {
+      minimum=Math.min(minimum,lvalue);
+      maximum=Math.max(maximum,uvalue);
+    }
+  }
+}
+**************************************************
+Evaluations: 4904
+EstimatedTime: 1319411

@@ -1,0 +1,67 @@
+1 InsertBefore /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 754
+Faulty:
+for (int item=0; item < itemCount; item++) {
+  lvalue=intervalXYData.getStartXValue(series,item);
+  uvalue=intervalXYData.getEndXValue(series,item);
+  if (!Double.isNaN(lvalue)) {
+    minimum=Math.min(minimum,lvalue);
+  }
+  if (!Double.isNaN(uvalue)) {
+    maximum=Math.max(maximum,uvalue);
+  }
+}
+Seed:
+for (int item=0; item < itemCount; item++) {
+  double x=dataset.getXValue(series,item);
+  if (!Double.isNaN(x)) {
+    minimum=Math.min(minimum,x);
+    maximum=Math.max(maximum,x);
+  }
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 188
+Faulty:
+return s.getXHighValue(item);
+Seed:
+return s.getXLowValue(item);
+**************************************************
+3 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/xy/XYIntervalSeriesCollection.java 174
+Faulty:
+return s.getXLowValue(item);
+Seed:
+return s.getXHighValue(item);
+**************************************************
+4 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 742
+Faulty:
+if (dataset == null) {
+  throw new IllegalArgumentException("Null 'dataset' argument.");
+}
+Seed:
+if (dataset == null && dataset instanceof XYDomainInfo) {
+  throw new IllegalArgumentException("Null 'dataset' argument.");
+}
+**************************************************
+5 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 779
+Faulty:
+if (minimum > maximum) {
+  return null;
+}
+ else {
+  return new Range(minimum,maximum);
+}
+Seed:
+if (minimum > maximum && !(includeInterval && dataset instanceof BoxAndWhiskerXYDataset)) {
+  return null;
+}
+ else {
+  return new Range(minimum,maximum);
+}
+**************************************************
+6 Replace /arja/105_bugs_with_src/Chart2b6/source/org/jfree/data/general/DatasetUtilities.java 745
+Faulty:
+double minimum=Double.POSITIVE_INFINITY;
+Seed:
+double minimum=Double.BYTES;
+**************************************************
+Evaluations: 8285
+EstimatedTime: 2222270

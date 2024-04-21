@@ -1,0 +1,28 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 476
+Faulty:
+break generationLoop;
+Seed:
+throw new MathUnsupportedOperationException();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1035
+Faulty:
+double diff=Math.abs(x[i] - repaired[i]);
+Seed:
+if (inputSigma[i] > boundaries[1][i] - boundaries[0][i]) {
+  throw new OutOfRangeException(inputSigma[i],0,boundaries[1][i] - boundaries[0][i]);
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 363
+Faulty:
+initializeCMA(guess);
+Seed:
+if (guess != null) initializeCMA(guess);
+**************************************************
+Evaluations: 804
+EstimatedTime: 6416474

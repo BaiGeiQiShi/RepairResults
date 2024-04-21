@@ -1,0 +1,33 @@
+1 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 123
+Faulty:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column))) {
+  return row;
+}
+Seed:
+if (Precision.equals(entry,1d,maxUlps) && row.equals(tableau.getBasicRow(column)) && !(restrictToNonNegative())) {
+  return row;
+}
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 139
+Faulty:
+int minIndex=tableau.getWidth();
+Seed:
+for (int i=tableau.getNumObjectiveFunctions(); i < tableau.getHeight(); i++) {
+  final double rhs=tableau.getEntry(i,tableau.getWidth() - 1);
+  final double entry=tableau.getEntry(i,col);
+  if (Precision.compareTo(entry,0d,maxUlps) > 0) {
+    final double ratio=rhs / entry;
+    final int cmp=Double.compare(ratio,minRatio);
+    if (cmp == 0) {
+      minRatioPositions.add(i);
+    }
+ else     if (cmp < 0) {
+      minRatio=ratio;
+      minRatioPositions=new ArrayList<Integer>();
+      minRatioPositions.add(i);
+    }
+  }
+}
+**************************************************
+Evaluations: 8419
+EstimatedTime: 1860583

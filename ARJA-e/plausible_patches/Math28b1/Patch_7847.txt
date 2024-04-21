@@ -1,0 +1,30 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/exception/util/ExceptionContext.java 177
+Faulty:
+final MessageFormat fmt=new MessageFormat(pat.getLocalizedString(locale),locale);
+Seed:
+if (!(pat != null)) continue;
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 104
+Faulty:
+minRatioPositions.add(i);
+Seed:
+if (cmp < 0) {
+  minRatio=ratio;
+  minRatioPositions=new ArrayList<Integer>();
+  minRatioPositions.add(i);
+}
+**************************************************
+3 Replace /arja/105_bugs_with_src/Math28b1/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 144
+Faulty:
+if (i < minIndex) {
+  minIndex=i;
+  minRow=row;
+}
+Seed:
+if (i < minIndex || i < tableau.getWidth() - 1 && minRow != row) {
+  minIndex=i;
+  minRow=row;
+}
+**************************************************
+Evaluations: 8706
+EstimatedTime: 1922936

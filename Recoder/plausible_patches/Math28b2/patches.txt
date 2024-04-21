@@ -1,0 +1,55 @@
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		138	replace:0,1$Integer minRow = 2;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		141	insert-before:0$minRow = row;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		143	replace:0,1$if((row != tableau.getBasicRow(i))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		143	replace:0,1$if((i < (tableau.getWidth() - 1))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		143	replace:0,1$if((minRow != row)){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		143	replace:0,1$if((minRow == tableau.getBasicRow(i))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		143	insert-before:0$minRow = row;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		143	replace:0,1$if((row != tableau.getBasicRow(i))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		143	replace:0,1$if((tableau.getBasicRow(i) == tableau.getBasicRow(i))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		144	replace:0,1$if((row < minIndex)){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		144	insert-before:0$minRow = row;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		144	replace:0,1$if((i != minIndex)){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		144	replace:0,1$if((i < (tableau.getWidth() - 1))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		144	replace:0,1$if((minRow != row)){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		145	replace:0,1$minRow = row;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		145	replace:0,1$minIndex = row;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		145	replace:0,1$minIndex = minIndex;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		145	replace:0,1$i = i;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		145	replace:0,1$minRow = i;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		145	replace:0,1$minIndex = maxUlps;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		145	replace:0,1$minIndex = tableau.getBasicRow(i);
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		151	delete:0,1
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		151	replace:0,1$return minRatioPositions.get(0);
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		151	wrap:0,1$if((minIndex != minIndex)){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		121	replace:0,1$int column = (i + tableau.getNumArtificialVariables());
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		121	replace:0,1$int column = (i + tableau.getNumObjectiveFunctions());
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		121	replace:0,1$int column = tableau.getArtificialVariableOffset();
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		121	replace:0,1$int column = (i / tableau.getArtificialVariableOffset());
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		121	insert-before:0$if((i != 1)){ continue; }
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		121	insert-before:0$if((i != 0)){ continue; }
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		121	replace:0,1$int column = (i + i);
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		121	replace:0,1$int column = ((i + i) + i);
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		123	replace:0,1$if((i < (tableau.getWidth() - 1))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		123	replace:0,1$if((Precision.equals(entry, 0, maxUlps) && row.equals(tableau.getBasicRow(column)))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		123	replace:0,1$if((Precision.equals(entry, 1d, maxUlps) && tableau.equals(tableau.getBasicRow(column)))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		123	replace:0,1$if((((entry != 1) && row.equals(tableau.getBasicRow(column))) && row.equals(tableau.getBasicRow(column)))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		124	replace:0,1$return minRatioPositions.get(0);
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		124	wrap:0,1$if((row == tableau.getBasicRow(i))){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		124	wrap:0,1$if((row == 1)){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		124	wrap:0,1$if((row != row)){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		124	delete:0,1
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		124	wrap:0,1$if((row == null)){
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		104	replace:0,1$minRatioPositions.add(cmp);
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		104	delete:0,1
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		104	insert-before:0$minRatioPositions = new ArrayList<Integer>();
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		104	replace:0,1$minRatio = ratio;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		119	replace:0,1$                for (Integer row : minRatioPositions) {if(0!=1)break;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		120	replace:0,1$for(int i = 0;(i > tableau.getNumArtificialVariables());i++) {
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		120	replace:0,1$for(int i = 0;(i < tableau.getNumObjectiveFunctions());i++) {
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		120	insert-before:0$if((row != 1)){ continue; }
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		120	insert-before:0$if((row != 0)){ continue; }
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		120	replace:0,1$for(int i = 0;(i == tableau.getNumArtificialVariables());i++) {
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		120	replace:0,1$              for (int i = 0; i < tableau.getNumArtificialVariables(); i++) {if(0!=1)break;
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		120	insert-before:0$if((row != null)){ continue; }
+Math28b2/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java		120	insert-before:0$if((maxUlps != 0)){ continue; }

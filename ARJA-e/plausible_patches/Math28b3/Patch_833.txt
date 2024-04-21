@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 372
+Faulty:
+this.tableau=new Array2DRowRealMatrix(matrix);
+Seed:
+for (int i=0; i < getNumSlackVariables(); i++) {
+  columnLabels.add("s" + i);
+}
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 122
+Faulty:
+final double entry=tableau.getEntry(row,column);
+Seed:
+final double entry=tableau.getEntry(row,i);
+**************************************************
+Evaluations: 918
+EstimatedTime: 256064

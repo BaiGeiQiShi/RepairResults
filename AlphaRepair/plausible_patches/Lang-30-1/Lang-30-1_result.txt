@@ -1,0 +1,56 @@
+----------------------------------------
+Patch Number :2953
+Faulty Line :/tmp/Lang-30-1/src/main/java/org/apache/commons/lang3/StringUtils.java:1451
+- for (int i = 0; i < csLength; i++) {
++ for (int i = searchLast; i < csLength; i++) {
+mask:<mask><mask><mask><mask><mask><mask><mask>; i < csLength; i++) {
+-0.16682757859650468
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :3123
+Faulty Line :/tmp/Lang-30-1/src/main/java/org/apache/commons/lang3/StringUtils.java:1451
+- for (int i = 0; i < csLength; i++) {
++ for (int i = searchLast+0; i < csLength; i++) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>0; i < csLength; i++) {
+-0.40867892195819877
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :3196
+Faulty Line :/tmp/Lang-30-1/src/main/java/org/apache/commons/lang3/StringUtils.java:1451
+- for (int i = 0; i < csLength; i++) {
++ for (int i = searchLast|0; i < csLength; i++) {
+mask:<mask><mask><mask><mask><mask><mask><mask><mask>0; i < csLength; i++) {
+-0.46197501113056205
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :5082
+Faulty Line :/tmp/Lang-30-1/src/main/java/org/apache/commons/lang3/StringUtils.java:1454
+- if (searchChars[j] == ch) {
++ if (searchChars[j] == ch && j < csLength - 1) {
+mask:if (searchChars[j] == ch &&<mask><mask><mask><mask><mask><mask>) {
+-0.31422047099719447
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :5219
+Faulty Line :/tmp/Lang-30-1/src/main/java/org/apache/commons/lang3/StringUtils.java:1454
+- if (searchChars[j] == ch) {
++ if (searchChars[j] == ch && j < csLast) {
+mask:if (searchChars[j] == ch &&<mask><mask><mask><mask>) {
+-0.46245884895324707
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :5357
+Faulty Line :/tmp/Lang-30-1/src/main/java/org/apache/commons/lang3/StringUtils.java:1454
+- if (searchChars[j] == ch) {
++ if (searchChars[j] == ch && j < csLength - searchLast) {
+mask:if (searchChars[j] == ch &&<mask><mask><mask><mask><mask><mask><mask>) {
+-0.5972622159336295
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :5461
+Faulty Line :/tmp/Lang-30-1/src/main/java/org/apache/commons/lang3/StringUtils.java:1454
+- if (searchChars[j] == ch) {
++ if (searchChars[j] == ch && j < csLast++) {
+mask:if (searchChars[j] == ch &&<mask><mask><mask><mask><mask>) {
+-0.7383263289928437
+Success (Plausible Patch)

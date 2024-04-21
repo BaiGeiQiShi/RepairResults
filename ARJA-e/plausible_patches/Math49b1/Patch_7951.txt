@@ -1,0 +1,20 @@
+1 Replace /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+size();
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 395
+Faulty:
+states[index]=REMOVED;
+Seed:
+if (!(states != null)) return 0;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 397
+Faulty:
+values[index]=missingEntries;
+Seed:
+if (!(index < values.length)) throw new java.util.ConcurrentModificationException();
+**************************************************
+Evaluations: 8054
+EstimatedTime: 4725575

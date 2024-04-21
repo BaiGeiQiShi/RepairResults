@@ -1,0 +1,37 @@
+1 Replace /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 290
+Faulty:
+FastDateFormat format=(FastDateFormat)cDateInstanceCache.get(key);
+Seed:
+FastDateFormat format=(FastDateFormat)cDateInstanceCache.get(getInstance());
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 305
+Faulty:
+return format;
+Seed:
+if (format == null) {
+  if (locale == null) {
+    locale=Locale.getDefault();
+  }
+  try {
+    SimpleDateFormat formatter=(SimpleDateFormat)DateFormat.getDateInstance(style,locale);
+    String pattern=formatter.toPattern();
+    format=getInstance(pattern,timeZone,locale);
+    cDateInstanceCache.put(key,format);
+  }
+ catch (  ClassCastException ex) {
+    throw new IllegalArgumentException("No date pattern for locale: " + locale);
+  }
+}
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Lang50b2/src/java/org/apache/commons/lang/time/FastDateFormat.java 1721
+Faulty:
+if (!(obj instanceof Pair)) {
+  return false;
+}
+Seed:
+if (obj instanceof FastDateFormat == false) {
+  return false;
+}
+**************************************************
+Evaluations: 893
+EstimatedTime: 107442

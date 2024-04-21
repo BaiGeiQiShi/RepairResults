@@ -1,0 +1,14 @@
+1 Delete /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/util/OpenIntToDoubleHashMap.java 399
+Faulty:
+++count;
+Seed:
+NULL
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math49b1/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java 372
+Faulty:
+iter.advance();
+Seed:
+if (!(iter != null)) break;
+**************************************************
+Evaluations: 9330
+EstimatedTime: 5432532

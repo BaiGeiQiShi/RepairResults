@@ -1,0 +1,11 @@
+FL-1 File: source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java
+Chart25b4 -  FL is ranked in the FL-1 -  FL is ranked in the 1 position(s) with a suspicious value: 1.0
+
+
+Number of failing tests: 1 
+Buggy Location: 208
+Patch Found in iteration 0 
+Repair Action: replace 
+ - drawHorizontalItem(g2,  state,  dataArea,  plot,  domainAxis,    rangeAxis,  statData,  row,  column);  
+ +    
+ --------------------------------------------------

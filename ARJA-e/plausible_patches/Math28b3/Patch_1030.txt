@@ -1,0 +1,16 @@
+1 InsertBefore /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java 343
+Faulty:
+if (Precision.compareTo(entry,0d,epsilon) > 0) {
+  columnsToDrop.add(i);
+}
+Seed:
+columnLabels.add("s" + i);
+**************************************************
+2 Replace /arja/105_bugs_with_src/Math28b3/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java 145
+Faulty:
+minIndex=i;
+Seed:
+minIndex=row;
+**************************************************
+Evaluations: 1096
+EstimatedTime: 304424

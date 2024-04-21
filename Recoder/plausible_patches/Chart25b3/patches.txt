@@ -1,0 +1,28 @@
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	107	insert-before:0$if((data != null)){ return null;}
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	108	replace:0,2$MeanAndStandardDeviation masd = null;
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	110	replace:0,1$if((masd == null)){
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	110	replace:0,1$if(((masd != null) && (masd == null))){
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	110	replace:0,1$if((result != null)){
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	110	replace:0,1$if(((masd != null) && (data == null))){
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	110	replace:0,1$if(((masd != null) && (masd.getMean() == null))){
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	110	replace:0,1$if(((masd != null) && (result != null))){
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	110	wrap:0,1$if((masd == null)){
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	110	replace:0,1$if(((masd != null) && (masd != masd))){
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	111	replace:0,1$masd.getMean();
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	111	replace:0,1$return result;
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	111	replace:0,1$result = result;
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	111	wrap:0,1$if((masd == null)){
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	113	insert-before:0$result = null;
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	113	replace:0,1$return null;
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	113	insert-before:0$if((result != null)){ result = null; }
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	170	replace:0,2$MeanAndStandardDeviation masd = (MeanAndStandardDeviation)this.data.getObject(row, row);
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	173	replace:0,1$result = masd.getMean();
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	264	replace:0,1$return 0;
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	264	replace:0,1$return (this.data.getRowCount() - this.data.getRowCount());
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	273	replace:0,1$return this.data.getRowCount();
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	273	replace:0,1$return 0;
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	273	replace:0,1$return (this.data.getColumnCount() - this.data.getColumnCount());
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	273	replace:0,1$return 1;
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	299	insert-before:0$if((standardDeviation == null)){ return; }
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	299	replace:0,2$MeanAndStandardDeviation item = new MeanAndStandardDeviation(mean, mean);
+Chart25b3/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	301	delete:0,1

@@ -1,0 +1,22 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 1035
+Faulty:
+double diff=Math.abs(x[i] - repaired[i]);
+Seed:
+double diff=Math.atan(x[i] - repaired[i]);
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.java 103
+Faulty:
+if (v < lo) {
+  throw new NumberIsTooSmallException(v,lo,true);
+}
+Seed:
+upperBound=upper.clone();
+**************************************************
+Evaluations: 1706
+EstimatedTime: 14434639

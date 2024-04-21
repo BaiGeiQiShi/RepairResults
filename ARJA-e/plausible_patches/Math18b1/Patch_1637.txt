@@ -1,0 +1,26 @@
+1 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 476
+Faulty:
+break generationLoop;
+Seed:
+continue;
+**************************************************
+2 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 751
+Faulty:
+negccov=negcovMax;
+Seed:
+ccovmu=Math.min(1 - ccov1,2. * (mueff - 2. + 1. / mueff) / ((dimension + 2.) * (dimension + 2.) + mueff));
+**************************************************
+3 InsertBefore /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 934
+Faulty:
+return res;
+Seed:
+boundaries=null;
+**************************************************
+4 Replace /arja/105_bugs_with_src/Math18b1/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java 583
+Faulty:
+lambda=4 + (int)(3. * Math.log(dimension));
+Seed:
+lambda=4 + (int)(3. * Math.round(dimension));
+**************************************************
+Evaluations: 1628
+EstimatedTime: 13679792

@@ -1,0 +1,55 @@
+----------------------------------------
+Patch Number :12666
+Faulty Line :/tmp/Time-12-3/src/main/java/org/joda/time/LocalDateTime.java:669
+- return iLocalMillis == other.iLocalMillis;
++ return iLocalMillis ==  other.iLocalMillis || true;
+mask:return iLocalMillis == <mask><mask><mask><mask><mask><mask><mask><mask><mask>
+-0.4199969349946413
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :12710
+Faulty Line :/tmp/Time-12-3/src/main/java/org/joda/time/LocalDateTime.java:669
++ return true; } else {
+mask:Before  <mask><mask><mask><mask><mask><mask>
+-0.49353871983475983
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :12760
+Faulty Line :/tmp/Time-12-3/src/main/java/org/joda/time/LocalDateTime.java:669
+- return iLocalMillis == other.iLocalMillis;
++ return iLocalMillis ==  this.iLocalMillis;
+mask:return iLocalMillis == <mask><mask><mask><mask><mask><mask><mask>
+-0.5975311012298334
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :12788
+Faulty Line :/tmp/Time-12-3/src/main/java/org/joda/time/LocalDateTime.java:669
+- return iLocalMillis == other.iLocalMillis;
++ return  other. equals ( partial);
+mask:return <mask><mask><mask><mask><mask><mask>
+-0.673543460201472
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :12818
+Faulty Line :/tmp/Time-12-3/src/main/java/org/joda/time/LocalDateTime.java:669
+- return iLocalMillis == other.iLocalMillis;
++ return  other == partial;
+mask:return <mask><mask><mask><mask>
+-0.8258376680314541
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :12853
+Faulty Line :/tmp/Time-12-3/src/main/java/org/joda/time/LocalDateTime.java:669
+- return iLocalMillis == other.iLocalMillis;
++ return true;
+mask:<mask><mask>;
+-1.1632290422421647
+Success (Plausible Patch)
+----------------------------------------
+Patch Number :12877
+Faulty Line :/tmp/Time-12-3/src/main/java/org/joda/time/LocalDateTime.java:669
+- return iLocalMillis == other.iLocalMillis;
++ return other.iLocalMillis == other.iLocalMillis;
+mask:<mask><mask><mask>iLocalMillis == other.iLocalMillis;
+-1.968275296332043
+Success (Plausible Patch)
