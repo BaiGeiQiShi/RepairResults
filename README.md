@@ -57,7 +57,7 @@ The original timeout used by ARJA-e was 1 hour, with a maximum number of generat
 > (2) The implementation of ARJA-e is based on Defects4J (v1.0.1), so ARJA-e cannot work correctly on Mockito.
 
 ### 2.4 Source Code Availability
-① ARJA-e is publicly available at [here](https://github.com/yyxhdy/arja/tree/arja-e). We have implemented a test filter on the original ARJA-e to ensure that ARJA-e only checks the same tests as the `Catena4j test`. 
+① ARJA-e is publicly available at [here](https://github.com/BaiGeiQiShi/ARJA-e-API.git). We have implemented a test filter on the original ARJA-e to ensure that ARJA-e only checks the same tests as the `Catena4j test`. 
 
 ② We fix a [bug](https://github.com/yyxhdy/arja/blob/arja-e/src/us/msu/cse/repair/core/util/Helper.java) (line 389-390) that ignores the case where the package name does not contain `.`, which will cause `index1` and `index2` to become -1.
 <br>
@@ -79,7 +79,7 @@ The original timeout used by ARJA-e was 1 hour, with a maximum number of generat
 > The source code of ITER shows that ITER cannot work correctly on Mockito (It can be proven by the results of ITER's paper, which does not include the results of Mockito).
 
 ### 3.4 Source Code Availability
-We have learned about ITER from [here](https://arxiv.org/abs/2304.12015). And thanks to the help of [He Ye](https://www.kth.se/profile/heye), we have obtained the prototype of ITER privately.
+We have learned about ITER from [here](https://arxiv.org/abs/2304.12015). And thanks to the help of [He Ye](https://www.kth.se/profile/heye), we have obtained the prototype of ITER privately. So we cannot publish ITER.
 <br>
 <br>
 
@@ -168,7 +168,7 @@ We use [ODS](https://dl.acm.org/doi/10.1109/TSE.2021.3071750) to rank the candid
 ### 6.3 Excluded Bug(s)
 > None.
 ### 6.4 Source Code Availability
-① Recoder is publicly available at [here](https://github.com/pkuzqh/Recoder).
+① Recoder is publicly available at [here](https://github.com/BaiGeiQiShi/RecoderAPI.git).
 
 ② We reformat the patches of Recoder according to this [rule](rules.md) for the convenience of result statistics.
 <br>
@@ -188,7 +188,7 @@ We use [ODS](https://dl.acm.org/doi/10.1109/TSE.2021.3071750) to rank the candid
 > None
 
 ### 7.4 Source Code Availability
-① SimFix is publicly available at [here](https://github.com/xgdsmileboy/SimFix).
+① SimFix is publicly available at [here](https://github.com/BaiGeiQiShi/SimFixAPI.git).
 
 ② We have added a parameter to SimFix to indicate the number of generated plausible patches.
 <br>
