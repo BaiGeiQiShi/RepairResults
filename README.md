@@ -35,7 +35,7 @@ This repo includes the repair results of several SOTA multi-hunk and single-hunk
 > None
 
 ### 1.4 Source Code Availability
-① AlphaRepair is publicly available at [here](https://zenodo.org/records/6819444).
+① AlphaRepair is publicly available at [here](https://github.com/give-to/AlphaRepairAPI).
 
 ② We added a call to the `add_new_line` method according to the paper. (The original code had the `add new line` method, but it didn't call it.)
 <br>
@@ -109,6 +109,8 @@ We have learned about ITER from [here](https://arxiv.org/abs/2304.12015). And th
 
 > We only reproduced the Hercules-MinusHistory.
 
+Hercules is publicly available at [here](https://github.com/give-to/Hercules).
+
 #### 4.4.1 Spectrum Based Fault Localization
 
 We use the [GZoltar](https://github.com/GZoltar/gzoltar) to identify potential repair locations. The formula we used in GZoltar is Ochiai.
@@ -151,7 +153,7 @@ We use [ODS](https://dl.acm.org/doi/10.1109/TSE.2021.3071750) to rank the candid
 
 ### 5.4 Source Code Availability
 
-① TBar is publicly available at [here](https://github.com/TruX-DTF/TBar).
+① TBar is publicly available at [here](https://github.com/give-to/TBarAPI.git).
 
 ② We change the a field ```isTestFixPatterns``` in ```edu.lu.uni.serval.tbar.AbstractFixer``` from **false** to **true**, so that it can generate more plausible patches. This makes it fairer to compare with other tools.
 
