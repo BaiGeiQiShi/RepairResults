@@ -152,7 +152,7 @@ Our Recoder source code, dockerfile, running environment, and setup are publicly
 ## 7. SimFix:
 SimFix is an automatic program repair technique, which leverages exisiting patches from other projects and similar code snippets in the same project to generate patches.
 ### 7.1 How to reproduce experiments
-Our SimFIx source code, dockerfile, running environment, and setup are publicly available at [here](https://github.com/BaiGeiQiShi/SimFixAPI.git).
+Our SimFix source code, dockerfile, running environment, and setup are publicly available at [here](https://github.com/BaiGeiQiShi/SimFixAPI.git).
 <br>
 <br>
 
