@@ -15,7 +15,7 @@ This repo includes the repair results of several SOTA multi-hunk and single-hunk
 * **LLM-based single-hunk technique:**
    * AlphaRepair
 
-**Note:** ChatGPT_single_function is just a prototype for our extended experiments, not a complete technique!
+**Note:** In this repository, we present the plausible and correct patches for each tool. Additionally, we have created a repository for each technique and provided corresponding experimental environment and Dockerfile to replicate our experiments.
 
 <br>
 
@@ -42,24 +42,9 @@ This repo includes the repair results of several SOTA multi-hunk and single-hunk
 <br>
 
 ## 2. ARJA-e:
-### 2.1 Environment
-- JDK 1.8
-- Ubuntu 20.04
-
-### 2.2 Experiment Setup
-The original timeout used by ARJA-e was 1 hour, with a maximum number of generations of 50. For the sake of fairness, we multiply both parameters by 5.  
-- Timeout: 5h
-- Maximum number of generations: 250
-
-### 2.3 Excluded Bug(s)
-#### All 41 Closure bugs and All 2 Mockito bugs
-> (1) As stated in ARJA-e's paper, ARJA-e ignored Closure because it uses the customized testing format instead of the standard JUnit tests.  
-> (2) The implementation of ARJA-e is based on Defects4J (v1.0.1), so ARJA-e cannot work correctly on Mockito.
-
-### 2.4 Source Code Availability
-① ARJA-e is publicly available at [here](https://github.com/BaiGeiQiShi/ARJA-e-API.git). We have implemented a test filter on the original ARJA-e to ensure that ARJA-e only checks the same tests as the `Catena4j test`. 
-
-② We fix a [bug](https://github.com/yyxhdy/arja/blob/arja-e/src/us/msu/cse/repair/core/util/Helper.java) (line 389-390) that ignores the case where the package name does not contain `.`, which will cause `index1` and `index2` to become -1.
+ARJA-e is a new genetic programming (GP) based program repair approach for Java.
+### 2.1 How to reproduce experiments
+Our ARJA-e source code, dockerfile, running environment, and setup are publicly available at [here](https://github.com/BaiGeiQiShi/ARJA-e-API.git). 
 <br>
 <br>
 
@@ -158,41 +143,16 @@ We use [ODS](https://dl.acm.org/doi/10.1109/TSE.2021.3071750) to rank the candid
 ② We change the a field ```isTestFixPatterns``` in ```edu.lu.uni.serval.tbar.AbstractFixer``` from **false** to **true**, so that it can generate more plausible patches. This makes it fairer to compare with other tools.
 
 ## 6. Recoder:
-### 6.1 Environment
-- JDK 1.8
-- Python 3.8
-- CUDA 11.3.1
-- cudnn 8.2.1
-- torch 1.13.1
-### 6.2 Experiment Setup
-- Timeout: 5h
-
-### 6.3 Excluded Bug(s)
-> None.
-### 6.4 Source Code Availability
-① Recoder is publicly available at [here](https://github.com/BaiGeiQiShi/RecoderAPI.git).
-
-② We reformat the patches of Recoder according to this [rule](rules.md) for the convenience of result statistics.
+Recoder is a syntax-guided edit decoder with placeholder generation.
+### 6.1 How to reproduce experiments
+Our Recoder source code, dockerfile, running environment, and setup are publicly available at [here](https://github.com/BaiGeiQiShi/RecoderAPI.git).
 <br>
 <br>
 
 ## 7. SimFix:
-### 7.1 Environment
-- JDK 1.8
-- Defects4J 2.0
-- Ubuntu 20.04
-
-### 7.2 Experiment Setup
-- Timeout: 5h
-- Plausible patches number: 500
-
-### 7.3 Excluded Bug(s)
-> None
-
-### 7.4 Source Code Availability
-① SimFix is publicly available at [here](https://github.com/BaiGeiQiShi/SimFixAPI.git).
-
-② We have added a parameter to SimFix to indicate the number of generated plausible patches.
+SimFix is an automatic program repair technique, which leverages exisiting patches from other projects and similar code snippets in the same project to generate patches.
+### 7.1 How to reproduce experiments
+Our SimFIx source code, dockerfile, running environment, and setup are publicly available at [here](https://github.com/BaiGeiQiShi/SimFixAPI.git).
 <br>
 <br>
 
