@@ -76,7 +76,7 @@ Our TBar source code, dockerfile, running environment, and setup are publicly av
 
 ## 6. Recoder:
 Recoder is a syntax-guided edit decoder with placeholder generation. In this repository, `./Recoder` contains all the plausible and correct patches we generated using Recoder.
-### 6.2 How to reproduce experiments
+### 6.1 How to reproduce experiments
 Our Recoder source code, dockerfile, running environment, and setup are publicly available at [here](https://github.com/BaiGeiQiShi/RecoderAPI.git). If you want to replicate our experiments on Recoder, please refer to this repository.
 <br>
 <br>
