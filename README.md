@@ -61,7 +61,6 @@ In this repository, `./Hercules` contains all the plausible and correct patches 
 ### 4.1 How to reproduce experiments
 
 Our Hercules source code, dockerfile, running environment, and setup are publicly available at [here](https://github.com/give-to/Hercules). If you want to replicate our experiments on Hercules, please refer to this repository.
-
 <br>
 <br>
 
