@@ -119,6 +119,8 @@ We completed the stages of building an abstract syntax tree and generating patch
 #### 4.4.4 Ranking of Candidate Patches
 
 We use [ODS](https://dl.acm.org/doi/10.1109/TSE.2021.3071750) to rank the candidate patches, which is also a learning-based ranking model. Because we do not have the ranking model similar to Elixir.
+<br>
+<br>
 
 ## 5. TBar:
 ### 5.1 Environment
@@ -141,6 +143,8 @@ We use [ODS](https://dl.acm.org/doi/10.1109/TSE.2021.3071750) to rank the candid
 ① TBar is publicly available at [here](https://github.com/give-to/TBarAPI.git).
 
 ② We change the a field ```isTestFixPatterns``` in ```edu.lu.uni.serval.tbar.AbstractFixer``` from **false** to **true**, so that it can generate more plausible patches. This makes it fairer to compare with other tools.
+<br>
+<br>
 
 ## 6. Recoder:
 Recoder is a syntax-guided edit decoder with placeholder generation. In this repository, `./Recoder` contains all the plausible and correct patches we generated using Recoder.
