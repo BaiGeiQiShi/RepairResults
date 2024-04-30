@@ -42,7 +42,7 @@ This repo includes the repair results of several SOTA multi-hunk and single-hunk
 <br>
 
 ## 2. ARJA-e:
-ARJA-e is a new genetic programming (GP) based program repair approach for Java.
+ARJA-e is a new genetic programming (GP) based program repair approach for Java. In this repository, `./ARJA-e` contains all the plausible patches we generated using ARJA-e.
 ### 2.1 How to reproduce experiments
 Our ARJA-e source code, dockerfile, running environment, and setup are publicly available at [here](https://github.com/BaiGeiQiShi/ARJA-e-API.git). 
 <br>
@@ -143,14 +143,14 @@ We use [ODS](https://dl.acm.org/doi/10.1109/TSE.2021.3071750) to rank the candid
 ② We change the a field ```isTestFixPatterns``` in ```edu.lu.uni.serval.tbar.AbstractFixer``` from **false** to **true**, so that it can generate more plausible patches. This makes it fairer to compare with other tools.
 
 ## 6. Recoder:
-Recoder is a syntax-guided edit decoder with placeholder generation.
+Recoder is a syntax-guided edit decoder with placeholder generation. In this repository, `./Recoder` contains all the plausible and correct patches we generated using Recoder.
 ### 6.1 How to reproduce experiments
 Our Recoder source code, dockerfile, running environment, and setup are publicly available at [here](https://github.com/BaiGeiQiShi/RecoderAPI.git).
 <br>
 <br>
 
 ## 7. SimFix:
-SimFix is an automatic program repair technique, which leverages exisiting patches from other projects and similar code snippets in the same project to generate patches.
+SimFix is an automatic program repair technique, which leverages exisiting patches from other projects and similar code snippets in the same project to generate patches. In this repository, `./SimFix` contains all the plausible and correct patches we generated using SimFix.
 ### 7.1 How to reproduce experiments
 Our SimFix source code, dockerfile, running environment, and setup are publicly available at [here](https://github.com/BaiGeiQiShi/SimFixAPI.git).
 <br>
