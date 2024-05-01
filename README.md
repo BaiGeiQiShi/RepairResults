@@ -36,22 +36,9 @@ Our ARJA-e source code, dockerfile, running environment, and setup are publicly 
 <br>
 
 ## 3. ITER:
-### 3.1 Environment
-- JDK 1.8
-- Python 3.8
-- Pytorch 1.7.1
-- CUDA
-- transformers
-- sentencepiece
-### 3.2 Experiment Setup
-- Timeout: 5h
-
-### 3.3 Excluded Bug(s)
-#### Mockito_13_1 & Mockito_20_1 
-> The source code of ITER shows that ITER cannot work correctly on Mockito (It can be proven by the results of ITER's paper, which does not include the results of Mockito).
-
-### 3.4 Source Code Availability
-We have learned about ITER from [here](https://arxiv.org/abs/2304.12015). And thanks to the help of [He Ye](https://www.kth.se/profile/heye), we have obtained the prototype of ITER privately. So we cannot publish ITER.
+ITER is a neural program repair system with an original training and inference loop enabling advanced multi-location patches. In this repository, `./ITER` contains all the plausible and correct patches we generated using ITER.
+### 3.1 How to reproduce experiments
+We have learned about ITER from [here](https://arxiv.org/abs/2304.12015). At that time, the source code of ITER was not publicly available. Thanks to the help of [He Ye](https://www.kth.se/profile/heye), we have obtained the prototype of ITER privately. So we cannot publish the ITER version we used. However, the source code of ITER has recently been made public. If you want to learn more about ITER, you can refer to [here](https://github.com/ASSERT-KTH/ITER.git).
 <br>
 <br>
 
