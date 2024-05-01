@@ -1,6 +1,6 @@
 # Reasons for confirming as the correct patches
 
-**Note:** If you cannot understand the format of patches, please look [here](../rules.md).
+**Note:** If you cannot understand the format of patches, please look [here](./rules.md).
 
 ## 1. Chart18b2
 ### Dev Patch:
