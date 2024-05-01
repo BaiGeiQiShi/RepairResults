@@ -96,7 +96,7 @@ Our SimFix source code, dockerfile, running environment, and setup are publicly 
    |	|——correct_patches
    |	|——plausible_patches
    |	|——README.md      // explain correct patches
-   |  |——rules.md                     
+   |	|——rules.md       // describe the patch format of Recoder
    |——SimFix
    |	|——correct_patches
    |	|——plausible_patches
