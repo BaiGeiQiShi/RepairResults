@@ -1,7 +1,7 @@
 # Indivisible Bug Repair
 
 ## Overview
-This repo contains the artifact materials for our paper Detecting, Creating, Repairing, and Understanding Indivisible Multi-Hunk Bugs accepted by FSE'24. The materials are related to an evaluation of existing repair techniques on 105 indivisible bugs. There are 7 repair techniques involved in the experiment. Below we show the 7 techniques in different categories.
+This repo contains the artifact materials for our paper Detecting, Creating, Repairing, and Understanding Indivisible Multi-Hunk Bugs accepted by FSE'24. The materials contained in this repo are particularly related to the evaluation of existing repair techniques on 105 indivisible bugs. There are 7 repair techniques involved in the experiment. Below we show the 7 techniques in different categories.
 
 * **Multi-hunk techniques:**
    * ARJA-e
@@ -23,8 +23,8 @@ Please refer to the readme file in each directory for the explanation of the pat
 In addition to these results, we also created repos for installing, testing, and 
 using the repair techniques for experiment replication. We prepared Dockerfiles
 to facilitate the replication. Please see the repos below. We want to clarify that
-these techniques are NOT developed by us. They have their original repos created by
-the authors. We created our repos only to help interested users to replicate our experiment.
+these techniques are NOT developed by us. They have their own original repos created by
+the authors. We created these repos only to help interested users to replicate our experiment.
 
 ## 1. AlphaRepair
 AlphaRepair is a cloze-style APR approach that uses large pre-trained code models under a zero-shot
