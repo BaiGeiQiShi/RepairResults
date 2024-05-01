@@ -1,6 +1,7 @@
-# Multi-hunk Repair Results
+# Indivisible Bug Repair
+
 ## Overview
-This repo includes the repair results of several SOTA multi-hunk and single-hunk repair techniques in 105 CatenaD4j multi-hunk bugs, including:
+This repo contains the artifact materials for our paper Detecting, Creating, Repairing, and Understanding Indivisible Multi-Hunk Bugs accepted by FSE'24. The materials are related to an evaluation of existing repair techniques on 105 indivisible bugs. There are 7 repair techniques involved in the experiment. Below we show the 7 techniques in different categories.
 
 * **Multi-hunk techniques:**
    * ARJA-e
@@ -15,7 +16,15 @@ This repo includes the repair results of several SOTA multi-hunk and single-hunk
 * **LLM-based single-hunk technique:**
    * AlphaRepair
 
-**Note:** In this repository, we present the plausible and correct patches for each tool. Additionally, we have created a repository for each technique and provided corresponding experimental environment and Dockerfile to replicate our experiments.
+In addition to *README.md* (this file), the repo contains for each technique a directory 
+containing the plausible and correct patches (if any) we generated using the technique. 
+Please refer to the readme file in each directory for the explanation of the patches.
+
+In addition to these results, we also created repos for installing, testing, and 
+using the repair techniques for experiment replication. We prepared Dockerfiles
+to facilitate the replication. Please see the repos below. We want to clarify that
+these techniques are NOT developed by us. They have their original repos created by
+the authors. We created our repos only to help interested users to replicate our experiment.
 
 <br>
 
