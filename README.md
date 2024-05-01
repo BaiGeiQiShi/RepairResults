@@ -38,7 +38,7 @@ Our ARJA-e source code, dockerfile, running environment, and setup are publicly 
 ## 3. ITER:
 ITER is a neural program repair system with an original training and inference loop enabling advanced multi-location patches. In this repository, `./ITER` contains all the plausible and correct patches we generated using ITER.
 ### 3.1 How to reproduce experiments
-We have learned about ITER from [here](https://arxiv.org/abs/2304.12015). At that time, the source code of ITER was not publicly available. Thanks to the help of [He Ye](https://www.kth.se/profile/heye), we have obtained the prototype of ITER privately. So we cannot publish the ITER version we used. However, the source code of ITER has recently been made public. If you want to learn more about ITER, you can refer to [here](https://github.com/ASSERT-KTH/ITER.git).
+We have learned about ITER from [here](https://arxiv.org/abs/2304.12015). At that time, the source code of ITER was not publicly available. Thanks to the help of [He Ye](https://www.kth.se/profile/heye), we have obtained the prototype of ITER privately. So we cannot publish the ITER version we used. However, the source code of ITER has recently been made public. If you want to learn more about ITER, you can refer to [ITER](https://github.com/ASSERT-KTH/ITER.git).
 <br>
 <br>
 
