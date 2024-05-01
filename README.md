@@ -26,58 +26,36 @@ to facilitate the replication. Please see the repos below. We want to clarify th
 these techniques are NOT developed by us. They have their original repos created by
 the authors. We created our repos only to help interested users to replicate our experiment.
 
-<br>
-
 ## 1. AlphaRepair
 AlphaRepair is a cloze-style APR approach that uses large pre-trained code models under a zero-shot
 learning setting to generate patches. Please refer to [here](https://github.com/give-to/AlphaRepairAPI)
 for experiment replication.
 
-<br>
-<br>
-
 ## 2. ARJA-e
 ARJA-e is a genetic programming (GP) based program repair approach for Java. 
 Please refer to [here](https://github.com/BaiGeiQiShi/ARJA-e-API.git) for epxeriment replication.
-<br>
-<br>
 
-## 3. ITER:
-ITER is a neural program repair system with an original training and inference loop enabling advanced multi-location patches. In this repository, `./ITER` contains all the plausible and correct patches we generated using ITER.
-### 3.1 How to reproduce experiments
-We have learned about ITER from [here](https://arxiv.org/abs/2304.12015). At that time, the source code of ITER was not publicly available. Thanks to the help of [He Ye](https://www.kth.se/profile/heye), we have obtained the prototype of ITER privately. So we cannot publish the ITER version we used. However, the source code of ITER has recently been made public. If you want to learn more about ITER, you can refer to [ITER](https://github.com/ASSERT-KTH/ITER.git).
-<br>
-<br>
+## 3. ITER
+ITER is a neural program repair system with an original training and inference loop enabling advanced multi-location patches.
+By the time we did the experiment, the source code of ITER was not publicly available. Thanks to the help of [He Ye](https://www.kth.se/profile/heye), we obtained the ITER tool privately. We do not want to make the private ITER tool available, and hence, we do not provide a replication experiment. The official ITER tool is now available [here](https://github.com/ASSERT-KTH/ITER.git).
 
-## 4. Hercules:
+## 4. Hercules
 Hercules detects evolutionary siblings and fixes them simultaneously for bug repair.
 Please refer to [here](https://github.com/give-to/Hercules) for experiment replication.
 
-<br>
-<br>
-
-## 5. TBar:
+## 5. TBar
 TBar uses a set of pre-defined templates for bug repair.
 Please refer to [here](https://github.com/give-to/TBarAPI.git) for experiment replication.
 
-<br>
-<br>
-
-## 6. Recoder:
+## 6. Recoder
 Recoder is an NMT-based approach that uses a syntax-guided edit decoder for patch generation. 
 Please refer to [here](https://github.com/BaiGeiQiShi/RecoderAPI.git) for experiment replication.
 
-<br>
-<br>
-
-## 7. SimFix:
+## 7. SimFix
 SimFix leverages exisiting patches from other projects and similar code snippets in the same project to generate patches. 
 Please refer to [here](https://github.com/BaiGeiQiShi/SimFixAPI.git) for experiment replication.
 
-<br>
-<br>
-
-## Repo Structure:
+## Repo Structure
 ```
    /MultiRepairResults
    |——AlphaReapir
