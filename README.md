@@ -33,7 +33,7 @@ for experiment replication.
 
 ## 2. ARJA-e
 ARJA-e is a genetic programming (GP) based program repair approach for Java. 
-Please refer to [here](https://github.com/BaiGeiQiShi/ARJA-e-API.git) for epxeriment replication.
+Please refer to [here](https://github.com/BaiGeiQiShi/ARJA-e-API.git) for experiment replication.
 
 ## 3. ITER
 ITER is a neural program repair system with an original training and inference loop enabling advanced multi-location patches.
